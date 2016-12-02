@@ -1,5 +1,7 @@
 # Program XML
 
+[MORE ABOUT THIS ON THE WIKI](http://riverscapes.northarrowresearch.com/development/xml/Pycharm/)
+
 We need a way to represent the bucket file structure and hold that structure
 programatically so that products can find their homes when they upload and also
 so users can find the products they care about.
