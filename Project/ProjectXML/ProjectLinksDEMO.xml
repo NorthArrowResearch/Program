@@ -25,7 +25,7 @@
 
       <!--HERE ARE SOME PROJECT LINK CASES WE NEED TO COVER-->
 
-      <!--Case 1: Local file, non program vallye bottom file-->
+      <!--Case 1: Internally referenced file -->
       <!--Case 2: Non local file... will get copied into the project and appear like this too -->
       <Vector id="valleybottom01">
         <Name>USal_valley_bottom</Name>
