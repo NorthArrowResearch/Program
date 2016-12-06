@@ -1,39 +1,39 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:noNamespaceSchemaLocation="XSD/V1/Project.xsd">
+         xsi:noNamespaceSchemaLocation="../XSD/V1/Project.xsd">
 
   <Name>ConfinementTestProject</Name>
   <ProjectType>Confinement</ProjectType>
 
   <MetaData>
-    <Meta Name="Watershed">Yankee Fork</Meta>
-    <Meta Name="Operator">KMW</Meta>
+    <Meta name="Watershed">Yankee Fork</Meta>
+    <Meta name="Operator">KMW</Meta>
   </MetaData>
 
   <Inputs>
-    <Vector id="ValleyBottom01" Guid="257ecfc4-06ef-4270-884d-319d44f741cb">
+    <Vector id="ValleyBottom01" guid="257ecfc4-06ef-4270-884d-319d44f741cb">
       <Name>Valley Bottom 01</Name>
       <Path>Inputs\ValleyBottoms\ValleyBottom01\ValleyBottom.shp</Path>
     </Vector>
-    <Vector id="ValleyBottom02" Guid="6090e743-c54c-4a92-b165-ece0a073f650">
+    <Vector id="ValleyBottom02" guid="6090e743-c54c-4a92-b165-ece0a073f650">
       <Name>Valley Bottom 02</Name>
       <Path>Inputs\ValleyBottoms\ValleyBottom02\ValleyBottom.shp</Path>
     </Vector>
-    <Vector id="BankfullBuffer50Percent" Guid="6c148311-acf9-4cbe-b720-17b973793cb7">
+    <Vector id="BankfullBuffer50Percent" guid="6c148311-acf9-4cbe-b720-17b973793cb7">
       <Name>Bankfull Buffer 50 Percent</Name>
       <Path>Inputs\ChannelPolygons\ChannelPolygon01\BankfullChannelBuffer.shp</Path>
     </Vector>
-    <Vector id="StreamNetworkYF001" Guid="004a9ccf-fef6-4911-a6a3-c44b14c611f5">
+    <Vector id="StreamNetworkYF001" guid="004a9ccf-fef6-4911-a6a3-c44b14c611f5">
       <Name>Stream Network</Name>
       <Path>Inputs\StreamNetworks\StreamNetwork\StreamNetwork.shp</Path>
     </Vector>
   </Inputs>
 
   <Realizations>
-    <Confinement Promoted="false"
-                 DateCreated=""
-                 ProductVersion="0.1"
-                 Guid="241cdf2a-a397-4fd7-acd2-de0869ed4663">
+    <Confinement promoted="false"
+                 dateCreated=""
+                 productVersion="0.1"
+                 guid="241cdf2a-a397-4fd7-acd2-de0869ed4663">
       <Name>Confinement Run 01</Name>
 
       <Inputs> <!--there is only ever one instance of each input for any one realization-->
@@ -62,8 +62,8 @@
           <Name>Moving Window Analysis 500m 1K 2K</Name>
 
           <Parameters>
-            <Param Name="SeedPointDistance">500</Param><!--How best to represent a list of sizes? -->
-            <Param Name="WindowSizes">500,1000,2000</Param>
+            <Param name="SeedPointDistance">500</Param><!--How best to represent a list of sizes? -->
+            <Param name="WindowSizes">500,1000,2000</Param>
           </Parameters>
 
           <Outputs>
@@ -71,14 +71,14 @@
               <Name>Seed Points 01</Name>
               <Path>Outputs\Output_01\Analysis\Confinement001\ConfinementLocal.shp</Path>
               <MetaData>
-                <Meta Name="Type">SeedPointFile</Meta>
+                <Meta name="Type">SeedPointFile</Meta>
               </MetaData>
             </Vector>
             <Vector>
               <Name>Moving Window 01></Name>
               <Path>Outputs\Output_01\Analysis\Confinement001\ConfinementWindows.shp</Path>
               <MetaData>
-                <Meta Name="Type">MovingWindowFile</Meta>
+                <Meta name="Type">MovingWindowFile</Meta>
               </MetaData>
             </Vector>
           </Outputs>
@@ -86,14 +86,14 @@
         <FixedSegments>
           <Name>Fixed Segments 500m</Name>
           <Parameters>
-            <Param Name="SegmentSize">500</Param>
+            <Param name="SegmentSize">500</Param>
           </Parameters>
           <Outputs>
             <Vector>
               <Name>Fixed Segments 500m</Name>
               <Path>Outputs\Output_01\Analysis\Confinement002\ConfinementSegments.shp</Path>
               <MetaData>
-                <Meta Name="Type">FixedSegmentFile</Meta>
+                <Meta name="Type">FixedSegmentFile</Meta>
               </MetaData>
             </Vector>
           </Outputs>
@@ -101,7 +101,7 @@
         <CustomSegments> <!-- No examples exist for this type yet, this is just demo -->
           <Name>Joe's segmented Network!</Name>
           <Parameters>
-            <Param Name="SegmentedNetwork">SegmentedNetwork01</Param>
+            <Param name="SegmentedNetwork">SegmentedNetwork01</Param>
           </Parameters>
           <Outputs>
             <Vector>
