@@ -17,16 +17,16 @@
     <Collection id="REGIONS">
       <Collection id="WATERSHEDS">
         <Group id="Watershed" name="Watershed" folder="Watershed">
-          <Product name="GRTS Rollup" id="GRTS" folder="grts"/>
+          <Product name="GRTS Rollup" id="GRTS" folder="GRTS"/>
           <Product name="Context Layers" id="context" folder="context_layers"/>
         </Group>
         <Group id="Network" name="Network" folder="Network">
-          <Product name="VBET Models" id="VBET" folder="vbet"/>
-          <Product name="BRAT Models" id="BRAT" folder="brat"/>
+          <Product name="VBET Models" id="VBET" folder="VBET"/>
+          <Product name="BRAT Models" id="BRAT" folder="BRAT"/>
           <Product name="WRAT" id="WRAT" folder="wrat"/>
           <Product name="Matt Imputation Crap" id="MIC" folder="matt_impute"/>
-          <Product name="GPP" id="GPP" folder="gpp"/>
-          <Product name="Capacity" id="capacity" folder="capacity"/>
+          <Product name="GPP" id="GPP" folder="GPP"/>
+          <Product name="Capacity" id="Capacity" folder="Capacity"/>
           <Product name="River Styles" id="RSTYLES" folder="riverstyles"/>
         </Group>
         <Group id="Site" name="Site" folder="Site">
