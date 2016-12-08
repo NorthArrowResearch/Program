@@ -8,26 +8,26 @@
   <Definitions>
     <!--Here's where we say what's allowed for each collection. Can be a list or a regex-->
     <Collections>
-      <Collection id="COL_REGION">
+      <Collection id="COL_REGION" name="Region">
         <Allow name="CRB" folder="CRB"/>
       </Collection>
-      <Collection id="COL_WATERSHED">
+      <Collection id="COL_WATERSHED" name="Watershed">
         <Allow name="Asotin" folder="Asotin"/>
         <Allow name="Lemhi" folder="Lemhi"/>
         <Allow name="Middle Fork John Day" folder="MiddleForkJohnDay"/>
       </Collection>
-      <Collection id="COL_SITE">
+      <Collection id="COL_SITE" name="Site">
         <Allow pattern="*"/>
       </Collection>
-      <Collection id="COL_VISIT">
+      <Collection id="COL_VISIT" name="Visit">
         <Allow pattern="VISIT_[0-9]{4}"/>
       </Collection>
-      <Collection id="COL_YEAR">
+      <Collection id="COL_YEAR" name="Year">
         <Allow pattern="[0-9]{4}"/>
       </Collection>
     </Collections>
 
-    <!--Groups are a lot simpler than colections. They can only be a single folder-->
+    <!--Groups are a lot simpler than collections. They can only be a single folder-->
     <Groups>
       <Group id="GRP_WATERSHED" name="Watershed" folder="Watershed"/>
       <Group id="GRP_NETWORK" name="Network" folder="Network"/>
