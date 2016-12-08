@@ -5,24 +5,39 @@
 
   <xs:complexType name="ProgramType">
     <xs:sequence>
-      <xs:element type="MetaDataType" name="MetaData" maxOccurs="unbounded" minOccurs="0"/>
-      <xs:choice>
-        <xs:element type="BucketType" name="Level" maxOccurs="unbounded" minOccurs="0"/>
-        <xs:element type="BucketType" name="Container" maxOccurs="unbounded" minOccurs="0"/>
-        <xs:element type="ProductType" name="Product" maxOccurs="unbounded" minOccurs="0"/>
-      </xs:choice>
+      <xs:element type="MetaDataType" name="MetaData" maxOccurs="1" minOccurs="0"/>
+      <xs:element type="HierarchyType" name="Hierarchy" maxOccurs="1" minOccurs="1"/>
+      <xs:element type="CollectionsDefType" name="CollectionsDef" maxOccurs="1" minOccurs="0"/>
     </xs:sequence>
-
     <xs:attribute type="xs:string" name="name"/>
   </xs:complexType>
 
-  <xs:complexType name="BucketType">
+  <xs:complexType name="HierarchyType">
+    <xs:choice>
+      <xs:element type="CollectionType" name="Collection" maxOccurs="1"/>
+      <xs:element type="GroupType" name="Container" maxOccurs="1"/>
+      <xs:element type="ProductType" name="Product" maxOccurs="1"/>
+    </xs:choice>
+  </xs:complexType>
+
+  <xs:complexType name="CollectionType">
+    <xs:choice>
+      <xs:element type="CollectionType" name="Collection" maxOccurs="1" minOccurs="0"/>
+      <xs:element type="GroupType" name="Group" maxOccurs="unbounded" minOccurs="0"/>
+      <xs:element type="ProductType" name="Product" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:choice>
+    <xs:attribute type="xs:string" name="id" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="GroupType">
     <xs:sequence>
-      <xs:element type="BucketType" name="Level" maxOccurs="unbounded" minOccurs="0"/>
-      <xs:element type="BucketType" name="Container" maxOccurs="unbounded" minOccurs="0"/>
+      <xs:element type="CollectionType" name="Collection" maxOccurs="unbounded" minOccurs="0"/>
+      <xs:element type="GroupType" name="Container" maxOccurs="unbounded" minOccurs="0"/>
       <xs:element type="ProductType" name="Product" maxOccurs="unbounded" minOccurs="0"/>
     </xs:sequence>
     <xs:attribute type="xs:string" name="name" use="required"/>
+    <xs:attribute type="xs:string" name="id" use="required"/>
+    <xs:attribute type="xs:string" name="folder" use="required"/>
   </xs:complexType>
 
   <xs:complexType name="ProductType">
@@ -49,5 +64,23 @@
     </xs:sequence>
   </xs:complexType>
 
+  <xs:complexType name="CollectionsDefType">
+    <xs:sequence>
+      <xs:element type="CollectionDefType" name="Collection" maxOccurs="unbounded" minOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="CollectionDefType">
+    <xs:sequence>
+      <xs:element type="AllowType" name="Allow" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="ref" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="AllowType">
+    <xs:attribute type="xs:string" name="pattern"/>
+    <xs:attribute type="xs:string" name="name"/>
+    <xs:attribute type="xs:string" name="folder"/>
+  </xs:complexType>
 
 </xs:schema>

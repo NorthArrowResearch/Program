@@ -4,37 +4,72 @@
   <MetaData>
     <Meta name="s3bucket">riverscapesdata</Meta>
   </MetaData>
-  <Level name="Region">
-    <Level name="Watershed">
-      <Container name="Watershed">
-        <Product name="GRTS Rollup" id="GRTS" folder="grts"/>
-        <Product name="Context Layers" id="context" folder="context_layers"/>
-      </Container>
-      <Container name="Network">
-        <Product name="VBET Models" id="VBET" folder="vbet"/>
-        <Product name="BRAT Models" id="BRAT" folder="brat"/>
-        <Product name="WRAT" id="WRAT" folder="wrat"/>
-        <Product name="Matt Imputation Crap" id="MIC" folder="matt_impute"/>
-        <Product name="GPP" id="GPP" folder="gpp"/>
-        <Product name="Capacity" id="capacity" folder="capacity"/>
-        <Product name="River Styles" id="RSTYLES" folder="riverstyles"/>
-      </Container>
-      <Container name="Sites">
-        <Level name="Site">
-          <Level name="Visit">
-            <Level name="Year">
-              <Level name="Flow">
-                <Product name="FHM" id="FHM" folder="FHM"/>
-                <Product name="GUT" id="GUT" folder="GUT"/>
-                <Product name="GCD" id="GCD" folder="GCD"/>
-              </Level>
-              <Container name="Topography">
-                <Product name="DEM" id="DEM" folder="DEM"/>
-              </Container>
-            </Level>
-          </Level>
-        </Level>
-      </Container>
-    </Level>
-  </Level>
+
+  <!--HEre's where we specify the actual structture
+    Reminder:
+      - Collection: Repeating folders (e.g. Asotin, Lemhi
+      - Group: Single folder with an explicit name (e.g. Topography)
+     Rules:
+      - Only one collection is allowed at any level
+      - You cannot mix Colelctions and Groups at the same level
+  -->
+  <Hierarchy>
+    <Collection id="REGIONS">
+      <Collection id="WATERSHEDS">
+        <Group id="Watershed" name="Watershed" folder="Watershed">
+          <Product name="GRTS Rollup" id="GRTS" folder="grts"/>
+          <Product name="Context Layers" id="context" folder="context_layers"/>
+        </Group>
+        <Group id="Network" name="Network" folder="Network">
+          <Product name="VBET Models" id="VBET" folder="vbet"/>
+          <Product name="BRAT Models" id="BRAT" folder="brat"/>
+          <Product name="WRAT" id="WRAT" folder="wrat"/>
+          <Product name="Matt Imputation Crap" id="MIC" folder="matt_impute"/>
+          <Product name="GPP" id="GPP" folder="gpp"/>
+          <Product name="Capacity" id="capacity" folder="capacity"/>
+          <Product name="River Styles" id="RSTYLES" folder="riverstyles"/>
+        </Group>
+        <Group id="Site" name="Site" folder="Site">
+          <Collection id="SITES">
+            <Collection id="VISITS">
+              <Collection id="YEARS">
+                <Group id="Flow" name="Flow" folder="Flow">
+                  <Collection id="FLOWS">
+                    <Product name="FHM" id="FHM" folder="FHM"/>
+                    <Product name="GUT" id="GUT" folder="GUT"/>
+                    <Product name="GCD" id="GCD" folder="GCD"/>
+                  </Collection>
+                </Group>
+                <Group id="Topography" name="Topography" folder="Topography">
+                  <Product name="DEM" id="DEM" folder="DEM"/>
+                </Group>
+              </Collection>
+            </Collection>
+          </Collection>
+        </Group>
+      </Collection>
+    </Collection>
+  </Hierarchy>
+
+  <!--Here's where we say what's allowed for each collection. Can be a list or a regex-->
+  <CollectionsDef>
+    <Collection ref="REGIONS">
+      <Allow name="CRB" folder="CRB"/>
+    </Collection>
+    <Collection ref="WATERSHEDS">
+      <Allow name="Asotin" folder="Asotin"/>
+      <Allow name="Lemhi" folder="Lemhi"/>
+      <Allow name="Middle Fork John Day" folder="MiddleForkJohnDay"/>
+    </Collection>
+    <Collection ref="Site">
+      <Allow pattern="*"/>
+    </Collection>
+    <Collection ref="Visit">
+      <Allow pattern="VISIT_[0-9]{4}"/>
+    </Collection>
+    <Collection ref="Year">
+      <Allow pattern="[0-9]{4}"/>
+    </Collection>
+  </CollectionsDef>
+
 </Program>
