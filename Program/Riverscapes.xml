@@ -39,13 +39,13 @@
     <!--Products for now just need ref, name and folder-->
     <Products>
       <Product id="GRTS" name="GRTS Rollup" folder="GRTS"/>
-      <Product id="context" name="Context Layers" folder="context_layers"/>
+      <Product id="CONTEXT" name="Context Layers" folder="context_layers"/>
       <Product id="VBET" name="VBET Models" folder="VBET"/>
       <Product id="BRAT" name="BRAT Models" folder="BRAT"/>
       <Product id="WRAT" name="WRAT" folder="wrat"/>
       <Product id="MIC" name="Matt Imputation Crap" folder="matt_impute"/>
       <Product id="GPP" name="GPP" folder="GPP"/>
-      <Product id="Capacity" name="Capacity" folder="Capacity"/>
+      <Product id="CAPACITY" name="Capacity" folder="Capacity"/>
       <Product id="RSTYLES" name="River Styles" folder="riverstyles"/>
       <Product id="FHM" name="FHM" folder="FHM"/>
       <Product id="GUT" name="GUT" folder="GUT"/>
