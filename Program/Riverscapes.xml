@@ -25,6 +25,9 @@
       <Collection id="COL_YEAR" name="Year">
         <Allow pattern="[0-9]{4}"/>
       </Collection>
+      <Collection id="COL_FLOW" name="Site">
+        <Allow pattern="*"/>
+      </Collection>
     </Collections>
 
     <!--Groups are a lot simpler than collections. They can only be a single folder-->
