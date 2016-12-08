@@ -43,7 +43,7 @@
     <Products>
       <Product id="GRTS" name="GRTS Rollup" folder="GRTS"/>
       <Product id="CONTEXT" name="Context Layers" folder="context_layers"/>
-      <Product id="VBET" name="VBET Models" folder="VBET"/>
+      <Product id="VBET" name="VBET" folder="VBET"/>
       <Product id="BRAT" name="BRAT Models" folder="BRAT"/>
       <Product id="WRAT" name="WRAT" folder="wrat"/>
       <Product id="MIC" name="Matt Imputation Crap" folder="matt_impute"/>
