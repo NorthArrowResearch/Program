@@ -17,7 +17,7 @@
         <Allow name="Middle Fork John Day" folder="MiddleForkJohnDay"/>
       </Collection>
       <Collection id="COL_SITE" name="Site">
-        <Allow pattern="*"/>
+        <Allow pattern=".*"/>
       </Collection>
       <Collection id="COL_VISIT" name="Visit">
         <Allow pattern="VISIT_[0-9]{4}"/>
@@ -26,7 +26,7 @@
         <Allow pattern="[0-9]{4}"/>
       </Collection>
       <Collection id="COL_FLOW" name="Site">
-        <Allow pattern="*"/>
+        <Allow pattern=".*"/>
       </Collection>
     </Collections>
 
@@ -65,6 +65,12 @@
      Rules:
       - Only one collection is allowed at any level
       - You cannot mix Colelctions and Groups at the same level
+
+      BUCKET          COL.COLLECTION           GROUP   PRODUCT
+      riverscapesdata/CRB/Middle Fork John Day/Network/VBET
+      
+      BUCKET          COL.COLLECTION           GRP. COLLECTION    COL.       COL. GRP. COL.      PRODUCT
+      riverscapesdata/CRB/MiddleForkJohnDay/Site/ASC0023_23223/VISIT_2314/2012/Flow/Q_123_123/FHM
   -->
   <Hierarchy>
     <Collection ref="COL_REGION">
