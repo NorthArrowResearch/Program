@@ -609,7 +609,7 @@
           <xs:element name="ExistingCoverRasters">
           <xs:complexType>
             <xs:sequence>
-              <xs:element type="RasterType" name="Raster"/>
+              <xs:element type="RasterType" name="Raster" maxOccurs="unbounded"/>
             </xs:sequence>
           </xs:complexType>
           </xs:element>
@@ -625,7 +625,7 @@
           <xs:element name="HistoricCoverRasters">
           <xs:complexType>
             <xs:sequence>
-              <xs:element type="RasterType" name="Raster"/>
+              <xs:element type="RasterType" name="Raster" maxOccurs="unbounded"/>
             </xs:sequence>
           </xs:complexType>
           </xs:element>
@@ -637,7 +637,7 @@
   <xs:complexType name="RVDDrainageNetworksType" mixed="true">
     <xs:sequence>
       <xs:element name="Network">
-        <xs:complexType>
+        <xs:complexType mixed="true">
           <xs:complexContent>
             <xs:extension base="RasterType">
               <xs:sequence>
@@ -649,8 +649,6 @@
       </xs:element>
     </xs:sequence>
   </xs:complexType>
-
-
 
   <!--Analysis and Outputs-->
   <xs:complexType name="RVDAnalysisType">

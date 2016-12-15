@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:noNamespaceSchemaLocation="../XSD/V1/Project.xsd">
+  xsi:noNamespaceSchemaLocation="XSD/V1/Project.xsd">
 
   <Name>My FHM PRoject NAME</Name>
   <ProjectType>FHM</ProjectType>
@@ -35,15 +35,15 @@
     <FHM guid="" dateCreated="" productVersion="1.0.0" promoted="true">
       <Name>FIS Steelhead Spawner 1</Name>
 
-      <Parameters>
-        <Param name="Param1">Param</Param>
-      </Parameters>
-
       <MetaData>
         <Meta name="lifestage">Spawner</Meta>
         <Meta name="species">Steelhead</Meta>
         <Meta name="type">FIS</Meta>
       </MetaData>
+
+      <Parameters>
+        <Param name="Param1">Param</Param>
+      </Parameters>
 
       <Inputs>
         <Raster ref="DEPTH01"/>
@@ -70,15 +70,15 @@
     <FHM guid="" dateCreated="" productVersion="1.0.0" promoted="true">
       <Name>HSI Steelhead Spawner Analysis 1</Name>
 
-      <Parameters>
-        <Param name="Param1">Param</Param>
-      </Parameters>
-
       <MetaData>
         <Meta name="lifestage">Spawner</Meta>
         <Meta name="species">Steelhead</Meta>
         <Meta name="type">HSI</Meta>
       </MetaData>
+
+      <Parameters>
+        <Param name="Param1">Param</Param>
+      </Parameters>
 
       <Inputs>
         <Raster ref="DEPTH01"/>

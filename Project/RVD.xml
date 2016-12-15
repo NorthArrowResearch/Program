@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="XSD/V1/Project.xsd">
+	<Name>logan rvd</Name>
+	<ProjectType>RVD</ProjectType>
+	<MetaData>
+		<Meta name="HUCID">16010203</Meta>
+		<Meta name="Region">CRB</Meta>
+		<Meta name="Watershed">Little Bear-Logan</Meta>
+	</MetaData>
+	<Inputs>
+		<Raster guid="558A3767-3D21-46B8-8BC4-593A8DE33A58" id="EXVEG1">
+			<Name>Existing Vegetation</Name>
+			<Path>01_Inputs/01_Ex_Veg/Ex_Veg_001/US_140EVT</Path>
+		</Raster>
+		<Raster guid="558A3767-3D21-46B8-8BC4-593A8DE33A58" id="HISTVEG1">
+			<Name>Historic Vegetation</Name>
+			<Path>01_Inputs/02_Hist_Veg/Hist_Veg_001/US_130BPS</Path>
+		</Raster>
+		<Vector guid="558A3767-3D21-46B8-8BC4-593A8DE33A58" id="DN01">
+			<Name>Network</Name>
+			<Path>01_Inputs/03_Network/Network_001/NHD_Little_Bear_Logan_500m.shp</Path>
+		</Vector>
+		<Vector guid="558A3767-3D21-46B8-8BC4-593A8DE33A58" id="VALLEY1">
+			<Name>Valley Bottom</Name>
+			<Path>01_Inputs/04_Valley/Valley_001/Logan_Valley_Bottom.shp</Path>
+		</Vector>
+		<Vector>
+			<Name>Large River Polygon</Name>
+			<Path>01/Inputs/05_LRP/LRP_001/Logan_LRP.shp</Path>
+		</Vector>
+	</Inputs>
+	<Realizations>
+		<RVD dateCreated="2016-12-09 11:28:49" guid="558A3767-3D21-46B8-8BC4-593A8DE33A58" productVersion="0.1">
+			<Name>RVD Realization 1</Name>
+			<Inputs>
+				<ExistingVegetation ref="EXVEG1">
+					<ExistingCoverRasters>
+						<Raster>
+							<Name>Existing Riparian Vegetation</Name>
+							<Path>01_Inputs/01_Ex_Veg/Ex_Veg_001/Ex_Rasters/Rip_Veg.tif</Path>
+						</Raster>
+						<Raster>
+							<Name>Existing Cover Types</Name>
+							<Path>01_Inputs/01_Ex_Veg/Ex_Veg_001/Ex_Rasters/Veg_cover.tif</Path>
+						</Raster>
+					</ExistingCoverRasters>
+				</ExistingVegetation>
+				<HistoricVegetation ref="HISTVEG1">
+					<HistoricCoverRasters>
+						<Raster>
+							<Name>Historic Riparian Vegetation</Name>
+							<Path>01_Inputs/02_Hist_Veg/Hist_Veg_001/Hist_Rasters/Rip_Veg.tif</Path>
+						</Raster>
+						<Raster>
+							<Name>Historic Cover Types</Name>
+							<Path>01_Inputs/02_Hist_Veg/Hist_Veg_001/Hist_Rasters/Veg_cover.tif</Path>
+						</Raster>
+					</HistoricCoverRasters>
+				</HistoricVegetation>
+				<DrainageNetworks>
+					<Network ref="DN01">
+						<ThiessenPolygons guid="558A3767-3D21-46B8-8BC4-593A8DE33A58">
+							<Name>Thiessen Polygons</Name>
+							<Path>01_Inputs/03_Network/Network_001/Thiessen/Logan_Thiessen_polygons.shp</Path>
+						</ThiessenPolygons>
+					</Network>
+				</DrainageNetworks>
+				<ValleyBottom ref="VALLEY1"/>
+			</Inputs>
+			<Analysis>
+				<Name>Analysis1</Name>
+				<Outputs>
+					<Vector>
+						<Name>RVD1</Name>
+						<Path>02_Analyses/Outputs_001/Logan_RVD.shp</Path>
+					</Vector>
+					<Raster>
+						<Name>Conversion1</Name>
+						<Path>02_Analyses/Outputs_001/Conversion.tif</Path>
+					</Raster>
+				</Outputs>
+			</Analysis>
+		</RVD>
+	</Realizations>
+</Project>
+

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:noNamespaceSchemaLocation="../XSD/V1/Project.xsd">
+  xsi:noNamespaceSchemaLocation="XSD/V1/Project.xsd">
 
   <Name>MAtt Project 1</Name>
   <ProjectType>MATTPROJECT</ProjectType>
@@ -38,11 +38,11 @@
       <!--Case 2: Externally referenced Path-->
       <Vector id="valleybottom01">
         <Name>USal_valley_bottom</Name>
-        <!-- Project prefers relative path but CAN be absolute -->
-        <Project>../some/../other/path/Sample_VBET_Project.xml</Project>
         <!-- Path is preferred to be Local but Absolute paths WILL work (necessary for projects on
               different physical drives -->
         <Path>inputs/confinements/valley_bottom_polygon/valley_bottom_polygon_01/USal_valleybottom.shp</Path>
+        <!-- Project prefers relative path but CAN be absolute -->
+        <Project>../some/../other/path/Sample_VBET_Project.xml</Project>
       </Vector>
 
 
