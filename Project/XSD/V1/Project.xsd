@@ -202,6 +202,7 @@
       <xs:element type="ConfinementType" name="Confinement" maxOccurs="unbounded" minOccurs="0"/>
       <xs:element type="GUTType" name="GUT" maxOccurs="unbounded" minOccurs="0"/>
       <xs:element type="FHMType" name="FHM" maxOccurs="unbounded" minOccurs="0"/>
+      <xs:element type="RVDType" name="RVD" maxOccurs="unbounded" minOccurs="0"/>
     </xs:choice>
   </xs:complexType>
 
@@ -487,13 +488,13 @@
     </xs:sequence>
   </xs:complexType>
 
-  <xs:complexType name="GUTMetricsType">
-    <xs:sequence>
-      <xs:extension base="xs:string">
-        <xs:attribute type="xs:string" name="name"/>
-      </xs:extension>
-    </xs:sequence>
-  </xs:complexType>
+  <!--<xs:complexType name="GUTMetricsType">-->
+    <!--<xs:complexContent>-->
+      <!--<xs:extension base="xs:string">-->
+        <!--<xs:attribute type="xs:string" name="name"/>-->
+      <!--</xs:extension>-->
+    <!--</xs:complexContent>-->
+  <!--</xs:complexType>-->
 
   <xs:complexType name="GUTOutputsType">
     <xs:sequence>
@@ -553,11 +554,10 @@
   <xs:complexType name="FHMType" mixed="true">
     <xs:complexContent>
       <xs:extension base="RealizationType">
-        <xs:sequence>    <xs:sequence>
+        <xs:sequence>
           <xs:element type="DataSetContainerType" name="Inputs" minOccurs="0"/>
           <xs:element type="FHMAnalysisType" name="Analysis" minOccurs="0"/>
-        </xs:sequence></xs:sequence>
-
+        </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
@@ -575,5 +575,97 @@
       <xs:element type="RasterType" name="Raster"/>
     </xs:sequence>
   </xs:complexType>
+
+  <!-- =========================================================================
+
+    Project: RVD
+
+  ============================================================================== -->
+  <xs:complexType name="RVDType" mixed="true">
+    <xs:complexContent>
+      <xs:extension base="RealizationType">
+        <xs:sequence>
+          <xs:element type="RVDInputs" name="Inputs" minOccurs="0"/>
+          <xs:element type="RVDAnalysisType" name="Analysis" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <!-- RVD Inputs -->
+  <xs:complexType name="RVDInputs">
+    <xs:sequence>
+      <xs:element type="RVDExistingVegetationType" name="ExistingVegetation"/>
+      <xs:element type="RVDHistoricVegetationType" name="HistoricVegetation"/>
+      <xs:element type="RVDDrainageNetworksType" name="DrainageNetworks"/>
+      <xs:element type="VectorType" name="ValleyBottom"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="RVDExistingVegetationType" mixed="true">
+    <xs:complexContent>
+      <xs:extension base="RasterType">
+        <xs:sequence>
+          <xs:element name="ExistingCoverRasters">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="RasterType" name="Raster"/>
+            </xs:sequence>
+          </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="RVDHistoricVegetationType" mixed="true">
+    <xs:complexContent>
+      <xs:extension base="RasterType">
+        <xs:sequence>
+          <xs:element name="HistoricCoverRasters">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="RasterType" name="Raster"/>
+            </xs:sequence>
+          </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="RVDDrainageNetworksType" mixed="true">
+    <xs:sequence>
+      <xs:element name="Network">
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:extension base="RasterType">
+              <xs:sequence>
+                <xs:element type="VectorType" name="ThiessenPolygons"/>
+              </xs:sequence>
+            </xs:extension>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+
+
+  <!--Analysis and Outputs-->
+  <xs:complexType name="RVDAnalysisType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="Name"/>
+      <xs:element type="RVDOutputsType" name="Outputs"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="RVDOutputsType">
+    <xs:sequence>
+      <xs:element type="VectorType" name="Vector"/>
+      <xs:element type="RasterType" name="Raster"/>
+    </xs:sequence>
+  </xs:complexType>
+
 
 </xs:schema>
