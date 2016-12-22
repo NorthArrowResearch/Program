@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				 xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/Riverscapes/Program/master/Project/XSD/V1/Project.xsd">
+
+	<ProjectType>EC</ProjectType>
+	<Name>Example Conductivity Project</Name>
+
+	<MetaData>
+		<Meta name="HUCID">17020010</Meta>
+		<Meta name="Region">CRB</Meta>
+		<Meta name="Watershed">Entiat</Meta>
+        <Meta name="Model">rf17bCnd9</Meta>
+	</MetaData>
+
+	<Inputs>
+		<Vector id="SEG" guid="XXXXXXX">
+			<Name>Segmented Stream Network</Name>
+			<Path>Inputs\segments_entiat1000m.shp</Path>
+		</Vector>
+		<Table id="PARAMS" guid="XXXXXXX">
+			<Name>Environmental Parameter Table</Name>
+            <Path>Inputs\ws_cond_param.dbf</Path>
+		</Table>
+
+	</Inputs>
+
+	<Realizations>
+		<EC dateCreated="2016-10-27T16:47:38" productVersion="0.2" guid="xxxxxxxx">
+			<Name>GPP Solar Entiat</Name>
+
+			<Parameters>
+				<Param name="Predicted Conductivity Output Feature Class">C:\JL\Projects\riverscapes\conductivity\ExampleECProject\Realizations\Analysis\EC_Entiat_1000m\conductivity_entiat_20161103.shp</Param>
+			</Parameters>
+
+			<Inputs>
+				<Vector ref="SEG" />
+				<Table ref="PARAMS"/>
+			</Inputs>
+
+			<Analysis>
+				<Name>Conductivity Entiat 1000m</Name>
+				<Outputs>
+					<Vector id="" guid="XXXXXXX">
+						<Name>Predicted Electrical Conductivity</Name>
+						<Path>Realizations\Analysis\EC_Entiat_1000m\conductivity_entiat_1000m.shp</Path>
+					</Vector>
+				</Outputs>
+			</Analysis>
+		</EC>
+	</Realizations>
+
+</Project>
