@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				 xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/Riverscapes/Program/master/Project/XSD/V1/Project.xsd">
+
+	<ProjectType>Solar</ProjectType>
+	<Name>Example Solar Project</Name>
+
+	<MetaData>
+		<Meta name="HUCID">17020010</Meta>
+		<Meta name="Region">CRB</Meta>
+		<Meta name="Watershed">Entiat</Meta>
+		<Meta name="Year">2015</Meta>
+	</MetaData>
+
+	<Inputs>
+		<Vector id="SEG" guid="XXXXXXX">
+			<Name>Segmented Stream Network</Name>
+			<Path>Inputs\seg200m.shp</Path>
+		</Vector>
+		<Vector id="STREAMAREA" guid="XXXXXXX">
+			<Name>Stream Area</Name>
+			<Path>Inputs\NHD_Area.shp</Path>
+		</Vector>
+
+		<DEM id="DEM" guid="XXXXXXX">
+			<Name>DEM</Name>
+			<Path>Inputs\DEM_10m.tif</Path>
+		</DEM>
+		<Raster id="VEGHT" guid="XXXXXXX">
+            <Name>Vegetation Height</Name>
+            <Path>Inputs\nbcd_baw.tif</Path>
+        </Raster>
+
+	</Inputs>
+
+	<Realizations>
+		<SolarRaster dateCreated="2016-10-27T16:47:38" productVersion="0.1" guid="xxxxxxxx">
+			<Name>Solar Insolation Surface</Name>
+
+			<Parameters>
+				<Param name="Scratch workspace">C:\SFR\Jesse\Model\solar\Entiat\_2Model\scratch.gdb</Param>
+				<Param name="Time configuration">MultiDays   2015  182  243</Param>
+				<Param name="Day interval">7</Param>
+				<Param name="Hour interval">2</Param>
+			</Parameters>
+
+			<Inputs>
+				<Vector ref="SEG" />
+				<Vector ref="STREAMAREA"/>
+				<Raster ref="DEM"/>
+				<Raster ref="VEGHT"/>
+			</Inputs>
+
+			<Outputs>
+				<Raster id="SOLRAS" guid="XXXXXXX">
+					<Name>Area Solar Raster</Name>
+					<Path>Realizations\area_solar.tif</Path>
+				</Raster>
+			</Outputs>
+
+		</SolarRaster>
+
+		<SolarVector dateCreated="2016-10-27T16:47:38" productVersion="0.1" guid="xxxxxxxx">
+			<Name>Solar Stream Network</Name>
+			<Parameters>
+				<Param name="Scratch workspace">C:\SFR\Jesse\Model\solar\Entiat\_2Model\scratch.gdb</Param>
+				<Param name="Stream ID Field">LineOID</Param>
+			</Parameters>
+
+			<Inputs>
+				<Vector ref="SEG" />
+				<Vector ref="STREAMAREA" />
+				<Raster ref="SOLRAS" />
+			</Inputs>
+
+			<Outputs>
+				<Vector id="SOLVEC" guid="XXXXXX">
+					<Name>Solar per Stream Segment</Name>
+					<Path>Realizations\stream_solar.shp</Path>
+				</Vector>
+			</Outputs>
+		</SolarVector>
+
+	</Realizations>
+
+</Project>

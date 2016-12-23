@@ -13,40 +13,48 @@
 	</MetaData>
 
 	<Inputs>
+		<Vector id="CATCH" guid="XXXXXXX">
+			<Name>Catchment Area Polygons</Name>
+			<Path>Inputs\catchments_entiat1000m.shp</Path>
+		</Vector>
 		<Vector id="SEG" guid="XXXXXXX">
 			<Name>Segmented Stream Network</Name>
 			<Path>Inputs\segments_entiat1000m.shp</Path>
 		</Vector>
-		<Table id="PARAMS" guid="XXXXXXX">
-			<Name>Environmental Parameter Table</Name>
-            <Path>Inputs\ws_cond_param.dbf</Path>
-		</Table>
-
 	</Inputs>
 
 	<Realizations>
-		<EC dateCreated="2016-10-27T16:47:38" productVersion="0.2" guid="xxxxxxxx">
-			<Name>GPP Solar Entiat</Name>
-
+		<EC_PolyStat dateCreated="2016-10-27T16:47:38" productVewerion="" guid="xxxxxxxx">
+			<Name>Summary of Model Parameters</Name>
+            <Parameters>
+				<Param name="Environmental Parameter Workspace">C:\JL\ISEMP\Data\ec\model\Grids_rsmp</Param>
+			</Parameters>
+            <Inputs>
+                <Vector ref="CATCH" />
+            </Inputs>
+            <Outputs>
+                <Table id="PARAMS" guid="XXXXXXX">
+			        <Name>Environmental Parameter Table</Name>
+                    <Path>Realizations\ws_cond_param.dbf</Path>
+		        </Table>
+            </Outputs>
+		</EC_PolyStat>
+		<EC_Predict dateCreated="2016-10-27T16:47:38" productVersion="0.2" guid="xxxxxxxx">
+			<Name>Predicted Conductivity</Name>
 			<Parameters>
 				<Param name="Predicted Conductivity Output Feature Class">C:\JL\Projects\riverscapes\conductivity\ExampleECProject\Realizations\Analysis\EC_Entiat_1000m\conductivity_entiat_20161103.shp</Param>
 			</Parameters>
-
 			<Inputs>
 				<Vector ref="SEG" />
 				<Table ref="PARAMS"/>
 			</Inputs>
-
-			<Analysis>
-				<Name>Conductivity Entiat 1000m</Name>
-				<Outputs>
-					<Vector id="" guid="XXXXXXX">
-						<Name>Predicted Electrical Conductivity</Name>
-						<Path>Realizations\Analysis\EC_Entiat_1000m\conductivity_entiat_1000m.shp</Path>
-					</Vector>
-				</Outputs>
-			</Analysis>
-		</EC>
+            <Outputs>
+                <Vector id="" guid="XXXXXXX">
+                    <Name>Predicted Electrical Conductivity</Name>
+                    <Path>Realizations\Analysis\EC_Entiat_1000m\conductivity_entiat_1000m.shp</Path>
+                </Vector>
+            </Outputs>
+		</EC_Predict>
 	</Realizations>
 
 </Project>
