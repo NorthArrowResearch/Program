@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified"
-           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+           xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsL="http://www.w3.org/2001/XMLSchema">
   <xs:element name="Project" type="ProjectType"/>
 
   <!-- =========================================================================
@@ -97,6 +97,7 @@
       <!-- A scalar value is possible as an input or an output but use <Params> if you can -->
       <xs:element type="xs:string" name="Value"/>
       <xs:element type="RasterType" name="Raster"/>
+      <xs:element type="DataTableType" name="DataTable"/>
       <xs:element type="VectorType" name="Vector"/>
       <xs:element type="TINType" name="TIN"/>
       <xs:element type="DEMType" name="DEM"/>
@@ -181,6 +182,12 @@
     </xs:complexContent>
   </xs:complexType>
 
+  <xs:complexType name="DataTableType">
+    <xs:complexContent>
+      <xs:extension base="SimpleFileType"/>
+    </xs:complexContent>
+  </xs:complexType>
+
   <xs:complexType name="ImageType">
     <xs:complexContent>
       <xs:extension base="SimpleFileType"/>
@@ -203,6 +210,8 @@
       <xs:element type="GUTType" name="GUT" maxOccurs="unbounded" minOccurs="0"/>
       <xs:element type="FHMType" name="FHM" maxOccurs="unbounded" minOccurs="0"/>
       <xs:element type="RVDType" name="RVD" maxOccurs="unbounded" minOccurs="0"/>
+      <xs:element type="SolarType" name="Solar" maxOccurs="unbounded" minOccurs="0"/>
+      <xs:element type="ECType" name="EC" maxOccurs="unbounded" minOccurs="0"/>
     </xs:choice>
   </xs:complexType>
 
@@ -664,6 +673,52 @@
       <xs:element type="RasterType" name="Raster"/>
     </xs:sequence>
   </xs:complexType>
+
+
+  <!-- =========================================================================
+
+    Project: Solar
+
+  ============================================================================== -->
+  <xs:complexType name="SolarType" mixed="true">
+    <xs:complexContent>
+      <xs:extension base="RealizationType">
+        <xs:sequence>
+          <xs:element type="DataSetContainerType" name="Inputs" minOccurs="0"/>
+          <xs:element type="SolarAnalysisType" name="Analysis" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="SolarAnalysisType">
+    <xs:sequence>
+      <xs:element type="DataSetContainerType" name="Outputs"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- =========================================================================
+
+    Project: EC
+
+  ============================================================================== -->
+  <xs:complexType name="ECType" mixed="true">
+    <xs:complexContent>
+      <xs:extension base="RealizationType">
+        <xs:sequence>
+          <xs:element type="DataSetContainerType" name="Inputs" minOccurs="0"/>
+          <xs:element type="ECAnalysisType" name="Analysis" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="ECAnalysisType">
+    <xs:sequence>
+      <xs:element type="DataSetContainerType" name="Outputs"/>
+    </xs:sequence>
+  </xs:complexType>
+
 
 
 </xs:schema>

@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-				 xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/Riverscapes/Program/master/Project/XSD/V1/Project.xsd">
+				 xsi:noNamespaceSchemaLocation="XSD/V1/Project.xsd">
 
-	<ProjectType>EC</ProjectType>
 	<Name>Example Conductivity Project</Name>
+	<ProjectType>EC</ProjectType>
 
 	<MetaData>
 		<Meta name="HUCID">17020010</Meta>
 		<Meta name="Region">CRB</Meta>
 		<Meta name="Watershed">Entiat</Meta>
-        <Meta name="Model">rf17bCnd9</Meta>
+		<Meta name="Model">rf17bCnd9</Meta>
 	</MetaData>
 
 	<Inputs>
@@ -24,37 +24,35 @@
 	</Inputs>
 
 	<Realizations>
-		<EC_PolyStat dateCreated="2016-10-27T16:47:38" productVewerion="" guid="xxxxxxxx">
+		<EC dateCreated="2016-10-27T16:47:38" productVersion="" guid="xxxxxxxx">
+
 			<Name>Summary of Model Parameters</Name>
-            <Parameters>
-				<Param name="Environmental Parameter Workspace">C:\JL\ISEMP\Data\ec\model\Grids_rsmp</Param>
-			</Parameters>
-            <Inputs>
-                <Vector ref="CATCH" />
-            </Inputs>
-            <Outputs>
-                <Table id="PARAMS" guid="XXXXXXX">
-			        <Name>Environmental Parameter Table</Name>
-                    <Path>Realizations\ws_cond_param.dbf</Path>
-		        </Table>
-            </Outputs>
-		</EC_PolyStat>
-		<EC_Predict dateCreated="2016-10-27T16:47:38" productVersion="0.2" guid="xxxxxxxx">
-			<Name>Predicted Conductivity</Name>
+
 			<Parameters>
+				<Param name="Environmental Parameter Workspace">C:\JL\ISEMP\Data\ec\model\Grids_rsmp</Param>
 				<Param name="Predicted Conductivity Output Feature Class">C:\JL\Projects\riverscapes\conductivity\ExampleECProject\Realizations\Analysis\EC_Entiat_1000m\conductivity_entiat_20161103.shp</Param>
 			</Parameters>
+
 			<Inputs>
+				<Vector ref="CATCH" />
 				<Vector ref="SEG" />
-				<Table ref="PARAMS"/>
+				<DataTable ref="PARAMS"/>
 			</Inputs>
-            <Outputs>
-                <Vector id="" guid="XXXXXXX">
-                    <Name>Predicted Electrical Conductivity</Name>
-                    <Path>Realizations\Analysis\EC_Entiat_1000m\conductivity_entiat_1000m.shp</Path>
-                </Vector>
-            </Outputs>
-		</EC_Predict>
+
+			<Analysis>
+				<Outputs>
+					<Vector id="" guid="XXXXXXX">
+						<Name>Predicted Electrical Conductivity</Name>
+						<Path>Realizations\Analysis\EC_Entiat_1000m\conductivity_entiat_1000m.shp</Path>
+					</Vector>
+					<DataTable id="PARAMS" guid="XXXXXXX">
+						<Name>Environmental Parameter Table</Name>
+						<Path>Realizations\ws_cond_param.dbf</Path>
+					</DataTable>
+				</Outputs>
+			</Analysis>
+		</EC>
+
 	</Realizations>
 
 </Project>
