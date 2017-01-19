@@ -17,6 +17,7 @@
         <Allow name="Middle Fork John Day" folder="MiddleForkJohnDay"/>
         <Allow name="Little Salmon" folder="LittleSalmon"/>
         <Allow name="Clearwater" folder="Clearwater"/>
+        <Allow name="Wenatchee" folder="Wenatchee"/>
       </Collection>
       <Collection id="COL_SITE" name="Site">
         <Allow pattern=".*"/>
