@@ -12,7 +12,7 @@
         <Allow name="CRB" folder="CRB"/>
       </Collection>
       <Collection id="COL_WATERSHED" name="Watershed">
-        <Allow name="Asotin" folder="Asotin"/>
+        <Allow name="Lower Snake-Asotin" folder="Asotin"/>
         <Allow name="Lemhi" folder="Lemhi"/>
         <Allow name="Middle Fork John Day" folder="MiddleForkJohnDay"/>
         <Allow name="Little Salmon" folder="LittleSalmon"/>
@@ -21,18 +21,16 @@
         <Allow name="Lower Selway" folder="LowerSelway"/>
         <Allow name="Imnaha" folder="Imnaha"/>
         <Allow name="Lower John Day" folder="LowerJohnDay"/>
-        <Allow name="Middle Fork John Day" folder="MiddleForkJohnDay"/>
         <Allow name="North Fork John Day" folder="NorthForkJohnDay"/>
         <Allow name="Upper John Day" folder="UpperJohnDay"/>
-        <Allow name="Lower Snake Asotin" folder="LowerSnakeAsotin"/>
         <Allow name="Methow" folder="Methow"/>
-        <Allow name="Okganogan" folder="Okanogan"/>
+        <Allow name="Okanogan" folder="Okanogan"/>
         <Allow name="Hells Canyon" folder="HellsCanyon"/>
-        <Allow name="Lemhi" folder="Lemhi"/>
         <Allow name="Lower Salmon" folder="LowerSalmon"/>
         <Allow name="Pahsimeroi" folder="Pahsimeroi"/>
         <Allow name="South Fork Salmon" folder="SouthForkSalmon"/>
         <Allow name="Upper Middle Fork Salmon" folder="UpperMiddleForkSalmon"/>
+        <Allow name="Lower Snake-Tucannon" folder="Tucannon"/>
       </Collection>
       <Collection id="COL_SITE" name="Site">
         <Allow pattern=".*"/>
