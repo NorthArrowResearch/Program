@@ -18,6 +18,7 @@
         <Allow name="Little Salmon" folder="LittleSalmon"/>
         <Allow name="Clearwater" folder="Clearwater"/>
         <Allow name="Wenatchee" folder="Wenatchee"/>
+        <Allow name="Lower Clearwater" folder="LowerClearwater"/>
       </Collection>
       <Collection id="COL_SITE" name="Site">
         <Allow pattern=".*"/>
