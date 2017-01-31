@@ -19,6 +19,20 @@
         <Allow name="Clearwater" folder="Clearwater"/>
         <Allow name="Wenatchee" folder="Wenatchee"/>
         <Allow name="Lower Selway" folder="LowerSelway"/>
+        <Allow name="Imnaha" folder="Imnaha"/>
+        <Allow name="Lower John Day" folder="LowerJohnDay"/>
+        <Allow name="Middle Fork John Day" folder="MiddleForkJohnDay"/>
+        <Allow name="North Fork John Day" folder="NorthForkJohnDay"/>
+        <Allow name="Upper John Day" folder="UpperJohnDay"/>
+        <Allow name="Lower Snake Asotin" folder="LowerSnakeAsotin"/>
+        <Allow name="Methow" folder="Methow"/>
+        <Allow name="Okganogan" folder="Okanogan"/>
+        <Allow name="Hells Canyon" folder="HellsCanyon"/>
+        <Allow name="Lemhi" folder="Lemhi"/>
+        <Allow name="Lower Salmon" folder="LowerSalmon"/>
+        <Allow name="Pahsimeroi" folder="Pahsimeroi"/>
+        <Allow name="South Fork Salmon" folder="SouthForkSalmon"/>
+        <Allow name="Upper Middle Fork Salmon" folder="UpperMiddleForkSalmon"/>
       </Collection>
       <Collection id="COL_SITE" name="Site">
         <Allow pattern=".*"/>
