@@ -59,6 +59,7 @@
       <Product id="GUT" name="GUT" folder="GUT"/>
       <Product id="GCD" name="GCD" folder="GCD"/>
       <Product id="DEM" name="DEM" folder="DEM"/>
+      <Product id="CONFINEMENT" name="Confinement" folder="CONFINEMENT"/>
     </Products>
 
   </Definitions>
@@ -93,6 +94,7 @@
           <Product ref="GPP"/>
           <Product ref="CAPACITY"/>
           <Product ref="RSTYLES"/>
+          <Product ref="CONFINEMENT"/>
         </Group>
         <Group ref="GRP_SITE">
           <Collection ref="COL_SITE">
