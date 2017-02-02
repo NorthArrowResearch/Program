@@ -36,19 +36,18 @@
 			<Inputs>
 				<Vector ref="CATCH" />
 				<Vector ref="SEG" />
-				<DataTable ref="PARAMS"/>
 			</Inputs>
 
 			<Analysis>
 				<Outputs>
-					<Vector id="" guid="XXXXXXX">
-						<Name>Predicted Electrical Conductivity</Name>
-						<Path>Realizations\Analysis\EC_Entiat_1000m\conductivity_entiat_1000m.shp</Path>
-					</Vector>
 					<DataTable id="PARAMS" guid="XXXXXXX">
 						<Name>Environmental Parameter Table</Name>
 						<Path>Realizations\ws_cond_param.dbf</Path>
 					</DataTable>
+					<Vector id="" guid="XXXXXXX">
+						<Name>Predicted Electrical Conductivity</Name>
+						<Path>Realizations\Analysis\EC_Entiat_1000m\conductivity_entiat_1000m.shp</Path>
+					</Vector>
 				</Outputs>
 			</Analysis>
 		</EC>

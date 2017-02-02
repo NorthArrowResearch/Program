@@ -212,6 +212,7 @@
       <xs:element type="RVDType" name="RVD" maxOccurs="unbounded" minOccurs="0"/>
       <xs:element type="SolarType" name="Solar" maxOccurs="unbounded" minOccurs="0"/>
       <xs:element type="ECType" name="EC" maxOccurs="unbounded" minOccurs="0"/>
+      <xs:element type="RCAType" name="RCA" maxOccurs="unbounded" minOccurs="0"/>
     </xs:choice>
   </xs:complexType>
 
@@ -719,6 +720,40 @@
     </xs:sequence>
   </xs:complexType>
 
+  <!-- =========================================================================
 
+    Project: RCA
+
+  ============================================================================== -->
+
+  <xs:complexType name="RCAType" mixed="true">
+    <xs:complexContent>
+      <xs:extension base="RealizationType">
+        <xs:sequence>
+          <xs:element type="RCAInputsContainerType" name="Inputs" minOccurs="0"/>
+          <xs:element type="AnalysisType" name="Analysis" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="RCAInputsContainerType">
+    <xs:sequence>
+      <xs:element type="RCAInputsType" name="ExistingVegetation"/>
+      <xs:element type="RCAInputsType" name="HistoricVegetation"/>
+      <xs:element type="RVDDrainageNetworksType" name="DrainageNetworks"/>
+      <xs:element type="RasterType" name="LargeRiverPolygon"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="RCAInputsType" mixed="true">
+    <xs:complexContent>
+      <xs:extension base="RasterType">
+        <xs:sequence>
+          <xs:element type="RasterType" name="Raster" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
 
 </xs:schema>
