@@ -34,7 +34,7 @@
 	</Inputs>
 
 	<Realizations>
-		<Solar dateCreated="2016-10-27T16:47:38" productVersion="0.1" guid="xxxxxxxx">
+		<Solar dateCreated="2016-10-27T16:47:38" id="solar1" productVersion="0.1" guid="xxxxxxxx">
 			<Name>Solar Insolation Surface</Name>
 
 			<Parameters>

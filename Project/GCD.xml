@@ -143,7 +143,7 @@ t1 - t0: 01_01_2013 - 01_01_2011</Meta>
   </Inputs>
 
   <Realizations>
-    <DoD DateCreated="" Guid="" ProductVersion="1.0.0">
+    <DoD dateCreated="" id="" guid="" productVersion="1.0.0">
       <Name>2014 (VisitID 2529)_2011 (VisitID 418)</Name>
 
         <Parameters>

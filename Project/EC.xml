@@ -24,7 +24,7 @@
 	</Inputs>
 
 	<Realizations>
-		<EC dateCreated="2016-10-27T16:47:38" productVersion="" guid="xxxxxxxx">
+		<EC dateCreated="2016-10-27T16:47:38" id="ec1" productVersion="" guid="xxxxxxxx">
 
 			<Name>Summary of Model Parameters</Name>
 

@@ -23,7 +23,7 @@
   </Inputs>
 
   <Realizations>
-    <NREI promoted="true" dateCreated="2016-07-08T23:49:51" productVersion="1.4.0" guid="241cdf2a-a397-4fd7-acd2-de0869ed4662">
+    <NREI promoted="true" id="" dateCreated="2016-07-08T23:49:51" productVersion="1.4.0" guid="241cdf2a-a397-4fd7-acd2-de0869ed4662">
       <Name>2012 Visit 1029 Flow Q001</Name>
       <Inputs>
         <Raster ref="depth01"/>

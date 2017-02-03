@@ -32,7 +32,7 @@
   </Inputs>
 
   <Realizations>
-    <FHM guid="" dateCreated="" productVersion="1.0.0" promoted="true">
+    <FHM guid="" id="" dateCreated="" productVersion="1.0.0" promoted="true">
       <Name>FIS Steelhead Spawner 1</Name>
 
       <MetaData>
@@ -67,7 +67,7 @@
         </Outputs>
       </Analysis>
     </FHM>
-    <FHM guid="" dateCreated="" productVersion="1.0.0" promoted="true">
+    <FHM guid="" id="" dateCreated="" productVersion="1.0.0" promoted="true">
       <Name>HSI Steelhead Spawner Analysis 1</Name>
 
       <MetaData>

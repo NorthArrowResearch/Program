@@ -32,7 +32,7 @@
 		</Vector>
 	</Inputs>
 	<Realizations>
-		<RCA dateCreated="2017-01-18 12:08:45" guid="5D74C6CD-21F0-4439-9A62-6883A926803E" productVersion="1.0">
+		<RCA dateCreated="2017-01-18 12:08:45" id="" guid="5D74C6CD-21F0-4439-9A62-6883A926803E" productVersion="1.0">
 			<Name>RCA Realization 1</Name>
 			<Parameters>
 				<Param name="width_thresh">140</Param>
@@ -82,7 +82,7 @@
 				</Outputs>a
 			</Analysis>
 		</RCA>
-		<RCA dateCreated="2017-01-18 12:13:57" productVersion="1.0" guid="">
+		<RCA dateCreated="2017-01-18 12:13:57" id="rca1" productVersion="1.0" guid="">
 			<Name>RCA Realization 2</Name>
 			<Parameters>
 				<Param name="width_thresh">100</Param>

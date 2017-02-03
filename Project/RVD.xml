@@ -31,7 +31,7 @@
 		</Vector>
 	</Inputs>
 	<Realizations>
-		<RVD dateCreated="2016-12-09 11:28:49" guid="558A3767-3D21-46B8-8BC4-593A8DE33A58" productVersion="0.1">
+		<RVD dateCreated="2016-12-09 11:28:49" id="" guid="558A3767-3D21-46B8-8BC4-593A8DE33A58" productVersion="0.1">
 			<Name>RVD Realization 1</Name>
 			<Inputs>
 				<ExistingVegetation ref="EXVEG1">

@@ -49,7 +49,7 @@
 
 
   <Realizations>
-    <RiverStyles promoted="true" dateCreated="" productVersion="" guid="241cdf2a-a397-4fd7-acd2-de0869ed4662">
+    <RiverStyles promoted="true" id="" dateCreated="" productVersion="" guid="241cdf2a-a397-4fd7-acd2-de0869ed4662">
       <Name>USal_confinement_500m</Name>
 
       <Parameters>

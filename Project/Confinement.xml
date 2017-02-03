@@ -31,6 +31,7 @@
 
   <Realizations>
     <Confinement promoted="false"
+                 id="confine1"
                  dateCreated=""
                  productVersion="0.1"
                  guid="241cdf2a-a397-4fd7-acd2-de0869ed4663">

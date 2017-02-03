@@ -61,7 +61,7 @@
 
   <Realizations>
 
-    <GUT dateCreated="" guid="" productVersion="" promoted="true">
+    <GUT dateCreated="" id="" guid="" productVersion="" promoted="true">
       <Name>VISIT 1029 Realization 1</Name>
 
       <Parameters>
