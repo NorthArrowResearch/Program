@@ -72,6 +72,8 @@
       <Product id="GCD" name="GCD" folder="GCD"/>
       <Product id="DEM" name="DEM" folder="DEM"/>
       <Product id="CONFINEMENT" name="Confinement" folder="CONFINEMENT"/>
+      <Product id="EC" name="EC" folder="EC"/>
+      <Product id="SOLAR" name="Solar" folder="Solar"/>
     </Products>
 
   </Definitions>
@@ -107,6 +109,8 @@
           <Product ref="CAPACITY"/>
           <Product ref="RSTYLES"/>
           <Product ref="CONFINEMENT"/>
+          <Product ref="EC"/>
+          <Product ref="SOLAR"/>
         </Group>
         <Group ref="GRP_SITE">
           <Collection ref="COL_SITE">
