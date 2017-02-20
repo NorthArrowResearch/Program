@@ -1,71 +1,117 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 				 xsi:noNamespaceSchemaLocation="XSD/V1/Project.xsd">
-
-	<Name>Example Solar Project</Name>
-	<ProjectType>Solar</ProjectType>
-
+	<Name>
+		Entiat Solar Radiation
+	</Name>
+	<ProjectType>
+		Solar
+	</ProjectType>
 	<MetaData>
-		<Meta name="HUCID">17020010</Meta>
-		<Meta name="Region">CRB</Meta>
-		<Meta name="Watershed">Entiat</Meta>
-		<Meta name="Year">2015</Meta>
+		<Meta name="HUCID">
+			17020010
+		</Meta>
+		<Meta name="Region">
+			CRB
+		</Meta>
+		<Meta name="Watershed">
+			Entiat
+		</Meta>
 	</MetaData>
-
 	<Inputs>
-		<Vector id="SEG" guid="XXXXXXX">
-			<Name>Segmented Stream Network</Name>
-			<Path>Inputs\seg200m.shp</Path>
-		</Vector>
-		<Vector id="STREAMAREA" guid="XXXXXXX">
-			<Name>Stream Area</Name>
-			<Path>Inputs\NHD_Area.shp</Path>
-		</Vector>
-
-		<DEM id="DEM" guid="XXXXXXX">
-			<Name>DEM</Name>
-			<Path>Inputs\DEM_10m.tif</Path>
-		</DEM>
-		<Raster id="VEGHT" guid="XXXXXXX">
-			<Name>Vegetation Height</Name>
-			<Path>Inputs\nbcd_baw.tif</Path>
+		<Raster guid="46CB3115-5329-47B5-A431-78CF4FFB9DE2" id="DEM">
+			<Name>
+				Bare earth DEM raster dataset
+			</Name>
+			<Path>
+				ProjectInputs\dem_100m.tif
+			</Path>
 		</Raster>
-
 	</Inputs>
-
 	<Realizations>
-		<Solar dateCreated="2016-10-27T16:47:38" id="solar1" productVersion="0.1" guid="xxxxxxxx">
-			<Name>Solar Insolation Surface</Name>
-
+		<Solar dateCreated="2017-02-14T14:21:34.416000" guid="4A8177EE-E661-4E8E-8284-813FF68536BE" id="run201702141420" productVersion="0.1">
+			<Name>
+				Test Run 01
+			</Name>
+			<MetaData>
+				<Meta name="Operator">
+					jlangdon
+				</Meta>
+				<Meta name="ComputerID">
+					SFR
+				</Meta>
+				<Meta name="solar_raster Start Time">
+					2017-02-14T14:20:57.841000
+				</Meta>
+				<Meta name="solar_raster Stop Time">
+					2017-02-14T14:21:34.416000
+				</Meta>
+				<Meta name="solar_vector Start Time">
+					2017-02-14T14:23:30.154000
+				</Meta>
+				<Meta name="solar_vector Stop Time">
+					2017-02-14T14:24:32.621000
+				</Meta>
+			</MetaData>
 			<Parameters>
-				<Param name="Scratch workspace">C:\SFR\Jesse\Model\solar\Entiat\_2Model\scratch.gdb</Param>
-				<Param name="Time configuration">MultiDays   2015  182  243</Param>
-				<Param name="Day interval">7</Param>
-				<Param name="Hour interval">2</Param>
-				<Param name="Stream ID Field">LineOID</Param>
+				<Param name="Time configuration">
+					MultiDays   2016  182  183
+				</Param>
+				<Param name="Day interval">
+					7
+				</Param>
+				<Param name="Hour interval">
+					14
+				</Param>
 			</Parameters>
-
 			<Inputs>
-				<Vector ref="SEG" />
-				<Vector ref="STREAMAREA"/>
 				<Raster ref="DEM"/>
-				<Raster ref="VEGHT"/>
-				<Raster ref="SOLRAS" />
+				<Raster guid="448D145F-CA18-4972-8376-17AE258F75DF">
+					<Name>
+						Vegetation height raster dataset
+					</Name>
+					<Path>
+						Realizations\run201702141420\Inputs\nbcd_baw_100m.tif
+					</Path>
+				</Raster>
+				<Vector guid="76C9AA4A-8E94-4C33-9D65-76FF390F2BC6">
+					<Name>
+						Stream network polyline feature class
+					</Name>
+					<Path>
+						Realizations\run201702141420\Inputs\segments200m
+					</Path>
+				</Vector>
+				<Vector guid="26ECB80B-E1F6-490E-9CEF-071F9CF744E4">
+					<Name>
+						Stream area polygon feature class
+					</Name>
+					<Path>
+						Realizations\run201702141420\Inputs\NHD_area.shp
+					</Path>
+				</Vector>
+				<Raster ref="SOL_RAS"/>
 			</Inputs>
-
-			<Analysis>
+			<Analyses>
 				<Outputs>
-					<Raster id="SOLRAS" guid="XXXXXXX">
-						<Name>Area Solar Raster</Name>
-						<Path>Realizations\area_solar.tif</Path>
+					<Raster guid="14E10970-8843-456E-AC28-C35951686C48" id="SOL_RAS">
+						<Name>
+							Solar insolation raster dataset
+						</Name>
+						<Path>
+							Realizations\run201702141420\SolarRasterOutput\solar_surface.tif
+						</Path>
 					</Raster>
-					<Vector id="SOLVEC" guid="XXXXXX">
-						<Name>Solar per Stream Segment</Name>
-						<Path>Realizations\stream_solar.shp</Path>
+					<Vector guid="A61E0D70-93F9-48A0-8E82-2BDF7F7FC916" id="PRED_SOLAR">
+						<Name>
+							Output polyline feature with solar values
+						</Name>
+						<Path>
+							Realizations\run201702141420\SolarVectorOutput\pred_solar.shp
+						</Path>
 					</Vector>
 				</Outputs>
-			</Analysis>
+			</Analyses>
 		</Solar>
 	</Realizations>
-
 </Project>

@@ -40,6 +40,7 @@
   <xs:complexType name="AnalysisType" mixed="true">
     <xs:sequence>
       <xs:element type="xs:string" name="Name"/>
+      <xs:element type="MetricsType" name="Metrics" minOccurs="0"/>
       <xs:element type="DataSetContainerType" name="Outputs" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
@@ -103,6 +104,8 @@
       <xs:element type="TINType" name="TIN"/>
       <xs:element type="DEMType" name="DEM"/>
       <xs:element type="HillShadeType" name="HillShade"/>
+      <xs:element type="CSVType" name="CSV"/>
+      <xs:element type="ImageType" name="Image"/>
     </xs:choice>
   </xs:complexType>
 
@@ -214,6 +217,8 @@
       <xs:element type="SolarType" name="Solar" maxOccurs="unbounded" minOccurs="0"/>
       <xs:element type="ECType" name="EC" maxOccurs="unbounded" minOccurs="0"/>
       <xs:element type="RCAType" name="RCA" maxOccurs="unbounded" minOccurs="0"/>
+      <xs:element type="HydroType" name="Hydro" maxOccurs="unbounded" minOccurs="0"/>
+      <xs:element type="GNATType" name="GNAT" maxOccurs="unbounded" minOccurs="0"/>
     </xs:choice>
   </xs:complexType>
 
@@ -228,7 +233,7 @@
       <xs:extension base="RealizationType">
         <xs:sequence>
           <xs:element type="VBETInputType" name="Inputs" minOccurs="0"/>
-          <xs:element type="VBETAnalysisType" name="Analysis" minOccurs="0"/>
+          <xs:element type="VBETAnalysisType" name="Analyses" minOccurs="0"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -290,7 +295,7 @@
       <xs:extension base="RealizationType">
         <xs:sequence>
           <xs:element type="DataSetContainerType" name="Inputs" minOccurs="0"/>
-          <xs:element type="DataSetContainerType" name="Analysis" minOccurs="0"/>
+          <xs:element type="DataSetContainerType" name="Analyses" minOccurs="0"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -378,7 +383,7 @@
       <xs:extension base="RealizationType">
         <xs:sequence>
           <xs:element type="RiverStylesInputType" name="Inputs" minOccurs="0"/>
-          <xs:element type="RiverStylesAnalysisType" name="Analysis" minOccurs="0"/>
+          <xs:element type="RiverStylesAnalysesType" name="Analyses" minOccurs="0"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -432,7 +437,7 @@
     </xs:sequence>
   </xs:complexType>
 
-  <xs:complexType name="RiverStylesAnalysisType">
+  <xs:complexType name="RiverStylesAnalysesType">
     <xs:sequence>
       <xs:element type="RiverStylesConfinementType" name="Confinements"/>
       <xs:element type="RiverStylesReachType" name="RiverStyleReach"/>
@@ -448,20 +453,20 @@
     <xs:complexContent>
       <xs:extension base="RealizationType">    <xs:sequence>
         <xs:element type="DataSetContainerType" name="Inputs" minOccurs="0"/>
-        <xs:element type="GUTAnalysisType" name="Analysis" minOccurs="0"/>
+        <xs:element type="GUTAnalysesType" name="Analyses" minOccurs="0"/>
       </xs:sequence></xs:extension>
     </xs:complexContent>
   </xs:complexType>
 
-  <xs:complexType name="GUTAnalysisType">
+  <xs:complexType name="GUTAnalysesType">
     <xs:sequence>
-      <xs:element type="GUTEvidenceLasyersType" name="EvidenceLayers"/>
+      <xs:element type="GUTEvidenceLayersType" name="EvidenceLayers"/>
       <xs:element type="GUTMetricsType" name="Metrics"/>
       <xs:element type="GUTOutputsContainerType" name="Outputs"/>
     </xs:sequence>
   </xs:complexType>
 
-  <xs:complexType name="GUTEvidenceLasyersType">
+  <xs:complexType name="GUTEvidenceLayersType">
     <xs:sequence>
       <xs:element type="RasterType" name="Raster"/>
       <xs:element type="VectorType" name="Vector"/>
@@ -534,7 +539,7 @@
       <xs:extension base="RealizationType">
         <xs:sequence>
           <xs:element type="GCDInputType" name="Inputs" minOccurs="0"/>
-          <xs:element type="GCDAnalysisType" name="Analysis" minOccurs="0"/>
+          <xs:element type="GCDAnalysesType" name="Analyses" minOccurs="0"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -548,7 +553,7 @@
     </xs:sequence>
   </xs:complexType>
 
-  <xs:complexType name="GCDAnalysisType">
+  <xs:complexType name="GCDAnalysesType">
     <xs:sequence>
       <xs:element type="xs:string" name="Name"/>
       <xs:element type="DataSetContainerType" name="Outputs"/>
@@ -567,13 +572,13 @@
       <xs:extension base="RealizationType">
         <xs:sequence>
           <xs:element type="DataSetContainerType" name="Inputs" minOccurs="0"/>
-          <xs:element type="FHMAnalysisType" name="Analysis" minOccurs="0"/>
+          <xs:element type="FHMAnalysesType" name="Analyses" minOccurs="0"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
 
-  <xs:complexType name="FHMAnalysisType">
+  <xs:complexType name="FHMAnalysesType">
     <xs:sequence>
       <xs:element type="MetricsType" name="Metrics"/>
       <xs:element type="FHMOutputsType" name="Outputs"/>
@@ -597,7 +602,7 @@
       <xs:extension base="RealizationType">
         <xs:sequence>
           <xs:element type="RVDInputs" name="Inputs" minOccurs="0"/>
-          <xs:element type="RVDAnalysisType" name="Analysis" minOccurs="0"/>
+          <xs:element type="RVDAnalysesType" name="Analyses" minOccurs="0"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -662,7 +667,7 @@
   </xs:complexType>
 
   <!--Analysis and Outputs-->
-  <xs:complexType name="RVDAnalysisType">
+  <xs:complexType name="RVDAnalysesType">
     <xs:sequence>
       <xs:element type="xs:string" name="Name"/>
       <xs:element type="RVDOutputsType" name="Outputs"/>
@@ -687,13 +692,13 @@
       <xs:extension base="RealizationType">
         <xs:sequence>
           <xs:element type="DataSetContainerType" name="Inputs" minOccurs="0"/>
-          <xs:element type="SolarAnalysisType" name="Analysis" minOccurs="0"/>
+          <xs:element type="SolarAnalysesType" name="Analyses" minOccurs="0"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
 
-  <xs:complexType name="SolarAnalysisType">
+  <xs:complexType name="SolarAnalysesType">
     <xs:sequence>
       <xs:element type="DataSetContainerType" name="Outputs"/>
     </xs:sequence>
@@ -709,13 +714,13 @@
       <xs:extension base="RealizationType">
         <xs:sequence>
           <xs:element type="DataSetContainerType" name="Inputs" minOccurs="0"/>
-          <xs:element type="ECAnalysisType" name="Analysis" minOccurs="0"/>
+          <xs:element type="ECAnalysesType" name="Analyses" minOccurs="0"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
 
-  <xs:complexType name="ECAnalysisType">
+  <xs:complexType name="ECAnalysesType">
     <xs:sequence>
       <xs:element type="DataSetContainerType" name="Outputs"/>
     </xs:sequence>
@@ -732,7 +737,7 @@
       <xs:extension base="RealizationType">
         <xs:sequence>
           <xs:element type="RCAInputsContainerType" name="Inputs" minOccurs="0"/>
-          <xs:element type="AnalysisType" name="Analysis" minOccurs="0"/>
+          <xs:element type="AnalysisType" name="Analyses" minOccurs="0"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -756,5 +761,64 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+
+  <!-- =========================================================================
+
+    Project: Hydro
+
+  ============================================================================== -->
+
+  <xs:complexType name="HydroType" mixed="true">
+    <xs:complexContent>
+      <xs:extension base="RealizationType">
+        <xs:sequence>
+          <xs:element type="DataSetContainerType" name="Inputs" minOccurs="0"/>
+          <xs:element type="AnalysisType" name="Analyses" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <!-- =========================================================================
+
+    Project: GNAT
+
+  ============================================================================== -->
+  <xs:complexType name="GNATType" mixed="true">
+    <xs:complexContent>
+      <xs:extension base="RealizationType">
+        <xs:sequence>
+          <xs:element type="DataSetContainerType" name="Inputs" minOccurs="0"/>
+          <xs:element type="GNATOutputsType" name="Outputs" minOccurs="0"/>
+          <xs:element type="GNATAnalysesType" name="Analyses" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+
+  <xs:complexType name="GNATOutputsType">
+    <xs:sequence>
+      <xs:element type="VectorType" name="GNATNetwork"/>
+      <xs:element type="VectorType" name="GNATNetworkTable"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="GNATAnalysesType">
+    <xs:sequence>
+      <xs:element type="GNATAnalysisType" name="SegmentedNetwork"/>
+      <xs:element type="GNATAnalysisType" name="BranchNetwork"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="GNATAnalysisType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="Name"/>
+      <xs:element type="MetaDataType" name="MetaData"/>
+      <xs:element type="ParametersType" name="Params"/>
+      <xs:element type="GNATOutputsType" name="Outputs"/>
+    </xs:sequence>
+  </xs:complexType>
+
 
 </xs:schema>

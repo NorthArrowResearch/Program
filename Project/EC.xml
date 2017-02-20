@@ -1,57 +1,91 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 				 xsi:noNamespaceSchemaLocation="XSD/V1/Project.xsd">
-
-	<Name>Example Conductivity Project</Name>
-	<ProjectType>EC</ProjectType>
-
+	<Name>
+		Entiat Conductivity 2015
+	</Name>
+	<ProjectType>
+		EC
+	</ProjectType>
 	<MetaData>
-		<Meta name="HUCID">17020010</Meta>
-		<Meta name="Region">CRB</Meta>
-		<Meta name="Watershed">Entiat</Meta>
-		<Meta name="Model">rf17bCnd9</Meta>
+		<Meta name="HUCID">
+			17020010
+		</Meta>
+		<Meta name="Region">
+			CRB
+		</Meta>
+		<Meta name="Watershed">
+			Entiat
+		</Meta>
+		<Meta name="Model">
+			rf17bCnd9
+		</Meta>
 	</MetaData>
-
-	<Inputs>
-		<Vector id="CATCH" guid="XXXXXXX">
-			<Name>Catchment Area Polygons</Name>
-			<Path>Inputs\catchments_entiat1000m.shp</Path>
-		</Vector>
-		<Vector id="SEG" guid="XXXXXXX">
-			<Name>Segmented Stream Network</Name>
-			<Path>Inputs\segments_entiat1000m.shp</Path>
-		</Vector>
-	</Inputs>
-
+	<Inputs/>
 	<Realizations>
-		<EC dateCreated="2016-10-27T16:47:38" id="ec1" productVersion="" guid="xxxxxxxx">
-
-			<Name>Summary of Model Parameters</Name>
-
-			<Parameters>
-				<Param name="Environmental Parameter Workspace">C:\JL\ISEMP\Data\ec\model\Grids_rsmp</Param>
-				<Param name="Predicted Conductivity Output Feature Class">C:\JL\Projects\riverscapes\conductivity\ExampleECProject\Realizations\Analysis\EC_Entiat_1000m\conductivity_entiat_20161103.shp</Param>
-			</Parameters>
-
+		<EC dateCreated="2017-02-14T16:09:10.232000" guid="099F7E2E-88B6-4EA2-A89B-DBEB31918252" id="run201702141609" productVersion="0.4">
+			<Name>
+				Test Run 01
+			</Name>
+			<MetaData>
+				<Meta name="Operator">
+					jlangdon
+				</Meta>
+				<Meta name="ComputerID">
+					SFR
+				</Meta>
+				<Meta name="Polystat Start Time">
+					2017-02-14T16:09:01.031000
+				</Meta>
+				<Meta name="Polystat Stop Time">
+					2017-02-14T16:09:10.232000
+				</Meta>
+				<Meta name="Predict Start Time">
+					2017-02-14T16:09:50.991000
+				</Meta>
+				<Meta name="Predict Stop Time">
+					2017-02-14T16:09:58.167000
+				</Meta>
+			</MetaData>
 			<Inputs>
-				<Vector ref="CATCH" />
-				<Vector ref="SEG" />
+				<Vector guid="521FA961-D344-40FC-8CDD-6842EFB114CD">
+					<Name>
+						Catchment Area Polygons
+					</Name>
+					<Path>
+						Realizations\run201702141609\Inputs\catch_test
+					</Path>
+				</Vector>
+				<Vector guid="C51389D1-DBD8-402A-B99D-2F5CF97B9004">
+					<Name>
+						Segmented Stream Network
+					</Name>
+					<Path>
+						Realizations\run201702141609\Inputs\seg1000m_test
+					</Path>
+				</Vector>
+				<DataTable ref="PARAM_TABLE"/>
 			</Inputs>
-
-			<Analysis>
+			<Analyses>
 				<Outputs>
-					<DataTable id="PARAMS" guid="XXXXXXX">
-						<Name>Environmental Parameter Table</Name>
-						<Path>Realizations\ws_cond_param.dbf</Path>
+					<DataTable guid="E83157DB-D47F-4A8C-867B-448CCB2C0B03" id="PARAM_TABLE">
+						<Name>
+							Environmental Parameter Table
+						</Name>
+						<Path>
+							Realizations\run201702141609\PreprocessOutput\cond_param.dbf
+						</Path>
 					</DataTable>
-					<Vector id="" guid="XXXXXXX">
-						<Name>Predicted Electrical Conductivity</Name>
-						<Path>Realizations\Analysis\EC_Entiat_1000m\conductivity_entiat_1000m.shp</Path>
+					<Vector guid="042C7AA9-6F63-4FC3-B19C-C77BF0259AA0" id="PRED">
+						<Name>
+							Predicted Electrical Conductivity
+						</Name>
+						<Path>
+							Realizations\run201702141609\PredictOutput\pred_cond_20170214.shp
+						</Path>
 					</Vector>
 				</Outputs>
-			</Analysis>
+			</Analyses>
 		</EC>
-
 	</Realizations>
-
 </Project>
