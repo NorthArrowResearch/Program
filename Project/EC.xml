@@ -2,7 +2,7 @@
 <Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 				 xsi:noNamespaceSchemaLocation="XSD/V1/Project.xsd">
 	<Name>
-		Entiat Conductivity 2015
+		Entiat Predicted Conductivity
 	</Name>
 	<ProjectType>
 		EC
@@ -23,9 +23,9 @@
 	</MetaData>
 	<Inputs/>
 	<Realizations>
-		<EC dateCreated="2017-02-14T16:09:10.232000" guid="099F7E2E-88B6-4EA2-A89B-DBEB31918252" id="run201702141609" productVersion="0.4">
+		<EC dateCreated="2016-11-03T10:53:19.057000" guid="65669D37-5BEA-4573-B9FA-08BEFEEF69B2" id="run201611031053" productVersion="0.4">
 			<Name>
-				Test Run 01
+				Realization Run 01
 			</Name>
 			<MetaData>
 				<Meta name="Operator">
@@ -35,53 +35,56 @@
 					SFR
 				</Meta>
 				<Meta name="Polystat Start Time">
-					2017-02-14T16:09:01.031000
 				</Meta>
 				<Meta name="Polystat Stop Time">
-					2017-02-14T16:09:10.232000
 				</Meta>
 				<Meta name="Predict Start Time">
-					2017-02-14T16:09:50.991000
+					2016-11-03T10:53:12.728000
 				</Meta>
 				<Meta name="Predict Stop Time">
-					2017-02-14T16:09:58.167000
+					2016-11-03T10:53:19.745000
 				</Meta>
 			</MetaData>
+			<Parameters>
+				<Param name="Environmental Parameter Workspace">
+					C:\JL\ISEMP\Data\ec\model\Grids_rsmp
+				</Param>
+			</Parameters>
 			<Inputs>
-				<Vector guid="521FA961-D344-40FC-8CDD-6842EFB114CD">
+				<Vector guid="81446D73-8F77-49E7-82BB-F56E57EB5D62">
 					<Name>
 						Catchment Area Polygons
 					</Name>
 					<Path>
-						Realizations\run201702141609\Inputs\catch_test
+						Realizations\run201611031053\Inputs\catch_final.shp
 					</Path>
 				</Vector>
-				<Vector guid="C51389D1-DBD8-402A-B99D-2F5CF97B9004">
+				<Vector guid="2AF1685A-C13A-4026-801A-7489FEF73154">
 					<Name>
 						Segmented Stream Network
 					</Name>
 					<Path>
-						Realizations\run201702141609\Inputs\seg1000m_test
+						Realizations\run201611031053\Inputs\segments1000m.shp
 					</Path>
 				</Vector>
 				<DataTable ref="PARAM_TABLE"/>
 			</Inputs>
 			<Analyses>
 				<Outputs>
-					<DataTable guid="E83157DB-D47F-4A8C-867B-448CCB2C0B03" id="PARAM_TABLE">
+					<DataTable guid="80F3784E-9212-466A-8E28-BD5A7F139199" id="PARAM_TABLE">
 						<Name>
 							Environmental Parameter Table
 						</Name>
 						<Path>
-							Realizations\run201702141609\PreprocessOutput\cond_param.dbf
+							Realizations\run201611031053\PreprocessOutput\ws_cond_param.dbf
 						</Path>
 					</DataTable>
-					<Vector guid="042C7AA9-6F63-4FC3-B19C-C77BF0259AA0" id="PRED">
+					<Vector guid="6CA0C334-DBA7-4AD4-BC94-4C9A3393FB1D" id="PRED">
 						<Name>
 							Predicted Electrical Conductivity
 						</Name>
 						<Path>
-							Realizations\run201702141609\PredictOutput\pred_cond_20170214.shp
+							Realizations\run201611031053\PredictOutput\conductivity_entiat_20161103.shp
 						</Path>
 					</Vector>
 				</Outputs>

@@ -2,7 +2,7 @@
 <Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 				 xsi:noNamespaceSchemaLocation="XSD/V1/Project.xsd">
 	<Name>
-		Entiat Solar Radiation
+		Entiat Solar 2015
 	</Name>
 	<ProjectType>
 		Solar
@@ -19,19 +19,19 @@
 		</Meta>
 	</MetaData>
 	<Inputs>
-		<Raster guid="46CB3115-5329-47B5-A431-78CF4FFB9DE2" id="DEM">
+		<Raster guid="DAFA429B-38FC-4A3B-A197-978E6659EA31" id="DEM">
 			<Name>
 				Bare earth DEM raster dataset
 			</Name>
 			<Path>
-				ProjectInputs\dem_100m.tif
+				ProjectInputs\DEM_10m.tif
 			</Path>
 		</Raster>
 	</Inputs>
 	<Realizations>
-		<Solar dateCreated="2017-02-14T14:21:34.416000" guid="4A8177EE-E661-4E8E-8284-813FF68536BE" id="run201702141420" productVersion="0.1">
+		<Solar dateCreated="2016-10-27T16:47:38.816000" guid="58C2504E-8E8B-4F1B-8B36-337A7EB6819B" id="run201610271647" productVersion="0.4">
 			<Name>
-				Test Run 01
+				NBCD-2015-182-243
 			</Name>
 			<MetaData>
 				<Meta name="Operator">
@@ -41,73 +41,71 @@
 					SFR
 				</Meta>
 				<Meta name="solar_raster Start Time">
-					2017-02-14T14:20:57.841000
+					2016-10-27T11:09:46.500000
 				</Meta>
 				<Meta name="solar_raster Stop Time">
-					2017-02-14T14:21:34.416000
+					2016-10-27T16:47:38.816000
 				</Meta>
 				<Meta name="solar_vector Start Time">
-					2017-02-14T14:23:30.154000
 				</Meta>
 				<Meta name="solar_vector Stop Time">
-					2017-02-14T14:24:32.621000
 				</Meta>
 			</MetaData>
 			<Parameters>
 				<Param name="Time configuration">
-					MultiDays   2016  182  183
+					MultiDays   2015  182  243
 				</Param>
 				<Param name="Day interval">
 					7
 				</Param>
 				<Param name="Hour interval">
-					14
+					2
 				</Param>
 			</Parameters>
 			<Inputs>
 				<Raster ref="DEM"/>
-				<Raster guid="448D145F-CA18-4972-8376-17AE258F75DF">
+				<Raster guid="7357B65E-E76D-4FBF-9170-A0BBFE518028">
 					<Name>
 						Vegetation height raster dataset
 					</Name>
 					<Path>
-						Realizations\run201702141420\Inputs\nbcd_baw_100m.tif
+						Realizations\run201610271647\Inputs\nbcd_baw.tif
 					</Path>
 				</Raster>
-				<Vector guid="76C9AA4A-8E94-4C33-9D65-76FF390F2BC6">
+				<Vector guid="6249271B-BCE9-436A-B3AE-75BC3C4ABF9A">
 					<Name>
 						Stream network polyline feature class
 					</Name>
 					<Path>
-						Realizations\run201702141420\Inputs\segments200m
+						Realizations\run201610271647\Inputs\seg200m_entiat.shp
 					</Path>
 				</Vector>
-				<Vector guid="26ECB80B-E1F6-490E-9CEF-071F9CF744E4">
+				<Vector guid="1F055141-18FA-4CCB-8552-EB101662F62F">
 					<Name>
 						Stream area polygon feature class
 					</Name>
 					<Path>
-						Realizations\run201702141420\Inputs\NHD_area.shp
+						Realizations\run201610271647\Inputs\NHDArea_Entiat.shp
 					</Path>
 				</Vector>
 				<Raster ref="SOL_RAS"/>
 			</Inputs>
 			<Analyses>
 				<Outputs>
-					<Raster guid="14E10970-8843-456E-AC28-C35951686C48" id="SOL_RAS">
+					<Raster guid="E67ABB98-72B1-47EA-93BE-C0F91D3B3FF7" id="SOL_RAS">
 						<Name>
 							Solar insolation raster dataset
 						</Name>
 						<Path>
-							Realizations\run201702141420\SolarRasterOutput\solar_surface.tif
+							Realizations\run201610271647\SolarRasterOutput\area_solar.tif
 						</Path>
 					</Raster>
-					<Vector guid="A61E0D70-93F9-48A0-8E82-2BDF7F7FC916" id="PRED_SOLAR">
+					<Vector guid="AE91256E-7A56-4040-AFF0-F9DB9099F287" id="PRED_SOLAR">
 						<Name>
 							Output polyline feature with solar values
 						</Name>
 						<Path>
-							Realizations\run201702141420\SolarVectorOutput\pred_solar.shp
+							Realizations\run201610271647\SolarVectorOutput\pred_solar_2015.shp
 						</Path>
 					</Vector>
 				</Outputs>
