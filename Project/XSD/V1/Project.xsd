@@ -37,6 +37,14 @@
   </xs:complexType>
 
   <!--Realizations Must have an Analysis-->
+  <xs:complexType name="AnalysesType" mixed="true">
+    <xs:sequence>
+      <xs:element type="AnalysisType" name="Analysis" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+
+  <!--Realizations Must have an Analysis-->
   <xs:complexType name="AnalysisType" mixed="true">
     <xs:sequence>
       <xs:element type="xs:string" name="Name"/>
@@ -295,7 +303,7 @@
       <xs:extension base="RealizationType">
         <xs:sequence>
           <xs:element type="DataSetContainerType" name="Inputs" minOccurs="0"/>
-          <xs:element type="DataSetContainerType" name="Analyses" minOccurs="0"/>
+          <xs:element type="AnalysesType" name="Analyses" minOccurs="0"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -572,25 +580,12 @@
       <xs:extension base="RealizationType">
         <xs:sequence>
           <xs:element type="DataSetContainerType" name="Inputs" minOccurs="0"/>
-          <xs:element type="FHMAnalysesType" name="Analyses" minOccurs="0"/>
+          <xs:element type="AnalysesType" name="Analyses" minOccurs="0"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
 
-  <xs:complexType name="FHMAnalysesType">
-    <xs:sequence>
-      <xs:element type="MetricsType" name="Metrics"/>
-      <xs:element type="FHMOutputsType" name="Outputs"/>
-    </xs:sequence>
-  </xs:complexType>
-
-  <xs:complexType name="FHMOutputsType">
-    <xs:sequence>
-      <xs:element type="ImageType" name="Image"/>
-      <xs:element type="RasterType" name="Raster"/>
-    </xs:sequence>
-  </xs:complexType>
 
   <!-- =========================================================================
 
@@ -773,7 +768,7 @@
       <xs:extension base="RealizationType">
         <xs:sequence>
           <xs:element type="DataSetContainerType" name="Inputs" minOccurs="0"/>
-          <xs:element type="AnalysisType" name="Analyses" minOccurs="0"/>
+          <xs:element type="AnalysesType" name="Analyses" minOccurs="0"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>

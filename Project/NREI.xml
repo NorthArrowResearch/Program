@@ -8,17 +8,18 @@
   <MetaData>
     <Meta name="year">2012</Meta>
     <Meta name="visit">1029</Meta>
-    <Meta name="flow">Q001</Meta>
+    <Meta name="flow">S000001_93</Meta>
   </MetaData>
 
   <Inputs>
-    <Raster id="depth01" guid="">
+    <!--We can either reference local files (like below) or files in another project-->
+    <Raster id="depth01" guid="d40faca3-c417-455b-8be1-9bd7ab13dc77">
       <Name>Depth</Name>
-      <Path>CWB_0000001/2012/1029/Q001/inputs/WaterDepth1.tif</Path>
+      <Path>inputs/WaterDepth1.tif</Path>
     </Raster>
-    <Raster id="velocity01" guid="">
+    <Raster id="velocity01" guid="3f748fb2-5b31-47c3-bea6-8b53fc5d3bc7">
       <Name>Velocity</Name>
-      <Path>CWB_0000001/2012/1029/Q001/inputs/WaterVelocity1.tif</Path>
+      <Path>inputs/WaterVelocity1.tif</Path>
     </Raster>
   </Inputs>
 
@@ -29,12 +30,21 @@
         <Raster ref="depth01"/>
         <Raster ref="velocity01"/>
       </Inputs>
-      <Analysis>
-        <Raster>
-          <Name>NREI</Name>
-          <Path>CWB_0000001/2012/1029/Q001/outputs/Steelhead/70mm/nrei.tif</Path>
-        </Raster>
-      </Analysis>
+      <Analyses>
+        <Analysis>
+          <Name>NREI Analysis</Name>
+          <Metrics>
+            <Metric name="metricname">metricval</Metric>
+          </Metrics>
+          <Outputs>
+            <Raster>
+              <Name>NREI</Name>
+              <Path>CWB_0000001/2012/1029/Q001/outputs/Steelhead/70mm/nrei.tif</Path>
+            </Raster>
+          </Outputs>
+        </Analysis>
+      </Analyses>
+
     </NREI>
   </Realizations>
 

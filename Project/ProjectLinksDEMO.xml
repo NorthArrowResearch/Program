@@ -36,7 +36,7 @@
       </Vector>
 
       <!--Case 2: Externally referenced Path-->
-      <Vector id="valleybottom01">
+      <Vector id="valleybottom01" guid="ASDFASDFSADFSD-234SDFSDF-12312ASDFASD">
         <Name>USal_valley_bottom</Name>
         <!-- Path is preferred to be Local but Absolute paths WILL work (necessary for projects on
               different physical drives -->
