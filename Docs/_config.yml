@@ -1,0 +1,29 @@
+# Site settings
+title: Riverscapes Documentation
+email: matt@northarrowresearch.com
+description: > # this means to ignore newlines until "baseurl:"
+  Some site description will go here
+url: http://riverscapes.northarrowresearch.com/
+baseurl: /
+twitter_username: jekyllrb
+github_username:  jekyll
+theme: nardocs
+
+# Build settings
+markdown: kramdown
+
+defaults:
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+    values:
+      layout: "default"
+
+sass:
+    sass_dir: node_modules/foundation-sites/scss
+    style: compressed
+
+exclude:
+  - LICENSE
+  - package.json
+  - README.md
