@@ -7,7 +7,7 @@ url: http://riverscapes.northarrowresearch.com/
 baseurl: /
 twitter_username: jekyllrb
 github_username:  jekyll
-theme: nardocs
+theme: nardocs-jekyll-theme
 
 # Build settings
 markdown: kramdown
@@ -27,3 +27,7 @@ exclude:
   - LICENSE
   - package.json
   - README.md
+  - .vendor
+  - Gemfile
+  - Gemfile.lock
+  - _config.yml
