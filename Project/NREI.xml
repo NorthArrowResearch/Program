@@ -24,12 +24,22 @@
   </Inputs>
 
   <Realizations>
+
     <NREI promoted="true" id="" dateCreated="2016-07-08T23:49:51" productVersion="1.4.0" guid="241cdf2a-a397-4fd7-acd2-de0869ed4662">
       <Name>2012 Visit 1029 Flow Q001</Name>
+
+      <Parameters>
+        <Param name="SOMEPARAM">0.23423</Param>
+        <!--We need to discuss the parameters that should go here-->
+      </Parameters>
+
+      <!--Any other inputs that we need??-->
       <Inputs>
         <Raster ref="depth01"/>
         <Raster ref="velocity01"/>
       </Inputs>
+
+      <!--WE should talk about what kind of outputs need to happen here-->
       <Analyses>
         <Analysis>
           <Name>NREI Analysis</Name>
@@ -39,7 +49,7 @@
           <Outputs>
             <Raster>
               <Name>NREI</Name>
-              <Path>CWB_0000001/2012/1029/Q001/outputs/Steelhead/70mm/nrei.tif</Path>
+              <Path>outputs/Steelhead/70mm/nrei.tif</Path>
             </Raster>
           </Outputs>
         </Analysis>

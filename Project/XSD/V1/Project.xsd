@@ -36,7 +36,7 @@
     <xs:attribute type="xs:string" name="guid" use="required"/>
   </xs:complexType>
 
-  <!--Realizations Must have an Analysis-->
+  <!--Realizations Must have an Analyses-->
   <xs:complexType name="AnalysesType" mixed="true">
     <xs:sequence>
       <xs:element type="AnalysisType" name="Analysis" maxOccurs="unbounded" minOccurs="0"/>
@@ -241,7 +241,7 @@
       <xs:extension base="RealizationType">
         <xs:sequence>
           <xs:element type="VBETInputType" name="Inputs" minOccurs="0"/>
-          <xs:element type="VBETAnalysisType" name="Analyses" minOccurs="0"/>
+          <xs:element type="VBETAnalysesType" name="Analyses" minOccurs="0"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -281,6 +281,12 @@
   <xs:complexType name="VBETBufferType">
     <xs:sequence>
       <xs:element type="VectorType" name="Buffer" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="VBETAnalysesType">
+    <xs:sequence>
+      <xs:element type="VBETAnalysisType" name="Analysis" minOccurs="0" maxOccurs="unbounded"/>
     </xs:sequence>
   </xs:complexType>
 

@@ -42,7 +42,7 @@
               different physical drives -->
         <Path>inputs/confinements/valley_bottom_polygon/valley_bottom_polygon_01/USal_valleybottom.shp</Path>
         <!-- Project prefers relative path but CAN be absolute -->
-        <Project>../some/../other/path/Sample_VBET_Project.xml</Project>
+        <Project>../some/../other/path/Sample_VBET_Project_FOLDER/</Project>
       </Vector>
 
 

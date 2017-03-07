@@ -54,7 +54,7 @@
 
       <Parameters>
         <Param name="surveyed_discharge">TRUE</Param>
-        <!--We should probably include flow and any other parameters in here-->
+        <!--We need to discuss the other parameters that should go here-->
       </Parameters>
 
       <Inputs>
@@ -65,7 +65,7 @@
 
       <Analyses>
         <Analysis>
-          <Name>Analysis 1</Name>
+          <Name>Hydraulic Analysis</Name>
 
           <Metrics>
             <Metric name="d84">118</Metric>

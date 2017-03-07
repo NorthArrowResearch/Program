@@ -44,7 +44,7 @@
   </Inputs>
 
   <Realizations>
-    <VBET dateCreated="2016-07-08T23:49:51" productVersion="1.4.0" guid="241cdf2a-a397-4fd7-acd2-de0869ed4662">
+    <VBET id="Realization1" dateCreated="2016-07-08T23:49:51" productVersion="1.4.0" guid="241cdf2a-a397-4fd7-acd2-de0869ed4662">
   
       <Name>My realization Name</Name>
 
@@ -93,21 +93,24 @@
           </Network>
         </DrainageNetworks>
       </Inputs>
-      <Analysis>
-        <Name>My First Analysis</Name>
-        <Outputs>
-          <!-- These are just the types we know and love -->
-          <Vector>
-            <Name>Raw Valley Bottom</Name>
-            <Path>02_Analyses/Output_001/Tucannon_VBET_unedited.shp</Path>
-          </Vector>
 
-          <Vector>
-            <Name>Edited Valley Bottom</Name>
-            <Path>02_Analyses/Output_001/Tucannon_VBET_edited.shp</Path>
-          </Vector>
-        </Outputs>
-      </Analysis>
+      <Analyses>
+        <Analysis>
+          <Name>My First Analysis</Name>
+          <Outputs>
+            <!-- These are just the types we know and love -->
+            <Vector>
+              <Name>Raw Valley Bottom</Name>
+              <Path>02_Analyses/Output_001/Tucannon_VBET_unedited.shp</Path>
+            </Vector>
+
+            <Vector>
+              <Name>Edited Valley Bottom</Name>
+              <Path>02_Analyses/Output_001/Tucannon_VBET_edited.shp</Path>
+            </Vector>
+          </Outputs>
+        </Analysis>
+      </Analyses>
 
     </VBET>
 
