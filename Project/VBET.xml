@@ -93,11 +93,6 @@
           </Network>
         </DrainageNetworks>
       </Inputs>
-
-      <Analyses>
-
-      </Analyses>
-
       <Analysis>
         <Name>My First Analysis</Name>
         <Outputs>

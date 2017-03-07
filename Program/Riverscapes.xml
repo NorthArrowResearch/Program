@@ -3,6 +3,7 @@
          xsi:noNamespaceSchemaLocation="XSD/V1/Program.xsd">
   <MetaData>
     <Meta name="s3bucket">riverscapesdata</Meta>
+    <Meta name="projectfile">project.rs.xml</Meta>
   </MetaData>
 
   <Definitions>
@@ -75,6 +76,7 @@
       <Product id="CONFINEMENT" name="Confinement" folder="CONFINEMENT"/>
       <Product id="EC" name="EC" folder="EC"/>
       <Product id="SOLAR" name="Solar" folder="Solar"/>
+      <Product id="HYDRO" name="Hydro" folder="Hydro"/>
     </Products>
 
   </Definitions>
@@ -119,7 +121,10 @@
               <Collection ref="COL_YEAR">
                 <Group ref="GRP_FLOW">
                   <Collection ref="COL_FLOW">
-                    <Product ref="FHM"/>
+                    <Product ref="Hydro"/>
+                    <Collection ref="FHM_COMBO">
+                      <Product ref="FHM"/>
+                    </Collection>
                     <Product ref="GUT"/>
                     <Product ref="GCD"/>
                   </Collection>
