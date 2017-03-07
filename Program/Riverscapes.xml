@@ -122,9 +122,7 @@
                 <Group ref="GRP_FLOW">
                   <Collection ref="COL_FLOW">
                     <Product ref="Hydro"/>
-                    <Collection ref="FHM_COMBO">
-                      <Product ref="FHM"/>
-                    </Collection>
+                    <Product ref="FHM"/>
                     <Product ref="GUT"/>
                     <Product ref="GCD"/>
                   </Collection>
