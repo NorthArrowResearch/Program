@@ -81,7 +81,7 @@
 
   </Definitions>
 
-  <!--HEre's where we specify the actual structture
+  <!-- Here's where we specify the actual structure
     Reminder:
       - Collection: Repeating folders (e.g. Asotin, Lemhi
       - Group: Single folder with an explicit name (e.g. Topography)
@@ -121,7 +121,7 @@
               <Collection ref="COL_YEAR">
                 <Group ref="GRP_FLOW">
                   <Collection ref="COL_FLOW">
-                    <Product ref="Hydro"/>
+                    <Product ref="HYDRO"/>
                     <Product ref="FHM"/>
                     <Product ref="GUT"/>
                     <Product ref="GCD"/>
