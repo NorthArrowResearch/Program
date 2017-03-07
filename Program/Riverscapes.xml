@@ -24,6 +24,7 @@
         <Allow name="Lower John Day" folder="LowerJohnDay"/>
         <Allow name="North Fork John Day" folder="NorthForkJohnDay"/>
         <Allow name="Upper John Day" folder="UpperJohnDay"/>
+        <Allow name="Middle Salmon-Panther" folder="MiddleSalmonPanther"/>
         <Allow name="Methow" folder="Methow"/>
         <Allow name="Okanogan" folder="Okanogan"/>
         <Allow name="Hells Canyon" folder="HellsCanyon"/>
