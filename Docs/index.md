@@ -1,5 +1,6 @@
 ---
 title: Home
+layout: home
 ---
 
 Homepage for everything Riverscapes:
