@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/NorthArrowResearch/nardocs-jekyll-theme
-  revision: 38cf0db3539d7dd4345715adbdba1839950e5b9b
+  revision: 66cb041ddc81dbdc470bf484c2a0d2f79293940f
   specs:
     nardocs-jekyll-theme (0.1.0)
       jekyll (~> 3.4)
@@ -24,8 +24,6 @@ GEM
       pathutil (~> 0.9)
       rouge (~> 1.7)
       safe_yaml (~> 1.0)
-    jekyll-feed (0.9.1)
-      jekyll (~> 3.3)
     jekyll-sass-converter (1.5.0)
       sass (~> 3.4)
     jekyll-watch (1.5.0)
@@ -51,7 +49,6 @@ PLATFORMS
 
 DEPENDENCIES
   jekyll (= 3.4.0)
-  jekyll-feed (~> 0.6)
   nardocs-jekyll-theme!
   tzinfo-data
 
