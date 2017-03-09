@@ -49,14 +49,6 @@ author: Philip
 
 *NB: if your title is breaking it might be because it has special characters. This can be fixed by "Putting your title in quotations".*
 
-#### Youtube embeds
-
-You can embed youtube videos like so:
-
-**\{\{< youtube ngElkyQ6Rhs >\}\}**
-
-
-{{< youtube ngElkyQ6Rhs >}}
 
 ## Images
 

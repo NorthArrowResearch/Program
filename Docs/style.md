@@ -65,9 +65,6 @@ Name    | Age | City      | Fav Animal
 Bob     | 27  | Vancouver | skybison
 Alice   | 23  | Toronto   | molerat
 
-## Youtube
-
-{{< youtube ngElkyQ6Rhs >}}
 
 ## Other
 
