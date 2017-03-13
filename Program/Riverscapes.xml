@@ -34,6 +34,7 @@
         <Allow name="Upper Middle Fork Salmon" folder="UpperMiddleForkSalmon"/>
         <Allow name="Lower Snake-Tucannon" folder="Tucannon"/>
         <Allow name="Entiat" folder="Entiat"/>
+        <Allow name="Upper Grande Ronde" folder="UpperGrandeRonde"/>
       </Collection>
       <Collection id="COL_SITE" name="Site">
         <Allow pattern=".*"/>
