@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/NorthArrowResearch/nardocs-jekyll-theme
-  revision: 66cb041ddc81dbdc470bf484c2a0d2f79293940f
+  revision: e86d329b174970f40f7f24dd883cea6ffae0a17b
   specs:
     nardocs-jekyll-theme (0.1.0)
       jekyll (~> 3.4)
