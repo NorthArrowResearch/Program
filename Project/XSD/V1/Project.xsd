@@ -701,6 +701,12 @@
 
   <xs:complexType name="SolarAnalysesType">
     <xs:sequence>
+      <xs:element type="SolarAnalysisType" name="Analysis"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="SolarAnalysisType">
+    <xs:sequence>
       <xs:element type="DataSetContainerType" name="Outputs"/>
     </xs:sequence>
   </xs:complexType>
