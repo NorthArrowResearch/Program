@@ -616,6 +616,7 @@
       <xs:element type="RVDHistoricVegetationType" name="HistoricVegetation"/>
       <xs:element type="RVDDrainageNetworksType" name="DrainageNetworks"/>
       <xs:element type="VectorType" name="ValleyBottom"/>
+      <xs:element type="VectorType" name="LargeRiverPolygon"/>
     </xs:sequence>
   </xs:complexType>
 
@@ -669,6 +670,12 @@
 
   <!--Analysis and Outputs-->
   <xs:complexType name="RVDAnalysesType">
+    <xs:sequence>
+      <xs:element type="RVDAnalysisType" name="Analysis"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="RVDAnalysisType">
     <xs:sequence>
       <xs:element type="xs:string" name="Name"/>
       <xs:element type="RVDOutputsType" name="Outputs"/>
