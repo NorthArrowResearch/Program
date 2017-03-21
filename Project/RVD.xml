@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/Riverscapes/Program/master/Project/XSD/V1/Project.xsd">
+<Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="XSD/V1/Project.xsd">
 	<Name>Et_Al_Lochsa_RVD</Name>
 	<ProjectType>RVD</ProjectType>
 	<MetaData>
@@ -69,7 +69,7 @@
 				<LargeRiverPolygon ref="LRP1"/>
 			</Inputs>
 			<Analyses>
-				<Analyses>
+				<Analysis>
 					<Name>RVD Analysis</Name>
 					<Outputs>
 						<Vector guid="F9FA6541-3133-4D21-BB38-9942935E24EB">
@@ -81,7 +81,7 @@
 							<Path>02_Analyses/Output_1/Converstion_Raster.tif</Path>
 						</Raster>
 					</Outputs>
-				</Analyses>
+				</Analysis>
 			</Analyses>
 		</RVD>
 	</Realizations>
