@@ -4,7 +4,6 @@ description: > # this means to ignore newlines until "baseurl:"
   Some site description will go here
 url: http://riverscapes.northarrowresearch.com/
 baseurl: ""
-theme: nardocs-jekyll-theme
 
 # Build settings
 markdown: kramdown
@@ -17,11 +16,11 @@ defaults:
       layout: "page"
 
 
+layouts_dir:  src/_layouts
+includes_dir: src/_includes
+
 exclude:
+  - src
   - LICENSE
   - README.md
-  - .vendor
-  - .bundle
-  - Gemfile
-  - Gemfile.lock
   - _config.yml
