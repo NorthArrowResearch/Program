@@ -1,0 +1,25 @@
+---
+layout: default
+---
+
+  <header>
+    <div id="topbarnav" class="row"></div>
+    <div class="text-center callout large">
+        <h4 class="subheader">{{ site.title }}</h4>   
+      <h1>{{ page.title }}</h1>
+      {% if page.subtitle %}
+        <h3 class="post-subtitle subheader">{{ page.subtitle }}</h3>    
+      {% endif %}
+    </div>
+  </header>
+
+  <div id="inner" class="row">
+    <div class="large-4 columns">
+      <div id="toc"></div>
+      <div id="sidenav"></div>
+    </div>
+    <div class="large-8 columns">
+      <section>{{ content }}</section>
+    </div>
+  </div>
+
