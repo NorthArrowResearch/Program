@@ -1,7 +1,7 @@
 {
-  "name": "web_anabranch",
+  "name": "web_riverscapes",
   "version": "1.0.0",
-  "description": "This is just a quick test of the Gitbook Engine",
+  "description": "The riverscapes theme",
   "main": "index.js",
   "dependencies": {
     "font-awesome": "^4.7.0",

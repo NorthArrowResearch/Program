@@ -112,7 +112,9 @@ $(document).ready(function (){
 		// Now go find more branches to sort their leaves
 		for (lf in t.leaves) {
 			$li = $('<li><a href="' + t.leaves[lf].absurl + '">' + t.leaves[lf].title + '</a></li>');
-			$mUL.append($li);
+			var extSplit = t.leaves[lf].url.split('.');
+			if (extSplit.length == 1 || extSplit[extSplit.length -1] == "html") 
+				$mUL.append($li);
 		}				
 		// Now go find more branches to sort their leaves
 		for (br in t.branches) {
@@ -138,6 +140,7 @@ $(document).ready(function (){
 	// Initialize our UI framework
 	$(document).foundation();
 	$('#toc').toc();
+	$('#toc').prepend('<h4><span class="fa fa-file-text"></span> Page Contents:</h4>')
 
 });
 

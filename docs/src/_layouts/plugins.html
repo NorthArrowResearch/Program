@@ -1,24 +1,21 @@
-<!DOCTYPE html>
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+<xsl:template match="plugins">
 <html>
   <head>
-      <meta charset="utf-8">
-      <meta http-equiv="x-ua-compatible" content="ie=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta charset="utf-8"/>
+      <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
       <title>{{ site.title }}</title>
 
-      <meta name="viewport" content="width=device-width">
-      <link rel="stylesheet" href="{{ site.url }}/assets/css/app.css">
-      <link rel="stylesheet" href="{{ site.url }}/assets/css/custom.css">
+      <meta name="viewport" content="width=device-width"/>
+      <link rel="stylesheet" href="{{ site.url }}/assets/css/app.css"/>
+      <link rel="stylesheet" href="{{ site.url }}/assets/css/custom.css"/>
       <script src="https://use.fontawesome.com/586b1e1322.js"></script>
-      <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-      <![endif]-->
   </head>
-
-  <body>
-
+<body>
   <header>
-    <!-- <div id="topbarnav" class="row"></div> -->
     <div class="text-center callout large">
       {% if page.url == "/" %}
       <h1>{{ site.title }}</h1>
@@ -43,7 +40,7 @@
       <section>{{ content }}</section>
     </div>
   </div>
-
+    <xsl:text disable-output-escaping ="yes"><![CDATA[
     {% include footer.html %}
     {% include navigation.html context="/" %}
 
@@ -51,7 +48,10 @@
     <script src="{{ site.url }}/assets/js/foundation.min.js"></script>
     <script src="{{ site.url }}/assets/js/app.js"></script>
     <script src="{{ site.url }}/assets/js/toc.js"></script>
-
-  </body>
-
+    ]]>
+    </xsl:text>
+</body>
 </html>
+</xsl:template>
+
+</xsl:stylesheet>

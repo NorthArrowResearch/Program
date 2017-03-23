@@ -1,9 +1,15 @@
 ---
 title: Home
-layout: home
 ---
 
 Homepage for everything Riverscapes:
+
+## QGis Plugins:
+
+We now have a plugin repository available:
+
+* [Riverscapes Plugin Repository](/plugins.xml)
+
 
 ## Suggested Reading:
 
@@ -11,6 +17,7 @@ Homepage for everything Riverscapes:
 
 * [Installing QGIS](/development/qgis/installation-win/)
 * [Debugging Plugins Using Pycharm](/development/qgis/pycharm/)
+
 
 **XML Writing**
 

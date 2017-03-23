@@ -7,6 +7,7 @@
 // This grabs all our foundation settings
 @import 'settings';
 @import 'font-awesome';
+@import 'solarized-light';
 
 // SECTION is the tag denoting where all the 
 // content is. It's how we style the article content
@@ -55,6 +56,8 @@ header {
   background-position: 0% 50%;
   background-size: cover;
   background-color: #444444;
+  a { color: white; }
+  a:hover{ color: #eeeeee; }
   h1 {
     font-size: 2rem;
     font-weight: bold;
@@ -110,13 +113,95 @@ header {
   }
 }
 
+#toc {
+    display: block;
+    padding: 1.25rem; 
+    margin-bottom: 0.75rem;
+    background-color: #fff;
+    background: #eceeef;
+    border-radius: 0.25rem;  
+    ul {
+      list-style: none;
+      margin-left: 0;
+    }
+    li.toc-active { font-weight: bold; }
+    li.toc-h1 { padding-left: 0rem; font-size: 1rem; }
+    li.toc-h2 { padding-left: 1rem; font-size: 0.9rem; }
+    li.toc-h3 { padding-left: 2rem; font-size: 0.8rem; }
+    li.toc-h4 { padding-left: 3rem; font-size: 0.7rem; }
+    li.toc-h5 { padding-left: 4rem; font-size: 0.6rem; }
+}
+
 
 #sidenav {
-  li:before{
-    @extend .fa, .fa-file-text;
+  display: block;
+  padding: 1.25rem;   
+  margin-bottom: 0.75rem;
+  background-color: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 0.25rem;    
+  li a {
+    padding: 0.3rem 1rem;
   }
-  li.is-accordion-submenu-parent:before {
-    @extend .fa, .fa-folder;
+  li>a:before{
+    @extend .fa, .fa-file-text;
+    color: $primary-color;
+    display: inline-block;
+    margin-right: 0.3rem; 
+  }
+  li.is-accordion-submenu-parent>a:before {
+    @extend .fa, .fa-folder;  
   }
 }
 
+
+#pluginrepo {
+  margin: 0;
+  .plugin{
+    li {
+      padding: 0.2rem 0.5rem;      
+    }
+    .cta-button {
+      padding: 0
+    }
+    list-style: none;
+    border: 1px solid #666666;
+    .title{
+      background: #444;
+      color: white;
+      font-weight: bold;
+    }
+    .lbl { font-weight: bold; }
+    .about {}
+    .description {}
+    .button{
+      width: 100%;
+      margin: 0;
+    }
+  }
+}
+
+code.highlighter-rouge {
+  padding: 0rem 0.2rem;
+  border: 1px solid #d7d7d7;
+  background-color: #fafafa;
+  font-family: Consolas,"Liberation Mono",Courier,monospace;
+  font-weight: normal;
+  color: #0a0a0a;
+}
+
+.highlighter-rouge code {
+  font-size: 0.9rem;
+  line-height: 1.1;
+  padding: inherit;
+  border: inherit;
+  background-color: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+  color: inherit;
+
+}
+
+div.highlighter-rouge {
+  margin-bottom: 1.5rem;
+}

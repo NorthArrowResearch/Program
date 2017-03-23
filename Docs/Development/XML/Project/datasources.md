@@ -1,7 +1,6 @@
 ---
-Title: DataSources (Inputs/Outputs)
+title: "DataSources (Inputs/Outputs)"
 weight: 3
-
 ---
 
 DataSources can be defined in two places: 
