@@ -30,12 +30,14 @@ This is exactly the same as **Case 1** because it is up to the software to copy 
   <Vector id="valleybottom01">
     <Name>USal_valley_bottom</Name>
     <!-- Project prefers relative path but CAN be absolute -->
-    <Project>../some/../other/path/Sample_VBET_Project.xml</Project>
+    <Project>../some/../other/path/Sample_VBET_Project</Project>
     <!-- Path is preferred to be Local but Absolute paths WILL work (necessary for projects on
           different physical drives -->
     <Path>inputs/confinements/valley_bottom_polygon/valley_bottom_polygon_01/USal_valleybottom.shp</Path>
   </Vector>
 ```
+
+*NB: The `<Project>` tab references a folder, not an XML file*
 
 ## Case 4: Grab a file from an external project on another drive or outside the program
 
@@ -46,7 +48,7 @@ This case is here but it shouldn't be used if you can help it because it can't r
 ``` xml
   <Vector id="valleybottom01">
     <Name>USal_valley_bottom</Name>
-    <Project>c:\some\other\project\Sample_VBET_Project.xml</Project>
+    <Project>c:\some\other\project\Sample_VBET_Project</Project>
     <Path>confinements\valley_bottom_polygon\valley_bottom_polygon_01\USal_valleybottom.shp</Path>
   </Vector>
 ```
@@ -54,4 +56,4 @@ This case is here but it shouldn't be used if you can help it because it can't r
 ## Notes:
 
 * `<Path>` is ALWAYS relative. No exceptions
-* `<Project>` is usually relative. Exceptions can be made but should be avoided if possible.
+* `<Project>` is usually relative. Exceptions can be made but should be avoided if possible. It references a folder containing the project XML file (`project.rs.xml`)

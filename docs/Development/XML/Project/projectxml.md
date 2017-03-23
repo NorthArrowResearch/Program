@@ -5,7 +5,7 @@ weight: 1
 
 ### Quick Link:
 
-Validating your `project.xml` file can be done using the following URL:
+Validating your `project.rs.xml` file can be done using the following URL:
 
 ```
 https://raw.githubusercontent.com/Riverscapes/Program/master/Project/XSD/V1/Project.xsd
@@ -58,9 +58,11 @@ The Project XML structure is used by every type of Project in the RiverScapes Fa
       <!-- These inputs Inputs refer to the files defined at the top of the file-->		
       </Inputs>
 
-      <Analysis>
-		<!-- Analysis and outputs can be customized for each type of realization -->
-      </Analysis>
+      <Analyses>
+		    <!-- Analysis and outputs can be customized for each type of realization -->
+        <RiverStylesAnalysis>
+        </RiverStylesAnalysis>
+      </Analyses>
     </RiverStyles>
 
   </Realizations>
@@ -96,12 +98,12 @@ Inside the realzations tag you will find a custom tag based on what kind of proj
       </Parameters>
 
       <Inputs>
-		<!-- Project specific customizations start here -->
+		    <!-- Project specific customizations start here -->
       </Inputs>
 
-      <Analysis>
-		<!-- Project specific customizations start here -->
-      </Analysis>
+      <Analyses>
+		    <!-- Project specific customizations start here -->
+      </Analyses>
 
     </RiverStyles>
 ```
@@ -109,9 +111,9 @@ Inside the realzations tag you will find a custom tag based on what kind of proj
 #### Attributes:
 
 * **Guid**: Unique across all projects
+* **Id:** Text id for use with folder naming etc. 
 * **ProductVersion**: The version of the tool used to create this realization.
 * **DateCreated**: Date code for when this realization was created. Use [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format(e.g. `2016-07-08T23:49:51`)
-* **Promoted**: *(Optional)* Tag one of your realizations as `Promoted="true"` to make this the "Accepted" or QA-approved realization if applicable. 
 
 #### Elements:
 
@@ -145,29 +147,31 @@ Inside the realzations tag you will find a custom tag based on what kind of proj
         </DrainageNetworks>
       </Inputs>
 
-      <Analysis>
-        <!-- Container tag --> 
-        <Confinements>
-          <!-- ValleyBottom is an extension of a DataSource Reference Type --> 
-          <Confinement>
-            <Name>USal_confinement_500m</Name>
-            <Path>analyses\confinements\confinement_01\USal_Confinement_500m.shp</Path>
-            <MetaData>
-              <Meta Name="segmentation_distance">500</Meta>
-            </MetaData>
-          </Confinement>
-        </Confinements>
-        <!-- Container tag --> 
-        <RiverStyleReach>
+      <Analyses>
+        <Analysis>
           <!-- Container tag --> 
-          <ManualCrossChecks>
-            <!-- ManualCrossCheck is an extension of a DataSource Reference Type -->
-            <ManualCrossCheck>
-              <Path>analyses\river_styles\manual_crosschecks\manual_crosscheck_01\USal_River_Styles.shp</Path>
-            </ManualCrossCheck>
-          </ManualCrossChecks>
-        </RiverStyleReach>
-      </Analysis>
+          <Confinements>
+            <!-- ValleyBottom is an extension of a DataSource Reference Type --> 
+            <Confinement>
+              <Name>USal_confinement_500m</Name>
+              <Path>analyses\confinements\confinement_01\USal_Confinement_500m.shp</Path>
+              <MetaData>
+                <Meta Name="segmentation_distance">500</Meta>
+              </MetaData>
+            </Confinement>
+          </Confinements>
+          <!-- Container tag --> 
+          <RiverStyleReach>
+            <!-- Container tag --> 
+            <ManualCrossChecks>
+              <!-- ManualCrossCheck is an extension of a DataSource Reference Type -->
+              <ManualCrossCheck>
+                <Path>analyses\river_styles\manual_crosschecks\manual_crosscheck_01\USal_River_Styles.shp</Path>
+              </ManualCrossCheck>
+            </ManualCrossChecks>
+          </RiverStyleReach>
+        </Analysis>
+      </Analyses>
     </RiverStyles>
 </Realizations>
 ```

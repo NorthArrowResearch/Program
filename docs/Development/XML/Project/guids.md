@@ -58,7 +58,7 @@ f0b50bdc-e302-4647-ae04-98f561f90b38
 <Vector id="valleybottom01" guid="b5b5bb74-7dbd-468d-a863-a026b36a0224">
 	<Name>USal_valley_bottom</Name>
 	<Path>inputs/USal_valleybottom.shp</Path>
-	<Project>../some/../other/path/Sample_VBET_Project.xml</Project>
+	<Project>../some/../other/path/Sample_VBET_Project/</Project>
 </Vector>
   
 ```

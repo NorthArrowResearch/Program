@@ -1,6 +1,7 @@
 ---
-title: "DataSources (Inputs/Outputs)"
+Title: DataSources (Inputs/Outputs)
 weight: 3
+
 ---
 
 DataSources can be defined in two places: 
@@ -34,7 +35,7 @@ The kind of Datasource tag you choose (e.g. `<Raster>`, `<DEM>` ) is important. 
     <Vector id="hillshade01" Guid="241cdf2a-a397-4fd7-acd2-de0869ed4662">
       <Name>Hillshade</Name>
       <Path>analyses\context\layers\hillshade\Upper_Salmon_Hillshade.tif</Path>
-      <Project>../../Relative/path/to/OtherProject.xml</Project>
+      <Project>../../Relative/path/to/OtherProject</Project>
     </Vector>
 ```
 
@@ -96,11 +97,11 @@ The kind of Datasource tag you choose (e.g. `<Raster>`, `<DEM>` ) is important. 
 You can use Datasources from other projects using the `<Project>` element 
 
 * Relative paths are prefered. Absolute paths can be used but will break when transfered to another machine.
-* You *must* specify a path to an XML file: `../../Path/to/Project.xml`
+* You *must* specify a path to a FOLDER contianing the `project.rs.xml` file: `../../Path/to/Project/`
 
 ## Extended Use
 
-Sometimes you'll see a tag inside `<Analysis>` that is Dataset-like. An example is VBET where a drainage network `<Network>` is basically a shapefile Dataset Type that has been extended to contain `<Buffers>`
+Sometimes you'll see a tag inside an `<Analysis>` tag that is Dataset-like. An example is VBET where a drainage network `<Network>` is basically a shapefile Dataset Type that has been extended to contain `<Buffers>`
 
 ```xml
 <Inputs>

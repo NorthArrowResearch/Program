@@ -18,12 +18,12 @@ Inside the realzations tag you will find a custom tag based on what kind of proj
       </Parameters>
 
       <Inputs>
-		<!-- Project specific customizations start here -->
+		    <!-- Project specific customizations start here -->
       </Inputs>
 
-      <Analysis>
-		<!-- Project specific customizations start here -->
-      </Analysis>
+      <Analyses>
+		    <!-- Project specific customizations start here -->
+      </Analyses>
 
     </CustomTagName>
 </Realizations>
@@ -68,8 +68,8 @@ Inside the realzations tag you will find a custom tag based on what kind of proj
         </DrainageNetworks>
       </Inputs>
 
-      <Analysis>
-        <!-- Container tag --> 
+      <Analyses>
+        <!-- Analysis Container tag --> 
         <Confinements>
           <!-- ValleyBottom is an extension of a DataSource Reference Type --> 
           <Confinement>
@@ -80,7 +80,7 @@ Inside the realzations tag you will find a custom tag based on what kind of proj
             </MetaData>
           </Confinement>
         </Confinements>
-        <!-- Container tag --> 
+        <!-- Analysis Container tag --> 
         <RiverStyleReach>
           <!-- Container tag --> 
           <ManualCrossChecks>
@@ -90,7 +90,7 @@ Inside the realzations tag you will find a custom tag based on what kind of proj
             </ManualCrossCheck>
           </ManualCrossChecks>
         </RiverStyleReach>
-      </Analysis>
+      </Analyses>
     </RiverStyles>
 </Realizations>
 ```
@@ -149,19 +149,23 @@ Inside the realzations tag you will find a custom tag based on what kind of proj
           </Network>
         </DrainageNetworks>
       </Inputs>
-      <Analysis>
-        <Name>My First Analysis</Name>
-        <Outputs>
-          <Vector>
-            <Name>Raw Valley Bottom</Name>
-            <Path>02_Analyses/Output_001/Tucannon_VBET_unedited.shp</Path>
-          </Vector>
-          <Vector>
-            <Name>Edited Valley Bottom</Name>
-            <Path>02_Analyses/Output_001/Tucannon_VBET_edited.shp</Path>
-          </Vector>
-        </Outputs>
-      </Analysis>
+      <Analyses>
+        <Analysis>
+          <Name>My First Analysis</Name>
+          <Outputs>
+            <!-- These are just the types we know and love -->
+            <Vector>
+              <Name>Raw Valley Bottom</Name>
+              <Path>02_Analyses/Output_001/Tucannon_VBET_unedited.shp</Path>
+            </Vector>
+
+            <Vector>
+              <Name>Edited Valley Bottom</Name>
+              <Path>02_Analyses/Output_001/Tucannon_VBET_edited.shp</Path>
+            </Vector>
+          </Outputs>
+        </Analysis>
+      </Analyses>
   	</VBET>
 </Realizations>
 ```

@@ -83,11 +83,29 @@ pip uninstall riverscapestools
 pip install git+https://github.com/Riverscapes/riverscapestools
 ```
 
+## What version do I have?
 
+If you're asked what version you have type the following and look at the output:
+
+```bash
+$ pip show riverscapestools
+
+Name: riverscapestools
+Version: 0.0.2
+Summary: A Riverscapes Uploader tool
+Home-page: https://github.com/Riverscapes/riverscapestools
+Author: Matt Reimer
+Author-email: matt@northarrowresearch.com
+License: MIT
+Location: /Users/work/Projects/RiverScapes/riverscapestools
+
+```
+
+Then note the version (0.0.2 in this case)
 
 ### Riverscapes Project Uploader
 
-The project uploader reads the `[project].xml` and tries to find a place for it in the repo based on a `Program.xml` file. The output is verbose and it asks you to confirm everything before it uploads anything.
+The project uploader reads the `project.rs.xml` from inside the the `program` folder you specify and tries to find a place for it in the repo based on a `Program.xml` file. The output is verbose and it asks you to confirm everything before it uploads anything.
 
 Uploads are tested against what's already in the bucket using MD5 and only new files get uploaded.
 
@@ -99,7 +117,8 @@ usage: rspupload [-h] [--program PROGRAM] [--logfile LOGFILE] [--delete]
                  project
 
 positional arguments:
-  project            Path to the project XML file.
+  project            Path to the project folder containing the project xml
+                     file
 
 optional arguments:
   -h, --help         show this help message and exit
