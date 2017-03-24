@@ -129,6 +129,15 @@ $(document).ready(function (){
 		return $mUL;			
 	}
 
+	function expandCurentAccordion($sidebar) {
+		$menuEl = $sidebar.find("[href='"+window.location.pathname+"']");
+		$menuEl.addClass('menuActive')
+		menuancestry = $menuEl.parentsUntil($sidebar)
+		menuancestry.each(function(key, val){
+			$sidebar.foundation('down', $(val));
+		})
+	}
+
 	// Do all the things to get the tree
 	tree = treeize(NAVPages);
 	$topbar = topbarize(tree);
@@ -139,6 +148,18 @@ $(document).ready(function (){
 
 	// Initialize our UI framework
 	$(document).foundation();
+	var elem = new Foundation.AccordionMenu($sidebarnav);
+	expandCurentAccordion($sidebarnav);
+
+	// Bind our buttons to menu actions
+	$('#menuCtls #expand').click(function(){
+		$sidebarnav.foundation('showAll');
+	});
+	$('#menuCtls #contract').click(function(){
+		$sidebarnav.foundation('hideAll');
+		expandCurentAccordion($sidebarnav);
+	});
+
 	$('#toc').toc();
 	$('#toc').prepend('<h4><span class="fa fa-file-text"></span> Page Contents:</h4>')
 

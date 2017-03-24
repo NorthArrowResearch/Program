@@ -149,8 +149,20 @@ header {
     display: inline-block;
     margin-right: 0.3rem; 
   }
+  a.menuActive {
+    &:before{
+      color: black;
+    }
+    font-weight: bold;
+    color: black;
+  }
   li.is-accordion-submenu-parent>a:before {
     @extend .fa, .fa-folder;  
+  }
+  #menuCtls {
+    margin: 0;
+    position: relative;
+    float: right;    
   }
 }
 
