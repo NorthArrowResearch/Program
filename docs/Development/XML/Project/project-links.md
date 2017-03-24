@@ -57,3 +57,4 @@ This case is here but it shouldn't be used if you can help it because it can't r
 
 * `<Path>` is ALWAYS relative. No exceptions
 * `<Project>` is usually relative. Exceptions can be made but should be avoided if possible. It references a folder containing the project XML file (`project.rs.xml`)
+* Referencing the parent's guid is a good practice. See the [Guid guidelines](guids.html) page for examples of how fetch guids from other projects.

@@ -1,5 +1,5 @@
 ---
-Title: DataSources (Inputs/Outputs)
+title: DataSources (Inputs/Outputs)
 weight: 3
 
 ---

@@ -5,7 +5,7 @@ weight: 1
 
 [Universally Unique Identifiers (UUID, or GUID)](https://en.wikipedia.org/wiki/Universally_unique_identifier) Are used to track file changes on XML nodes. 
 
-```Txt
+```
 07817542-0b3f-4154-9bfb-d3e20cc69d64
 740ce55d-91f7-47bd-b3e7-265d685a464d
 174fd928-34a1-462f-ae60-8a6d3109c97b
@@ -38,7 +38,7 @@ f0b50bdc-e302-4647-ae04-98f561f90b38
 
 ## Examples:
 
-```Xml
+``` xml
 <!-- Note the Raster and not the container has the GUID -->
 <Inputs>
 	<Raster id="SLOPE4235" guid="241cdf2a-a397-4fd7-acd2-de0869ed4662">
@@ -82,3 +82,13 @@ print getUUID()
 ```
 
 Note that this uses `.upper()` to create windows-like GUIDs that are all uppercase. It shouldn't matter that much whether you create upper or lowercase GUIDs so long as you are consistent.
+
+
+
+### Fetching Guids
+
+When you're linking projects together you might need to fetch a guid from anothe project. 
+
+The following snippet shows 3 different ways to retrieve a guid from a project:
+
+<https://github.com/Riverscapes/Program/blob/master/Project/python/guid.py>
