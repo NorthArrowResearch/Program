@@ -137,17 +137,23 @@ header {
   display: block;
   padding: 1.25rem;   
   margin-bottom: 0.75rem;
-  background-color: #fff;
+  background-color: #f5f5f5;
   border: 1px solid #e5e5e5;
-  border-radius: 0.25rem;    
+  border-radius: 0.25rem;
+  li li {
+    font-size: 95%;
+  }
   li a {
     padding: 0.3rem 1rem;
+    line-height: 1.2;
   }
   li>a:before{
     @extend .fa, .fa-file-text;
     color: $primary-color;
-    display: inline-block;
-    margin-right: 0.3rem; 
+    display: block;
+    position: relative;
+    left: -4px;
+    float: left;
   }
   a.menuActive {
     &:before{
@@ -156,8 +162,14 @@ header {
     font-weight: bold;
     color: black;
   }
-  li.is-accordion-submenu-parent>a:before {
-    @extend .fa, .fa-folder;  
+  li.is-accordion-submenu-parent{
+    &>a{
+      &:before{
+        @extend .fa, .fa-folder;
+        color: #444444;
+      }
+      color: #444444;      
+    }
   }
   #menuCtls {
     margin: 0;
