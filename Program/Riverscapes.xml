@@ -13,28 +13,46 @@
         <Allow name="CRB" folder="CRB"/>
       </Collection>
       <Collection id="COL_WATERSHED" name="Watershed">
-        <Allow name="Lower Snake-Asotin" folder="Asotin"/>
-        <Allow name="Lemhi" folder="Lemhi"/>
-        <Allow name="Middle Fork John Day" folder="MiddleForkJohnDay"/>
-        <Allow name="Little Salmon" folder="LittleSalmon"/>
+        <Allow name="Brownlee Reservoir" folder="BrownleeReservoir"/>
         <Allow name="Clearwater" folder="Clearwater"/>
-        <Allow name="Wenatchee" folder="Wenatchee"/>
-        <Allow name="Lower Selway" folder="LowerSelway"/>
-        <Allow name="Imnaha" folder="Imnaha"/>
-        <Allow name="Lower John Day" folder="LowerJohnDay"/>
-        <Allow name="North Fork John Day" folder="NorthForkJohnDay"/>
-        <Allow name="Upper John Day" folder="UpperJohnDay"/>
-        <Allow name="Middle Salmon-Panther" folder="MiddleSalmonPanther"/>
-        <Allow name="Methow" folder="Methow"/>
-        <Allow name="Okanogan" folder="Okanogan"/>
-        <Allow name="Hells Canyon" folder="HellsCanyon"/>
-        <Allow name="Lower Salmon" folder="LowerSalmon"/>
-        <Allow name="Pahsimeroi" folder="Pahsimeroi"/>
-        <Allow name="South Fork Salmon" folder="SouthForkSalmon"/>
-        <Allow name="Upper Middle Fork Salmon" folder="UpperMiddleForkSalmon"/>
-        <Allow name="Lower Snake-Tucannon" folder="Tucannon"/>
         <Allow name="Entiat" folder="Entiat"/>
+        <Allow name="Hells Canyon" folder="HellsCanyon"/>
+        <Allow name="Imnaha" folder="Imnaha"/>
+        <Allow name="Klickitat" folder="Klickitat"/>
+        <Allow name="Lemhi" folder="Lemhi"/>
+        <Allow name="Little Salmon" folder="LittleSalmon"/>
+        <Allow name="Lochsa" folder="Lochsa"/>
+        <Allow name="Lower Grand Ronde" folder="LowerGrandRonde"/>
+        <Allow name="Lower John Day" folder="LowerJohnDay"/>
+        <Allow name="Lower Middle Fork Salmon" folder="LowerMiddleForkSalmon"/>
+        <Allow name="Lower North Fork Clearwater" folder="LowerNorthForkClearwater"/>
+        <Allow name="Lower Salmon" folder="LowerSalmon"/>
+        <Allow name="Lower Selway" folder="LowerSelway"/>
+        <Allow name="Lower Snake-Asotin" folder="Asotin"/>
+        <Allow name="Lower Snake-Tucannon" folder="Tucannon"/>
+        <Allow name="Lower Yakima" folder="LowerYakima"/>
+        <Allow name="Methow" folder="Methow"/>
+        <Allow name="Middle Columbia-Lake Wallula" folder="LakeWallula"/>
+        <Allow name="Middle Fork John Day" folder="MiddleForkJohnDay"/>
+        <Allow name="Middle Salmon-Chamberlain" folder="MiddleSalmonChamberlain"/>
+        <Allow name="Middle Salmon-Panther" folder="MiddleSalmonPanther"/>
+        <Allow name="Naches" folder="Naches"/>
+        <Allow name="North Fork John Day" folder="NorthForkJohnDay"/>
+        <Allow name="Okanogan" folder="Okanogan"/>
+        <Allow name="Pahsimeroi" folder="Pahsimeroi"/>
+        <Allow name="South Fork Clearwater" folder="SouthForkClearwater"/>
+        <Allow name="South Fork Salmon" folder="SouthForkSalmon"/>
+        <Allow name="Umatilla" folder="Umatilla"/>
         <Allow name="Upper Grande Ronde" folder="UpperGrandeRonde"/>
+        <Allow name="Upper John Day" folder="UpperJohnDay"/>
+        <Allow name="Upper Middle Fork Salmon" folder="UpperMiddleForkSalmon"/>
+        <Allow name="Upper Salmon" folder="UpperSalmon"/>
+        <Allow name="Upper Selway" folder="UpperSelway"/>
+        <Allow name="Upper Yakima" folder="UpperYakima"/>
+        <Allow name="Walla Walla" folder="WallaWalla"/>
+        <Allow name="Wallowa" folder="Wallowa"/>
+        <Allow name="Wenatchee" folder="Wenatchee"/>
+        <Allow name="Willow" folder="Willow"/>
       </Collection>
       <Collection id="COL_SITE" name="Site">
         <Allow pattern=".*"/>
