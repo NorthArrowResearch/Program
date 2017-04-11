@@ -853,7 +853,7 @@
     </xs:complexContent>
   </xs:complexType>
 
-  <xs:complexType name="TopoTINType">
+  <xs:complexType name="TopoTINType" mixed="true">
     <xs:complexContent>
       <xs:extension base="GeoSpatialType">
         <xs:sequence>
