@@ -107,13 +107,15 @@
       <!-- A scalar value is possible as an input or an output but use <Params> if you can -->
       <xs:element type="xs:string" name="Value"/>
       <xs:element type="RasterType" name="Raster"/>
-      <xs:element type="DataTableType" name="DataTable"/>
       <xs:element type="VectorType" name="Vector"/>
       <xs:element type="TINType" name="TIN"/>
       <xs:element type="DEMType" name="DEM"/>
       <xs:element type="HillShadeType" name="HillShade"/>
-      <xs:element type="CSVType" name="CSV"/>
-      <xs:element type="ImageType" name="Image"/>
+      <xs:element type="SimpleFileType" name="CSV"/>
+      <xs:element type="SimpleFileType" name="Image"/>
+      <xs:element type="SimpleFileType" name="SurveyQualityDB"/>
+      <xs:element type="SimpleFileType" name="InstrumentFile"/>
+      <xs:element type="SimpleFileType" name="AuxInstrumentFile"/>
     </xs:choice>
   </xs:complexType>
 
@@ -187,24 +189,7 @@
     </xs:complexContent>
   </xs:complexType>
 
-  <!-- Simple file types that we use often -->
-  <xs:complexType name="CSVType">
-    <xs:complexContent>
-      <xs:extension base="SimpleFileType"/>
-    </xs:complexContent>
-  </xs:complexType>
 
-  <xs:complexType name="DataTableType">
-    <xs:complexContent>
-      <xs:extension base="SimpleFileType"/>
-    </xs:complexContent>
-  </xs:complexType>
-
-  <xs:complexType name="ImageType">
-    <xs:complexContent>
-      <xs:extension base="SimpleFileType"/>
-    </xs:complexContent>
-  </xs:complexType>
 
   <!-- =========================================================================
 
@@ -227,6 +212,9 @@
       <xs:element type="RCAType" name="RCA" maxOccurs="unbounded" minOccurs="0"/>
       <xs:element type="HydroType" name="Hydro" maxOccurs="unbounded" minOccurs="0"/>
       <xs:element type="GNATType" name="GNAT" maxOccurs="unbounded" minOccurs="0"/>
+
+      <xs:element type="SurveyDataType" name="SurveyData" maxOccurs="unbounded" minOccurs="0"/>
+      <xs:element type="TopographyType" name="Topography" maxOccurs="unbounded" minOccurs="0"/>
     </xs:choice>
   </xs:complexType>
 
@@ -832,6 +820,49 @@
       <xs:element type="ParametersType" name="Params"/>
       <xs:element type="GNATOutputsType" name="Outputs"/>
     </xs:sequence>
+  </xs:complexType>
+
+  <!-- =========================================================================
+
+    Project: Topo Toolbar
+
+    This is a big one and it breaks a lot of the rules so be really careful with it.
+
+  ============================================================================== -->
+
+  <xs:complexType name="SurveyDataType" mixed="true">
+    <xs:complexContent>
+      <xs:extension base="RealizationType">
+        <xs:sequence>
+          <xs:element type="DataSetContainerType" name="Layers" minOccurs="1" maxOccurs="1"/>
+          <xs:element type="DataSetContainerType" name="SurveyExtents" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+        <xs:attribute type="xs:boolean" name="projected" use="required"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+
+  <xs:complexType name="TopographyType" mixed="true">
+    <xs:complexContent>
+      <xs:extension base="RealizationType">
+        <xs:sequence>
+          <xs:element type="TopoTINType" name="TIN" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="TopoTINType">
+    <xs:complexContent>
+      <xs:extension base="GeoSpatialType">
+        <xs:sequence>
+          <xs:element type="DEMType" name="DEM" minOccurs="1" maxOccurs="1"/>
+          <xs:element type="RasterType" name="Detrended" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+        <xs:attribute type="xs:boolean" name="active" use="required"/>
+      </xs:extension>
+    </xs:complexContent>
   </xs:complexType>
 
 

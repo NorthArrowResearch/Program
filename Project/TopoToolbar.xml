@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+<Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="XSD/V1/Project.xsd">
+  <Name>Testing Project</Name>
+  <ProjectType>Topo</ProjectType>
+  <MetaData>
+    <Meta name="CreatedOn">2017-04-11T14:40:27.0281597-07:00</Meta>
+    <Meta name="SiteName">Test Site</Meta>
+    <Meta name="VisitID">1</Meta>
+    <Meta name="FieldSeason">2017</Meta>
+    <Meta name="Watershed">Test Watesrhed</Meta>
+    <Meta name="StreamName">Test Stream</Meta>
+    <Meta name="Program">CHaMP</Meta>
+    <Meta name="Protocol">CHaMP 2017</Meta>
+    <Meta name="Organization">North Arrow Research Ltd.</Meta>
+    <Meta name="SurveyCrew">Philip et al.</Meta>
+    <Meta name="VisitType">Repeat</Meta>
+    <Meta name="SpatialReferenceName">UTM Zone 10N (NAD83)</Meta>
+    <Meta name="SpatialReferenceID">26910</Meta>
+  </MetaData>
+  <Inputs>
+    <SurveyQualityDB id="SurveyQualityDB">
+      <Name>Survey Quality Database</Name>
+      <Path>Inputs\SurveyQuality.sqlite</Path>
+    </SurveyQualityDB>
+    <InstrumentFile id="RawFile">
+      <Name>Instrument File</Name>
+      <Path>Inputs\InstrumentFile.mjf</Path>
+      <MetaData>
+        <Meta name="Type">Raw File</Meta>
+        <Meta name="InstrumentType">TopCon</Meta>
+        <Meta name="InstrumentModel">TopCon Magnet v2.5.1</Meta>
+        <Meta name="SurveyDates">2015-09-09,2015-09-10</Meta>
+        <Meta name="SurveyStartDate">2015-09-09</Meta>
+        <Meta name="SurveyEndDate">2015-09-10</Meta>
+      </MetaData>
+    </InstrumentFile>
+    <AuxInstrumentFile id="AuxFile">
+      <Name>Auxilliary Instrument File</Name>
+      <Path>Inputs\AuxInstrumentFile.raw</Path>
+    </AuxInstrumentFile>
+    <Vector id="QaQcPoints">
+      <Name>QaQc Raw Points</Name>
+      <Path>Inputs\QaQcPoints.shp</Path>
+    </Vector>
+    <Vector id="BreaklineDXF">
+      <Name>Breaklines</Name>
+      <Path>Inputs\Breaklines.dxf</Path>
+      <MetaData>
+        <Meta name="FeatureClassName">Polyline</Meta>
+      </MetaData>
+    </Vector>
+  </Inputs>
+  <Realizations>
+    <SurveyData dateCreated="" id="" guid="" productVersion="" projected="true">
+      <Name>MyRealizationName</Name>
+      <Layers>
+        <Vector id="topo_points">
+          <Name>Topo Points</Name>
+          <Path>SurveyData\Topo_Points.shp</Path>
+        </Vector>
+        <Vector id="control_points">
+          <Name>Control Points</Name>
+          <Path>SurveyData\Control_Points.shp</Path>
+        </Vector>
+        <Vector id="error_points">
+          <Name>Error Points</Name>
+          <Path>SurveyData\Error_Points.shp</Path>
+        </Vector>
+        <Vector id="eow_points">
+          <Name>Edge of Water Points</Name>
+          <Path>SurveyData\EdgeOfWater_Points.shp</Path>
+        </Vector>
+        <Vector id="breaklines">
+          <Name>Breaklines</Name>
+          <Path>SurveyData\Breaklines.shp</Path>
+        </Vector>
+        <Vector id="stream_features">
+          <Name>Stream Features</Name>
+          <Path>SurveyData\Stream_Features.shp</Path>
+        </Vector>
+      </Layers>
+      <SurveyExtents>
+        <Vector id="survey_extent">
+          <Name>Survey Extent</Name>
+          <Path>SurveyData\SurveyExtents\SurveyExtent.shp</Path>
+        </Vector>
+      </SurveyExtents>
+    </SurveyData>
+    <Topography dateCreated="" id="" guid="" productVersion="">
+      <Name>MyRealizationName</Name>
+      <TIN id="" active="true" >
+        <Name>TopoTIN</Name>
+        <Path>Topography\TIN0001\TopoTIN</Path>
+        <DEM>
+          <Name>DEM</Name>
+          <Path>Topography\TIN0001\DEM.tif</Path>
+          <MetaData>
+            <Meta name="top">5284052</Meta>
+            <Meta name="left">701669</Meta>
+            <Meta name="bottom">5283723</Meta>
+            <Meta name="right">701877</Meta>
+            <Meta name="cellsize">0.1</Meta>
+          </MetaData>
+        </DEM>
+        <Detrended>
+          <Name>DEM</Name>
+          <Path>Topography\TIN0001\Detrended.tif</Path>
+          <MetaData>
+            <Meta name="item">asdfasdfasdfa</Meta>
+          </MetaData>
+        </Detrended>
+      </TIN>
+    </Topography>
+  </Realizations>
+
+</Project>
