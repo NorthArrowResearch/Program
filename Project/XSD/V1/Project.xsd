@@ -738,30 +738,90 @@
     <xs:complexContent>
       <xs:extension base="RealizationType">
         <xs:sequence>
-          <xs:element type="RCAInputsContainerType" name="Inputs" minOccurs="0"/>
-          <xs:element type="AnalysisType" name="Analyses" minOccurs="0"/>
+          <xs:element type="RCAInputs" name="Inputs" minOccurs="0"/>
+          <xs:element type="RCAAnalysesType" name="Analyses" minOccurs="0"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
 
-  <xs:complexType name="RCAInputsContainerType">
+  <!-- RCA Inputs -->
+  <xs:complexType name="RCAInputs">
     <xs:sequence>
-      <xs:element type="RCAInputsType" name="ExistingVegetation"/>
-      <xs:element type="RCAInputsType" name="HistoricVegetation"/>
-      <xs:element type="RVDDrainageNetworksType" name="DrainageNetworks"/>
-      <xs:element type="RasterType" name="LargeRiverPolygon"/>
+      <xs:element type="RCAExistingVegetationType" name="ExistingVegetation"/>
+      <xs:element type="RCAHistoricVegetationType" name="HistoricVegetation"/>
+      <xs:element type="RCADrainageNetworksType" name="DrainageNetworks"/>
+      <xs:element type="VectorType" name="FragmentedValleyBottom"/>
+      <xs:element type="VectorType" name="LargeRiverPolygon"/>
     </xs:sequence>
   </xs:complexType>
 
-  <xs:complexType name="RCAInputsType" mixed="true">
+  <xs:complexType name="RCAExistingVegetationType" mixed="true">
     <xs:complexContent>
       <xs:extension base="RasterType">
         <xs:sequence>
-          <xs:element type="RasterType" name="Raster" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="ExistingRasters">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="RasterType" name="Raster" maxOccurs="unbounded"/>
+            </xs:sequence>
+          </xs:complexType>
+          </xs:element>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="RCAHistoricVegetationType" mixed="true">
+    <xs:complexContent>
+      <xs:extension base="RasterType">
+        <xs:sequence>
+          <xs:element name="HistoricRasters">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="RasterType" name="Raster" maxOccurs="unbounded"/>
+            </xs:sequence>
+          </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="RCADrainageNetworksType" mixed="true">
+    <xs:sequence>
+      <xs:element name="Network">
+        <xs:complexType mixed="true">
+          <xs:complexContent>
+            <xs:extension base="RasterType">
+              <xs:sequence>
+                <xs:element type="VectorType" name="ThiessenPolygons"/>
+              </xs:sequence>
+            </xs:extension>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!--Analysis and Outputs-->
+  <xs:complexType name="RCAAnalysesType">
+    <xs:sequence>
+      <xs:element type="RCAAnalysisType" name="Analysis"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="RCAAnalysisType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="Name"/>
+      <xs:element type="RCAOutputsType" name="Outputs"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="RCAOutputsType">
+    <xs:sequence>
+      <xs:element type="VectorType" name="Vector"/>
+    </xs:sequence>
   </xs:complexType>
 
   <!-- =========================================================================
