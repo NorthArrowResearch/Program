@@ -1,45 +1,45 @@
 <?xml version="1.0" ?>
-<Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="XSD/V1/Project.xsd">
-	<Name>Et_Al_Lochsa_RVD</Name>
+<Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="XSD/V1/Project.xsd"><?xml version="1.0" ?>
+	<Name>Et_Al_17060103_RVD</Name>
 	<ProjectType>RVD</ProjectType>
 	<MetaData>
-		<Meta name="HUCID">17060303</Meta>
+		<Meta name="HUCID">17060103</Meta>
 		<Meta name="Region">CRB</Meta>
-		<Meta name="Watershed">Lochsa</Meta>
+		<Meta name="Watershed">Asotin</Meta>
 	</MetaData>
 	<Inputs>
-		<Raster guid="3F16C9E4-C521-43B5-848A-4C66B76090FC" id="EXVEG1">
+		<Raster guid="D3067853-D6DD-4D43-AA24-CA7253C41E31" id="EXVEG1">
 			<Name>Existing Vegetation</Name>
-			<Path>01_Inputs/01_Ex_Veg/Ex_Veg_1/US_140EVT/us_140evt_Clip.tif</Path>
+			<Path>01_Inputs/01_Ex_Veg/Ex_Veg_1/US_140EVT/us_140evt_clip.tif</Path>
 		</Raster>
-		<Raster guid="79DBAAA3-AAA4-4403-A4AD-E26A44FA7742" id="HISTVEG1">
+		<Raster guid="A8441007-8691-4EC4-BB10-B91036E185FD" id="HISTVEG1">
 			<Name>Historic Vegetation</Name>
-			<Path>01_Inputs/02_Hist_Veg/Hist_Veg_1/US_140BPS/us_140bps_Clip.tif</Path>
+			<Path>01_Inputs/02_Hist_Veg/Hist_Veg_1/US_140BPS/us_140bps_clip.tif</Path>
 		</Raster>
-		<Vector guid="37EC6F7E-2722-4F81-986B-E93D64DA4201" id="NETWORK1">
+		<Vector guid="52D1E87D-AF37-4C50-A9E8-1D05E74E50BC" id="NETWORK1">
 			<Name>Segmented Network</Name>
-			<Path>01_Inputs/03_Network/Network_1/NHD_24k_17060303_Perennial_500m.shp</Path>
+			<Path>01_Inputs/03_Network/Network_1/NHD_24K_17060103_Perennial_500m.shp</Path>
 		</Vector>
-		<Vector guid="CB38311B-C697-4FC6-B17D-62F2C27153E5" id="VALLEY1">
+		<Vector guid="1B3F253C-4A91-49F5-B66F-EF06E4501DC0" id="VALLEY1">
 			<Name>Valley Bottom</Name>
-			<Path>01_Inputs/04_Valley/Valley_1/17060303_Valley_Bottom_Edited.shp</Path>
+			<Path>01_Inputs/04_Valley/Valley_1/17060103_Valley_Bottom_Edited.shp</Path>
 		</Vector>
-		<Vector guid="E452C791-A6E5-46FA-BE43-53D5BE892AB6" id="LRP1">
+		<Vector guid="FC16A7EF-2FFE-4957-B938-DCB9C259FC27" id="LRP1">
 			<Name>Large River Polygon</Name>
 			<Path>01_Inputs/05_LRP/LRP_1/NHD_Area.shp</Path>
 		</Vector>
 	</Inputs>
 	<Realizations>
-		<RVD dateCreated="2017-03-21 14:08:53" guid="96468215-7C5A-4EA0-B289-C3E7AD919A33" id="RZ1" productVersion="1.0.5">
+		<RVD dateCreated="2017-03-27 12:52:00" guid="5790268A-C4EC-4EE3-93DE-F0706FC6FBE8" id="RZ1" productVersion="1.0.5">
 			<Name>RVD Realization 1</Name>
 			<Inputs>
 				<ExistingVegetation ref="EXVEG1">
 					<ExistingCoverRasters>
-						<Raster guid="D26730D7-3BE1-4523-BEDA-CBC04054A170">
+						<Raster guid="9BC52EAA-E45A-4030-BD5B-FB6F2D8B4B0B">
 							<Name>Existing Riparian</Name>
 							<Path>01_Inputs/01_Ex_Veg/Ex_Veg_1/Ex_Rasters/Ex_Riparian.tif</Path>
 						</Raster>
-						<Raster guid="06A39431-CF09-47B2-BAF7-629A372F75F4">
+						<Raster guid="B85DDB30-897B-4A3E-8EE6-41186805B1CE">
 							<Name>Existing Cover</Name>
 							<Path>01_Inputs/01_Ex_Veg/Ex_Veg_1/Ex_Rasters/Ex_Cover.tif</Path>
 						</Raster>
@@ -47,11 +47,11 @@
 				</ExistingVegetation>
 				<HistoricVegetation ref="HISTVEG1">
 					<HistoricCoverRasters>
-						<Raster guid="E57D1446-315B-4CF5-943D-1D252FAB4C9C">
+						<Raster guid="DAF67860-3B66-40F3-8957-9A977D145737">
 							<Name>Historic Riparian</Name>
 							<Path>01_Inputs/02_Hist_Veg/Hist_Veg_1/Hist_Rasters/Hist_Riparian.tif</Path>
 						</Raster>
-						<Raster guid="1E4D6EE3-F818-4905-A9E2-D39B56AE7E49">
+						<Raster guid="A0BCA6FF-DA4B-4719-8E9E-F45703A8F4CA">
 							<Name>Historic Cover</Name>
 							<Path>01_Inputs/02_Hist_Veg/Hist_Veg_1/Hist_Rasters/Hist_Cover.tif</Path>
 						</Raster>
@@ -59,7 +59,7 @@
 				</HistoricVegetation>
 				<DrainageNetworks>
 					<Network ref="NETWORK1">
-						<ThiessenPolygons guid="B35E0E4D-04DA-4199-9CFC-3A5E2D8160BD">
+						<ThiessenPolygons guid="A595DA9A-D890-44F0-8F40-0FDFE7D6F42D">
 							<Name>Thiessen Polygons</Name>
 							<Path>01_Inputs/03_Network/Network_1/Thiessen/Thiessen_Valley.shp</Path>
 						</ThiessenPolygons>
@@ -72,11 +72,11 @@
 				<Analysis>
 					<Name>RVD Analysis</Name>
 					<Outputs>
-						<Vector guid="F9FA6541-3133-4D21-BB38-9942935E24EB">
+						<Vector guid="B4B63A81-0162-4D6B-A326-BA62AAB6E85F">
 							<Name>RVD</Name>
-							<Path>02_Analyses/Output_1/17060303_RVD.shp</Path>
+							<Path>02_Analyses/Output_1/17060103_RVD.shp</Path>
 						</Vector>
-						<Raster guid="05623C8F-9B6D-451D-AEB9-3684EFCB9E88">
+						<Raster guid="19680685-5C10-46CB-8016-FA5F70219CD6">
 							<Name>Conversion Raster</Name>
 							<Path>02_Analyses/Output_1/Converstion_Raster.tif</Path>
 						</Raster>

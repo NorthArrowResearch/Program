@@ -83,6 +83,7 @@
       <Product id="CONTEXT" name="Context Layers" folder="context_layers"/>
       <Product id="VBET" name="VBET" folder="VBET"/>
       <Product id="RVD" name="RVD" folder="RVD"/>
+      <Product id="RCA" name="RCA" folder="RCA"/>
       <Product id="BRAT" name="BRAT Models" folder="BRAT"/>
       <Product id="WRAT" name="WRAT" folder="wrat"/>
       <Product id="MIC" name="Matt Imputation Crap" folder="matt_impute"/>
@@ -125,6 +126,7 @@
         <Group ref="GRP_NETWORK">
           <Product ref="VBET"/>
           <Product ref="RVD"/>
+          <Product ref="RCA"/>
           <Product ref="BRAT"/>
           <Product ref="WRAT"/>
           <Product ref="MIC"/>
