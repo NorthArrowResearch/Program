@@ -334,7 +334,7 @@
     <xs:sequence>
       <xs:element type="ConfinementAnalysisType" name="MovingWindow" maxOccurs="unbounded"/>
       <xs:element type="ConfinementAnalysisType" name="FixedSegments" maxOccurs="unbounded"/>
-      <xs:element type="ConfinementAnalysisType" name="CustomSegments" maxOccurs="unbounded"/>
+      <xs:element type="ConfinementAnalysisType" name="ConfinementBySegments" maxOccurs="unbounded"/>
     </xs:sequence>
   </xs:complexType>
 
