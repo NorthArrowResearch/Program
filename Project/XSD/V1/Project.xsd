@@ -113,6 +113,7 @@
       <xs:element type="HillShadeType" name="HillShade"/>
       <xs:element type="SimpleFileType" name="CSV"/>
       <xs:element type="SimpleFileType" name="Image"/>
+      <xs:element type="SimpleFileType" name="Video"/>
       <xs:element type="SimpleFileType" name="SurveyQualityDB"/>
       <xs:element type="SimpleFileType" name="InstrumentFile"/>
       <xs:element type="SimpleFileType" name="AuxInstrumentFile"/>
@@ -212,7 +213,7 @@
       <xs:element type="RCAType" name="RCA" maxOccurs="unbounded" minOccurs="0"/>
       <xs:element type="HydroType" name="Hydro" maxOccurs="unbounded" minOccurs="0"/>
       <xs:element type="GNATType" name="GNAT" maxOccurs="unbounded" minOccurs="0"/>
-
+      <xs:element type="StreamTemperatureType" name="StreamTemperature" maxOccurs="unbounded" minOccurs="0"/>
       <xs:element type="SurveyDataType" name="SurveyData" maxOccurs="unbounded" minOccurs="0"/>
       <xs:element type="TopographyType" name="Topography" maxOccurs="unbounded" minOccurs="0"/>
     </xs:choice>
@@ -840,6 +841,25 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+
+  <!-- =========================================================================
+
+    Project: StreamTemperature
+
+  ============================================================================== -->
+
+  <xs:complexType name="StreamTemperatureType" mixed="true">
+    <xs:complexContent>
+      <xs:extension base="RealizationType">
+        <xs:sequence>
+          <xs:element type="DataSetContainerType" name="Inputs" minOccurs="0"/>
+          <xs:element type="AnalysesType" name="Analyses" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+
 
   <!-- =========================================================================
 

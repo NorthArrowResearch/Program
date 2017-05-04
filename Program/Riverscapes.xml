@@ -95,6 +95,7 @@
       <Product id="GCD" name="GCD" folder="GCD"/>
       <Product id="DEM" name="DEM" folder="DEM"/>
       <Product id="CONFINEMENT" name="Confinement" folder="CONFINEMENT"/>
+      <Product id="STREAMTEMP" name="Stream Temperature" folder="StreamTemperature"/>
       <Product id="EC" name="EC" folder="EC"/>
       <Product id="SOLAR" name="Solar" folder="Solar"/>
       <Product id="HYDRO" name="Hydro" folder="Hydro"/>
@@ -136,6 +137,7 @@
           <Product ref="CONFINEMENT"/>
           <Product ref="EC"/>
           <Product ref="SOLAR"/>
+          <Product ref="STREAMTEMP"/>
         </Group>
         <Group ref="GRP_SITE">
           <Collection ref="COL_SITE">
