@@ -56,7 +56,7 @@ In order to run QGIS with the remote debugging eggs you need to launch it with t
 
 ##### `QGIS-debugenv.cmd`
 
-```Bash
+```bash
 @echo off
 SET OSGEO4W_ROOT=C:\OSGeo4W64
 call "%OSGEO4W_ROOT%"\bin\o4w_env.bat
@@ -105,7 +105,7 @@ What are we trying to achieve here?
 
 #### 1. create a module called `debug.py`
 
-```Python
+```python
 import os
 
 ######################### REMOTE DEBUG #########################
@@ -120,7 +120,7 @@ def InitDebug():
 
 Now in your project's `__init__.py` add the following:
 
-```Python
+```python
 ######################### REMOTE DEBUG #########################
 # To activate remote debugging set DEBUG_PLUGIN=RiverscapesToolbar as a QGIS
 # Environment variable in Preferences -> System -> Environment
