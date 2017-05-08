@@ -12,24 +12,24 @@ If you're not a developer just [download an install QGIS normally using the stan
 Go and get the OSGeo installer from the [QGIS download site](http://www.qgis.org/en/site/forusers/download.html). It's listed underneath the standalone installers. Choose the 64-bit version if you have a 64 bit version of Windows.
 
 1. Double click the OSGeo setup exe file to start the installation.
-1. Make sure to select `Advanced Install`.
-1. Choose `Install from Internet`
-1. When selecting the root directory you need to type `C:\` before the suggested root directory. The root directory should look like `C:\OSGeo4W64`. You can leave the `all users` option enabled.
-1. Accept the `local package` and `start menu` name suggestions.
-1. Leave the `direct connection` option enabled.
-1. Single click on the one and only available download site.
-1. **Important** choose to install the following packages:
-	* `Desktop -> qgis`: QGIS Desktop
-	* `Libs -> python-scipy` (not needed for anything but nice to have)
-	* `Libs -> qt4-devel` (needed for lrelease/translations)
-	* `Libs -> setuptools` (needed for installing pip)
-1. Accept the remaining screens...
+2. Make sure to select `Advanced Install`.
+3. Choose `Install from Internet`
+4. When selecting the root directory you need to type `C:\` before the suggested root directory. The root directory should look like `C:\OSGeo4W64`. You can leave the `all users` option enabled.
+5. Accept the `local package` and `start menu` name suggestions.
+6. Leave the `direct connection` option enabled.
+7. Single click on the one and only available download site.
+8. **Important** choose to install the following packages:
+ * `Desktop -> qgis`: QGIS Desktop
+ * `Libs -> python-scipy` (not needed for anything but nice to have)
+ * `Libs -> qt4-devel` (needed for lrelease/translations)
+ * `Libs -> setuptools` (needed for installing pip)
+9. Accept the remaining screens...
 
 ### Create 2 `.cmd` files
 
 The OSGeo suite of tools, including QGIS, are designed to be multi-platform. To achieve this, it means that these tools cannot use some of the Windows-specific software installation techniques. This manifests in some behaviours that can be unfamiliar to Windows users. For example, Windows users do not launch QGIS simply by clicking on the software executable. Instead, a small batch file is used to launch QGIS. This batch file configures all the necessary environment settings needed to help the suite of OSGeo tools find dependencies and libraries. The following instructions resuse and extend these batch files to make things a little easier:
 
-#### `pyqgis-console.cmd`
+#### `console-qgisenv.cmd`
 
 The first file  you will create is a straight-up environment file for using the OSGeo4W console. This is essentially a DOS prompt that is aware of all the OSGeo tools and that you can use for performing command line operations. e.g. Python or GDAL operations.
 
@@ -49,7 +49,7 @@ set QGIS_PREFIX_PATH=%OSGEO4W_ROOT%\apps\qgis
 cmd.exe
 ```
 
-#### `pycharm-qgis.cmd`
+#### `pycharm-qgisenv.cmd`
 
 The second file will be used to launch [PyCharm](https://www.jetbrains.com/pycharm) in the context of QGIS. This is extremely important. It will allow your PyCharm sessions to find and use the same version of Python that QGIS uses, and also debug plugins that are running within a QGIS session.
 
