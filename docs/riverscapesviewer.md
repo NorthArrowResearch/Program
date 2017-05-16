@@ -12,4 +12,4 @@ Using this tool you can:
 
 The Riverscapes Viewer has its own documentation so please go there 
 
-### [Riverscapes Viewer Site]()
+### [Riverscapes Viewer Site](https://riverscapes.github.io/RiverscapesToolbar/)
