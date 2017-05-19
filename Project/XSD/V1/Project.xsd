@@ -12,7 +12,7 @@
 
 
   <!-- Top Leve item: Here's where the overall project gets Defined -->
-  <xs:complexType name="ProjectType">
+  <xs:complexType name="ProjectType" mixed="true">
     <xs:sequence>
       <xs:element type="xs:string" name="Name" minOccurs="1" maxOccurs="1"/>
       <xs:element type="xs:string" name="ProjectType" minOccurs="1" maxOccurs="1"/>
@@ -199,7 +199,7 @@
   ============================================================================== -->
 
   <xs:complexType name="RealizationsType">
-    <xs:choice>
+    <xs:choice maxOccurs="unbounded">
       <xs:element type="DoDType" name="DoD" maxOccurs="unbounded" minOccurs="0"/>
       <xs:element type="VBETType" name="VBET" maxOccurs="unbounded" minOccurs="0"/>
       <xs:element type="NREIType" name="NREI" maxOccurs="unbounded" minOccurs="0"/>
@@ -508,11 +508,11 @@
   </xs:complexType>
 
   <!--<xs:complexType name="GUTMetricsType">-->
-    <!--<xs:complexContent>-->
-      <!--<xs:extension base="xs:string">-->
-        <!--<xs:attribute type="xs:string" name="name"/>-->
-      <!--</xs:extension>-->
-    <!--</xs:complexContent>-->
+  <!--<xs:complexContent>-->
+  <!--<xs:extension base="xs:string">-->
+  <!--<xs:attribute type="xs:string" name="name"/>-->
+  <!--</xs:extension>-->
+  <!--</xs:complexContent>-->
   <!--</xs:complexType>-->
 
   <xs:complexType name="GUTOutputsType">
@@ -614,11 +614,11 @@
       <xs:extension base="RasterType">
         <xs:sequence>
           <xs:element name="ExistingCoverRasters">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element type="RasterType" name="Raster" maxOccurs="unbounded"/>
-            </xs:sequence>
-          </xs:complexType>
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element type="RasterType" name="Raster" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
           </xs:element>
         </xs:sequence>
       </xs:extension>
@@ -630,11 +630,11 @@
       <xs:extension base="RasterType">
         <xs:sequence>
           <xs:element name="HistoricCoverRasters">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element type="RasterType" name="Raster" maxOccurs="unbounded"/>
-            </xs:sequence>
-          </xs:complexType>
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element type="RasterType" name="Raster" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
           </xs:element>
         </xs:sequence>
       </xs:extension>
@@ -762,11 +762,11 @@
       <xs:extension base="RasterType">
         <xs:sequence>
           <xs:element name="ExistingRasters">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element type="RasterType" name="Raster" maxOccurs="unbounded"/>
-            </xs:sequence>
-          </xs:complexType>
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element type="RasterType" name="Raster" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
           </xs:element>
         </xs:sequence>
       </xs:extension>
@@ -778,11 +778,11 @@
       <xs:extension base="RasterType">
         <xs:sequence>
           <xs:element name="HistoricRasters">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element type="RasterType" name="Raster" maxOccurs="unbounded"/>
-            </xs:sequence>
-          </xs:complexType>
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element type="RasterType" name="Raster" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
           </xs:element>
         </xs:sequence>
       </xs:extension>
@@ -914,12 +914,18 @@
     <xs:complexContent>
       <xs:extension base="RealizationType">
         <xs:sequence>
-          <xs:element type="DataSetContainerType" name="Layers" minOccurs="1" maxOccurs="1"/>
-          <xs:element type="DataSetContainerType" name="SurveyExtents" minOccurs="1" maxOccurs="1"/>
+          <xs:element type="VectorType" name="Vector" minOccurs="1" maxOccurs="unbounded"/>
+          <xs:element type="TopoSurveyExtentsType" name="SurveyExtents" minOccurs="1" maxOccurs="1"/>
         </xs:sequence>
         <xs:attribute type="xs:boolean" name="projected" use="required"/>
       </xs:extension>
     </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="TopoSurveyExtentsType">
+    <xs:sequence>
+      <xs:element type="SurveyExtentsVectorType" name="Vector" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
   </xs:complexType>
 
 
@@ -927,7 +933,7 @@
     <xs:complexContent>
       <xs:extension base="RealizationType">
         <xs:sequence>
-          <xs:element type="TopoTINType" name="TIN" minOccurs="1" maxOccurs="1"/>
+          <xs:element type="TopoTINType" name="TIN" minOccurs="1" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -936,14 +942,72 @@
   <xs:complexType name="TopoTINType" mixed="true">
     <xs:complexContent>
       <xs:extension base="GeoSpatialType">
-        <xs:sequence>
-          <xs:element type="DEMType" name="DEM" minOccurs="1" maxOccurs="1"/>
-          <xs:element type="RasterType" name="Detrended" minOccurs="1" maxOccurs="1"/>
-        </xs:sequence>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element type="DEMType" name="DEM" minOccurs="0" maxOccurs="1"/>
+          <xs:element type="RasterType" name="Detrended" minOccurs="0" maxOccurs="1"/>
+          <xs:element type="HillShadeType" name="DEMHillshade" minOccurs="0" maxOccurs="1"/>
+          <xs:element type="VectorType" name="Thalweg" minOccurs="0" maxOccurs="1"/>
+          <xs:element type="VectorType" name="ChannelUnitsField" minOccurs="0" maxOccurs="1"/>
+          <xs:element type="VectorType" name="ChannelUnits" minOccurs="0" maxOccurs="1"/>
+          <xs:element type="RasterType" name="WaterSurfaceDEM" minOccurs="0" maxOccurs="1"/>
+          <xs:element type="WaterSurfaceTINType" name="WaterSurfaceTIN" minOccurs="0" maxOccurs="1"/>
+          <xs:element type="RasterType" name="PointQuality3D" minOccurs="0" maxOccurs="1"/>
+          <xs:element type="RasterType" name="Roughness" minOccurs="0" maxOccurs="1"/>
+          <xs:element type="RasterType" name="WaterDepth" minOccurs="0" maxOccurs="1"/>
+          <xs:element type="AssocSurfacesType" name="AssocSurfaces" minOccurs="0" maxOccurs="1"/>
+          <xs:element type="TopoStagesType" name="Stages" minOccurs="0" maxOccurs="1"/>
+        </xs:choice>
         <xs:attribute type="xs:boolean" name="active" use="required"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
 
+  <xs:complexType name="WaterSurfaceTINType" mixed="true">
+    <xs:complexContent>
+      <xs:extension base="GeoSpatialType">
+        <xs:attribute type="xs:boolean" name="active" use="required"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="AssocSurfacesType">
+    <xs:sequence>
+      <xs:element type="RasterType" name="Slope" minOccurs="1" maxOccurs="1"/>
+      <xs:element type="RasterType" name="PointDensity" minOccurs="1" maxOccurs="1"/>
+      <xs:element type="RasterType" name="InterpolationError" minOccurs="1" maxOccurs="1"/>
+      <xs:element type="RasterType" name="PointQuality3D" minOccurs="1" maxOccurs="1"/>
+      <xs:element type="RasterType" name="Roughness" minOccurs="1" maxOccurs="1"/>
+      <xs:element type="RasterType" name="ErrSurface" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="TopoStagesType">
+    <xs:sequence>
+      <xs:element type="TopoStageVectorType" name="Vector" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="TopoSurveyDataType">
+    <xs:sequence>
+      <xs:element type="VectorType" name="Vector" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="TopoStageVectorType">
+    <xs:complexContent>
+      <xs:extension base="VectorType">
+        <xs:attribute type="xs:string" name="stage" use="required"/>
+        <xs:attribute type="xs:string" name="type" use="required"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="SurveyExtentsVectorType">
+    <xs:complexContent>
+      <xs:extension base="VectorType">
+        <xs:attribute type="xs:string" name="active" use="required"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
 
 </xs:schema>
