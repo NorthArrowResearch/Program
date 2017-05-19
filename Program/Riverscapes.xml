@@ -36,6 +36,7 @@
         <Allow name="Middle Fork John Day" folder="MiddleForkJohnDay"/>
         <Allow name="Middle Salmon-Chamberlain" folder="MiddleSalmonChamberlain"/>
         <Allow name="Middle Salmon-Panther" folder="MiddleSalmonPanther"/>
+        <Allow name="Minam" folder="Minam"/>
         <Allow name="Naches" folder="Naches"/>
         <Allow name="North Fork John Day" folder="NorthForkJohnDay"/>
         <Allow name="Okanogan" folder="Okanogan"/>
