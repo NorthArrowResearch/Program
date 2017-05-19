@@ -22,7 +22,7 @@
   </xs:complexType>
 
   <xs:complexType name="FolderType">
-    <xs:choice>
+    <xs:choice maxOccurs="unbounded">
       <xs:element type="FolderType" name="Collection" maxOccurs="1" minOccurs="0"/>
       <xs:element type="FolderType" name="Group" maxOccurs="unbounded" minOccurs="0"/>
       <xs:element type="ProductType" name="Product" maxOccurs="unbounded" minOccurs="0"/>

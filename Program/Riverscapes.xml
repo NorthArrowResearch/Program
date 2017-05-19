@@ -75,6 +75,7 @@
       <Group id="GRP_SITE" name="Site" folder="Site"/>
       <Group id="GRP_FLOW" name="Flow" folder="Flow"/>
       <Group id="GRP_TOPO" name="Topography" folder="Topography"/>
+      <Group id="GRP_STREAMTEMP" name="Stream Temperature" folder="StreamTemp"/>
     </Groups>
 
     <!--Products for now just need ref, name and folder-->
@@ -99,8 +100,10 @@
       <Product id="EC" name="EC" folder="EC"/>
       <Product id="SOLAR" name="Solar" folder="Solar"/>
       <Product id="HYDRO" name="Hydro" folder="Hydro"/>
+      <Product id="STREAMTEMPMIN" name="STREAMTEMPMIN" folder="StreamTempMin"/>
+      <Product id="STREAMTEMPMAX" name="STREAMTEMPMAX" folder="StreamTempMax"/>
+      <Product id="STREAMTEMPMEAN" name="STREAMTEMPMEAN" folder="StreamTempMean"/>
     </Products>
-
   </Definitions>
 
   <!-- Here's where we specify the actual structure
@@ -137,7 +140,11 @@
           <Product ref="CONFINEMENT"/>
           <Product ref="EC"/>
           <Product ref="SOLAR"/>
-          <Product ref="STREAMTEMP"/>
+          <Group ref="GRP_STREAMTEMP">
+            <Product ref="STREAMTEMPMIN"/>
+            <Product ref="STREAMTEMPMAX"/>
+            <Product ref="STREAMTEMPMEAN"/>
+          </Group>
         </Group>
         <Group ref="GRP_SITE">
           <Collection ref="COL_SITE">
