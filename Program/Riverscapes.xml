@@ -13,6 +13,7 @@
         <Allow name="CRB" folder="CRB"/>
       </Collection>
       <Collection id="COL_WATERSHED" name="Watershed">
+        <Allow name="Asotin" folder="Asotin"/>
         <Allow name="Brownlee Reservoir" folder="BrownleeReservoir"/>
         <Allow name="Big Navarro Garcia" folder="BigNavarroGarcia"/>
         <Allow name="Clearwater" folder="Clearwater"/>
