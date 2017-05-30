@@ -14,6 +14,7 @@
       </Collection>
       <Collection id="COL_WATERSHED" name="Watershed">
         <Allow name="Brownlee Reservoir" folder="BrownleeReservoir"/>
+        <Allow name="Big Navarro Garcia" folder="BigNavarroGarcia"/>
         <Allow name="Clearwater" folder="Clearwater"/>
         <Allow name="Entiat" folder="Entiat"/>
         <Allow name="Hells Canyon" folder="HellsCanyon"/>
@@ -22,6 +23,8 @@
         <Allow name="Lemhi" folder="Lemhi"/>
         <Allow name="Little Salmon" folder="LittleSalmon"/>
         <Allow name="Lochsa" folder="Lochsa"/>
+        <Allow name="Lolo" folder="Lolo"/>
+        <Allow name="Lower Clearwater" folder="LowerClearwater"/>
         <Allow name="Lower Grande Ronde" folder="LowerGrandeRonde"/>
         <Allow name="Lower John Day" folder="LowerJohnDay"/>
         <Allow name="Lower Middle Fork Salmon" folder="LowerMiddleForkSalmon"/>
@@ -41,6 +44,7 @@
         <Allow name="North Fork John Day" folder="NorthForkJohnDay"/>
         <Allow name="Okanogan" folder="Okanogan"/>
         <Allow name="Pahsimeroi" folder="Pahsimeroi"/>
+        <Allow name="Secesh" folder="Secesh"/>
         <Allow name="South Fork Clearwater" folder="SouthForkClearwater"/>
         <Allow name="South Fork Salmon" folder="SouthForkSalmon"/>
         <Allow name="Umatilla" folder="Umatilla"/>
@@ -142,9 +146,11 @@
           <Product ref="EC"/>
           <Product ref="SOLAR"/>
           <Group ref="GRP_STREAMTEMP">
-            <Product ref="STREAMTEMPMIN"/>
-            <Product ref="STREAMTEMPMAX"/>
-            <Product ref="STREAMTEMPMEAN"/>
+            <Collection ref="COL_YEAR">
+              <Product ref="STREAMTEMPMIN"/>
+              <Product ref="STREAMTEMPMAX"/>
+              <Product ref="STREAMTEMPMEAN"/>
+            </Collection>
           </Group>
         </Group>
         <Group ref="GRP_SITE">
