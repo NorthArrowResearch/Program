@@ -47,6 +47,7 @@
         <Allow name="Secesh" folder="Secesh"/>
         <Allow name="South Fork Clearwater" folder="SouthForkClearwater"/>
         <Allow name="South Fork Salmon" folder="SouthForkSalmon"/>
+        <Allow name="South Fork John Day" folder="SouthForkJohnDay"/>
         <Allow name="Tucannon" folder="Tucannon"/>
         <Allow name="Umatilla" folder="Umatilla"/>
         <Allow name="Upper Grande Ronde" folder="UpperGrandeRonde"/>
