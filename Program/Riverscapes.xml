@@ -58,6 +58,7 @@
         <Allow name="Wallowa" folder="Wallowa"/>
         <Allow name="Wenatchee" folder="Wenatchee"/>
         <Allow name="Willow" folder="Willow"/>
+        <Allow name="Yankee Fork" folder="YankeeFork"/>
       </Collection>
       <Collection id="COL_SITE" name="Site">
         <Allow pattern=".*"/>
