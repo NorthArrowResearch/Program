@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="XSD/V1/Project.xsd">
+
+  <Name>Et Al GPP site</Name>
+  <ProjectType>GPP</ProjectType>
+
+  <MetaData>
+    <Meta name="HUCID">1234</Meta>
+    <Meta name="Region">CRB</Meta>
+    <Meta name="Watershed">Asotin</Meta>
+  </MetaData>
+
+  <Inputs>
+    <Vector guid="1234" id="cond1">
+      <Name>Conductivity</Name>
+      <Path>Inputs/conductivity/myfile.shp</Path>
+    </Vector>
+    <Vector guid="1234" id="temp1">
+      <Name>Temperature</Name>
+      <Path>Inputs/tempurature/myfile.shp</Path>
+    </Vector>
+    <Vector guid="1234" id="solar1">
+      <Name>Solar</Name>
+      <Path>Inputs/solar/myfile.shp</Path>
+    </Vector>
+  </Inputs>
+
+  <Realizations>
+    <GPP dateCreated="2017-05-16 14:20:37" guid="1234" id="GPP1" productVersion="1.0.5">
+      <Name>GPP Realization 1</Name>
+      <Parameters>
+        <Param name="Intercept">-25.2496</Param>
+        <Param name="temperature">0.5111</Param>
+        <Param name="conductivity">0.9341</Param>
+        <Param name="solar">0.9507</Param>
+      </Parameters>
+
+      <Inputs>
+        <Vector ref="cond1"/>
+        <Vector ref="solar1"/>
+        <TemperatureModel ref="temp1">
+          <Vector guid="1234">
+            <Name>TemperatureModel</Name>
+            <Path>realization1/TemperatureModel/averagefromtemp1.shp</Path>
+          </Vector>
+        </TemperatureModel>
+      </Inputs>
+
+      <Analyses>
+        <Analysis>
+          <Name>GPP Analysis</Name>
+          <Outputs>
+            <Vector guid="1234">
+              <Name>GPP</Name>
+              <Path>Analyses/Output_1_GPP.shp</Path>
+            </Vector>
+          </Outputs>
+        </Analysis>
+      </Analyses>
+    </GPP>
+  </Realizations>
+</Project>

@@ -206,6 +206,7 @@
       <xs:element type="RiverStylesType" name="RiverStyles" maxOccurs="unbounded" minOccurs="0"/>
       <xs:element type="ConfinementType" name="Confinement" maxOccurs="unbounded" minOccurs="0"/>
       <xs:element type="GUTType" name="GUT" maxOccurs="unbounded" minOccurs="0"/>
+      <xs:element type="GPPType" name="GPP" maxOccurs="unbounded" minOccurs="0"/>
       <xs:element type="FHMType" name="FHM" maxOccurs="unbounded" minOccurs="0"/>
       <xs:element type="RVDType" name="RVD" maxOccurs="unbounded" minOccurs="0"/>
       <xs:element type="SolarType" name="Solar" maxOccurs="unbounded" minOccurs="0"/>
@@ -901,6 +902,42 @@
       <xs:element type="GNATOutputsType" name="Outputs"/>
     </xs:sequence>
   </xs:complexType>
+
+
+  <!-- =========================================================================
+
+    Project: GPP
+
+  ============================================================================== -->
+  <xs:complexType name="GPPType" mixed="true">
+    <xs:complexContent>
+      <xs:extension base="RealizationType">
+        <xs:sequence>
+          <xs:element type="GPPInputsType" name="Inputs" minOccurs="0"/>
+          <xs:element type="GNATOutputsType" name="Outputs" minOccurs="0"/>
+          <xs:element type="AnalysesType" name="Analyses" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="GPPInputsType">
+    <xs:choice maxOccurs="unbounded">
+      <xs:element type="GPPTemperatureModelType" name="TemperatureModel"/>
+      <xs:element type="VectorType" name="Vector"/>
+    </xs:choice>
+  </xs:complexType>
+
+  <xs:complexType name="GPPTemperatureModelType" mixed="true">
+    <xs:complexContent>
+      <xs:extension base="VectorType">
+        <xs:sequence>
+          <xs:element type="VectorType" name="Vector"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
 
   <!-- =========================================================================
 
