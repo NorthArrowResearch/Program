@@ -96,7 +96,6 @@
       <Product id="RCA" name="RCA" folder="RCA"/>
       <Product id="BRAT" name="BRAT Models" folder="BRAT"/>
       <Product id="WRAT" name="WRAT" folder="wrat"/>
-      <Product id="MIC" name="Matt Imputation Crap" folder="matt_impute"/>
       <Product id="GPP" name="GPP" folder="GPP"/>
       <Product id="CAPACITY" name="Capacity" folder="Capacity"/>
       <Product id="RSTYLES" name="River Styles" folder="riverstyles"/>
@@ -142,7 +141,6 @@
           <Product ref="RCA"/>
           <Product ref="BRAT"/>
           <Product ref="WRAT"/>
-          <Product ref="MIC"/>
           <Product ref="GPP"/>
           <Product ref="CAPACITY"/>
           <Product ref="RSTYLES"/>
