@@ -913,12 +913,20 @@
     <xs:complexContent>
       <xs:extension base="RealizationType">
         <xs:sequence>
+          <xs:element type="GPPParametersType" name="GPPParameters" minOccurs="0"/>
           <xs:element type="GPPInputsType" name="Inputs" minOccurs="0"/>
           <xs:element type="GNATOutputsType" name="Outputs" minOccurs="0"/>
           <xs:element type="AnalysesType" name="Analyses" minOccurs="0"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="GPPParametersType">
+    <xs:all>
+      <xs:element type="ParametersType" name="CRB"/>
+      <xs:element type="ParametersType" name="Watershed"/>
+    </xs:all>
   </xs:complexType>
 
   <xs:complexType name="GPPInputsType">
