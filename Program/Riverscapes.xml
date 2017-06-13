@@ -2,7 +2,7 @@
 <Program name="Riverscapes" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:noNamespaceSchemaLocation="XSD/V1/Program.xsd">
   <MetaData>
-    <Meta name="s3bucket">riverscapesdata</Meta>
+    <Meta name="s3bucket">sfr-riverscapesdata</Meta>
     <Meta name="projectfile">project.rs.xml</Meta>
   </MetaData>
 
