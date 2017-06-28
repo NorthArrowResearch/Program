@@ -2,6 +2,8 @@
 <?xml-stylesheet type="text/xsl" href="/plugins.xsl" ?>
 <plugins>
   <pyqgis_plugin name="NetworkProfiler" version="0.0.1">
+    <version>0.0.1</version>
+    <icon>icon.png</icon>
     <description>The network profiler</description>
     <homepage>https://github.com/Riverscapes/NetworkProfiler</homepage>
     <qgis_minimum_version>2.0</qgis_minimum_version>
@@ -9,9 +11,15 @@
     <author_name>Matt Reimer</author_name>
     <download_url>http://qgis.northarrowresearch.com/plugins/networkprofiler/NetworkProfiler-0.0.1.zip</download_url>
     <experimental>True</experimental>
-    <deprecated>False</deprecated>    
+    <deprecated>False</deprecated>  
+    <update_date>2017-05-02T00:00:00</update_date>
+    <tracker><![CDATA[https://github.com/Riverscapes/NetworkProfiler/issues]]></tracker>
+    <repository><![CDATA[https://github.com/Riverscapes/NetworkProfiler]]></repository>
+    <changelog><![CDATA[https://github.com/Riverscapes/NetworkProfiler/blob/master/CHANGELOG.md]]></changelog>
   </pyqgis_plugin>
   <pyqgis_plugin name="RiverscapesToolbar" version="0.5">
+    <version>0.5</version>
+    <icon>icon.png</icon>
     <description>RiverscapesToolbar</description>
     <homepage>https://github.com/Riverscapes/network-profiler</homepage>
     <qgis_minimum_version>2.0</qgis_minimum_version>
@@ -20,5 +28,9 @@
     <download_url>http://qgis.northarrowresearch.com/plugins/riverscapestoolbar/riverscapestoolbar-0.5.zip</download_url>
     <experimental>True</experimental>
     <deprecated>False</deprecated>   
+    <update_date>2017-05-02T00:00:00</update_date>
+    <tracker><![CDATA[https://github.com/Riverscapes/RiverscapesToolbar/issues]]></tracker>
+    <repository><![CDATA[https://github.com/Riverscapes/RiverscapesToolbar]]></repository>
+    <changelog><![CDATA[https://github.com/Riverscapes/RiverscapesToolbar/blob/master/CHANGELOG.md]]></changelog>
   </pyqgis_plugin>
 </plugins>
