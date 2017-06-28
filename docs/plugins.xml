@@ -1,7 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
 <?xml-stylesheet type="text/xsl" href="/plugins.xsl" ?>
 <plugins>
-  <pyqgis_plugin name="NetworkProfiler" version="0.0.1">
+  <pyqgis_plugin name="Network Profiler" version="0.0.1">
     <version>0.0.1</version>
     <icon>icon.png</icon>
     <description>The network profiler</description>
@@ -17,7 +17,7 @@
     <repository><![CDATA[https://github.com/Riverscapes/NetworkProfiler]]></repository>
     <changelog><![CDATA[https://github.com/Riverscapes/NetworkProfiler/blob/master/CHANGELOG.md]]></changelog>
   </pyqgis_plugin>
-  <pyqgis_plugin name="RiverscapesToolbar" version="0.5">
+  <pyqgis_plugin name="Riverscapes Toolbar" version="0.5">
     <version>0.5</version>
     <icon>icon.png</icon>
     <description>RiverscapesToolbar</description>
