@@ -90,21 +90,24 @@
 
     <!--Products for now just need ref, name and folder (url is optional and leads to a wiki)-->
     <Products>
-      <Product id="TOPO" name="Topo" folder="Topo" url=""/>
+      <Product id="QRF" name="QRF" folder="QRF" url=""/>
 
       <!--NETWORK level products-->
       <Product id="GRTS" name="GRTS Rollup" folder="GRTS" url=""/>
+      <Product id="GAA" name="GAA" folder="GAA" url=""/>
       <Product id="CONTEXT" name="Context Layers" folder="context_layers" url=""/>
       <Product id="VBET" name="VBET" folder="VBET" url=""/>
       <Product id="RVD" name="RVD" folder="RVD" url=""/>
       <Product id="RCA" name="RCA" folder="RCA" url=""/>
       <Product id="BRAT" name="BRAT Models" folder="BRAT" url=""/>
-      <Product id="WRAT" name="WRAT" folder="wrat" url=""/>
+      <Product id="WRAT" name="WRAT" folder="WRAT" url=""/>
       <Product id="GPP" name="GPP" folder="GPP" url=""/>
       <Product id="CAPACITY" name="Capacity" folder="Capacity" url=""/>
       <Product id="CONFINEMENT" name="Confinement" folder="CONFINEMENT" url=""/>
       <Product id="EC" name="EC" folder="EC" url=""/>
       <Product id="SOLAR" name="Solar" folder="Solar" url=""/>
+
+      <Product id="CHAMPMETRICS" name="CHaMP_Metrics" folder="CHaMPMetrics" url=""/>
 
       <!--Streamtemp-->
       <Product id="STREAMTEMPMIN" name="STREAMTEMPMIN" folder="StreamTempMin" url=""/>
@@ -113,9 +116,7 @@
 
       <!--Site-level products-->
       <Product id="SITE_HYDRO" name="Hydro" folder="Hydro" url=""/>
-      <Product id="SITE_GUT" name="GUT" folder="GUT" url=""/>
-      <Product id="SITE_GCD" name="GCD" folder="GCD" url=""/>
-      <Product id="SITE_FHM" name="FHM" folder="FHM" url=""/>
+      <Product id="GCD" name="GCD" folder="GCD" url=""/>
 
       <!--Visit-level products-->
       <Product id="TOPO" name="Topo" folder="Topo" url=""/>
@@ -124,6 +125,7 @@
       <Product id="FHM" name="FHM" folder="FHM" url=""/>
       <Product id="GUT" name="GUT" folder="GUT" url=""/>
       <Product id="HYDRO" name="Hydro" folder="Hydro" url=""/>
+      <Product id="NREI" name="NREI" folder="NREI" url=""/>
 
 
     </Products>
@@ -139,8 +141,12 @@
   -->
   <Hierarchy>
     <Collection ref="COL_REGION">
+      <Product ref="QRF"/>
+      <Product ref="GAA"/>
+      <Product ref="CONTEXT"/>
       <Group ref="GRP_WATERSHED">
         <Collection ref="COL_WATERSHED">
+          <Product ref="GRTS"/>
           <Group ref="GRP_NETWORK">
             <Product ref="VBET"/>
             <Product ref="RVD"/>
@@ -162,20 +168,19 @@
           </Group>
           <Group ref="GRP_SITE">
             <Collection ref="COL_SITE">
-              <Product ref="SITE_GCD"/>
-              <Product ref="SITE_FHM"/>
+              <Product ref="GCD"/>
+              <Product ref="FHM"/>
               <Product ref="SITE_HYDRO"/>
-              <Product ref="SITE_NREI"/>
+              <Product ref="NREI"/>
               <Group ref="GRP_YEAR">
                 <Collection ref="COL_YEAR">
                   <Collection ref="COL_VISIT">
                     <Group ref="GRP_FLOW">
                       <Collection ref="COL_FLOW">
                         <Product ref="HYDRO"/>
-                        <Product ref="FHM"/>
-                        <Product ref="GUT"/>
                       </Collection>
                     </Group>
+                    <Product ref="GUT"/>
                     <Product ref="TOPO"/>
                   </Collection>
                 </Collection>
