@@ -67,7 +67,7 @@
         <Allow pattern=".*"/>
       </Collection>
       <Collection id="COL_VISIT" name="Visit">
-        <Allow pattern="VISIT_[0-9]{4}"/>
+        <Allow pattern="[0-9]+"/>
       </Collection>
       <Collection id="COL_YEAR" name="Year">
         <Allow pattern="[0-9]{4}"/>
