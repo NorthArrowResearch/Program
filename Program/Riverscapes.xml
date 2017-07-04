@@ -82,35 +82,50 @@
       <Group id="GRP_WATERSHED" name="Watershed" folder="Watershed"/>
       <Group id="GRP_NETWORK" name="Network" folder="Network"/>
       <Group id="GRP_SITE" name="Site" folder="Site"/>
+      <Group id="GRP_YEAR" name="Year" folder="Year"/>
       <Group id="GRP_FLOW" name="Flow" folder="Flow"/>
       <Group id="GRP_TOPO" name="Topography" folder="Topography"/>
       <Group id="GRP_STREAMTEMP" name="Stream Temperature" folder="StreamTemp"/>
     </Groups>
 
-    <!--Products for now just need ref, name and folder-->
+    <!--Products for now just need ref, name and folder (url is optional and leads to a wiki)-->
     <Products>
-      <Product id="GRTS" name="GRTS Rollup" folder="GRTS"/>
-      <Product id="CONTEXT" name="Context Layers" folder="context_layers"/>
-      <Product id="VBET" name="VBET" folder="VBET"/>
-      <Product id="RVD" name="RVD" folder="RVD"/>
-      <Product id="RCA" name="RCA" folder="RCA"/>
-      <Product id="BRAT" name="BRAT Models" folder="BRAT"/>
-      <Product id="WRAT" name="WRAT" folder="wrat"/>
-      <Product id="GPP" name="GPP" folder="GPP"/>
-      <Product id="CAPACITY" name="Capacity" folder="Capacity"/>
-      <Product id="RSTYLES" name="River Styles" folder="riverstyles"/>
-      <Product id="FHM" name="FHM" folder="FHM"/>
-      <Product id="GUT" name="GUT" folder="GUT"/>
-      <Product id="GCD" name="GCD" folder="GCD"/>
-      <Product id="DEM" name="DEM" folder="DEM"/>
-      <Product id="CONFINEMENT" name="Confinement" folder="CONFINEMENT"/>
-      <Product id="STREAMTEMP" name="Stream Temperature" folder="StreamTemperature"/>
-      <Product id="EC" name="EC" folder="EC"/>
-      <Product id="SOLAR" name="Solar" folder="Solar"/>
-      <Product id="HYDRO" name="Hydro" folder="Hydro"/>
-      <Product id="STREAMTEMPMIN" name="STREAMTEMPMIN" folder="StreamTempMin"/>
-      <Product id="STREAMTEMPMAX" name="STREAMTEMPMAX" folder="StreamTempMax"/>
-      <Product id="STREAMTEMPMEAN" name="STREAMTEMPMEAN" folder="StreamTempMean"/>
+      <Product id="TOPO" name="Topo" folder="Topo" url=""/>
+
+      <!--NETWORK level products-->
+      <Product id="GRTS" name="GRTS Rollup" folder="GRTS" url=""/>
+      <Product id="CONTEXT" name="Context Layers" folder="context_layers" url=""/>
+      <Product id="VBET" name="VBET" folder="VBET" url=""/>
+      <Product id="RVD" name="RVD" folder="RVD" url=""/>
+      <Product id="RCA" name="RCA" folder="RCA" url=""/>
+      <Product id="BRAT" name="BRAT Models" folder="BRAT" url=""/>
+      <Product id="WRAT" name="WRAT" folder="wrat" url=""/>
+      <Product id="GPP" name="GPP" folder="GPP" url=""/>
+      <Product id="CAPACITY" name="Capacity" folder="Capacity" url=""/>
+      <Product id="CONFINEMENT" name="Confinement" folder="CONFINEMENT" url=""/>
+      <Product id="EC" name="EC" folder="EC" url=""/>
+      <Product id="SOLAR" name="Solar" folder="Solar" url=""/>
+
+      <!--Streamtemp-->
+      <Product id="STREAMTEMPMIN" name="STREAMTEMPMIN" folder="StreamTempMin" url=""/>
+      <Product id="STREAMTEMPMAX" name="STREAMTEMPMAX" folder="StreamTempMax" url=""/>
+      <Product id="STREAMTEMPMEAN" name="STREAMTEMPMEAN" folder="StreamTempMean" url=""/>
+
+      <!--Site-level products-->
+      <Product id="SITE_HYDRO" name="Hydro" folder="Hydro" url=""/>
+      <Product id="SITE_GUT" name="GUT" folder="GUT" url=""/>
+      <Product id="SITE_GCD" name="GCD" folder="GCD" url=""/>
+      <Product id="SITE_FHM" name="FHM" folder="FHM" url=""/>
+
+      <!--Visit-level products-->
+      <Product id="TOPO" name="Topo" folder="Topo" url=""/>
+
+      <!--Flow-level products-->
+      <Product id="FHM" name="FHM" folder="FHM" url=""/>
+      <Product id="GUT" name="GUT" folder="GUT" url=""/>
+      <Product id="HYDRO" name="Hydro" folder="Hydro" url=""/>
+
+
     </Products>
   </Definitions>
 
@@ -120,62 +135,55 @@
       - Group: Single folder with an explicit name (e.g. Topography)
      Rules:
       - Only one collection is allowed at any level
-      - You cannot mix Colelctions and Groups at the same level
-
-      BUCKET          COL.COLLECTION           GROUP   PRODUCT
-      riverscapesdata/CRB/Middle Fork John Day/Network/VBET
-      
-      BUCKET          COL.COLLECTION           GRP. COLLECTION    COL.       COL. GRP. COL.      PRODUCT
-      riverscapesdata/CRB/MiddleForkJohnDay/Site/ASC0023_23223/VISIT_2314/2012/Flow/Q_123_123/FHM
+      - Collections cannot be mixed with groups or products
   -->
   <Hierarchy>
     <Collection ref="COL_REGION">
-      <Collection ref="COL_WATERSHED">
-        <Group ref="GRP_WATERSHED">
-          <Product ref="GRTS"/>
-          <Product ref="CONTEXT"/>
-        </Group>
-        <Group ref="GRP_NETWORK">
-          <Product ref="VBET"/>
-          <Product ref="RVD"/>
-          <Product ref="RCA"/>
-          <Product ref="BRAT"/>
-          <Product ref="WRAT"/>
-          <Product ref="GPP"/>
-          <Product ref="CAPACITY"/>
-          <Product ref="RSTYLES"/>
-          <Product ref="CONFINEMENT"/>
-          <Product ref="EC"/>
-          <Product ref="SOLAR"/>
-          <Group ref="GRP_STREAMTEMP">
-            <Collection ref="COL_YEAR">
-              <Product ref="STREAMTEMPMIN"/>
-              <Product ref="STREAMTEMPMAX"/>
-              <Product ref="STREAMTEMPMEAN"/>
+      <Group ref="GRP_WATERSHED">
+        <Collection ref="COL_WATERSHED">
+          <Group ref="GRP_NETWORK">
+            <Product ref="VBET"/>
+            <Product ref="RVD"/>
+            <Product ref="RCA"/>
+            <Product ref="BRAT"/>
+            <Product ref="WRAT"/>
+            <Product ref="GPP"/>
+            <Product ref="CAPACITY"/>
+            <Product ref="CONFINEMENT"/>
+            <Product ref="EC"/>
+            <Product ref="SOLAR"/>
+            <Group ref="GRP_STREAMTEMP">
+              <Collection ref="COL_YEAR">
+                <Product ref="STREAMTEMPMIN"/>
+                <Product ref="STREAMTEMPMAX"/>
+                <Product ref="STREAMTEMPMEAN"/>
+              </Collection>
+            </Group>
+          </Group>
+          <Group ref="GRP_SITE">
+            <Collection ref="COL_SITE">
+              <Product ref="SITE_GCD"/>
+              <Product ref="SITE_FHM"/>
+              <Product ref="SITE_HYDRO"/>
+              <Product ref="SITE_NREI"/>
+              <Group ref="GRP_YEAR">
+                <Collection ref="COL_YEAR">
+                  <Collection ref="COL_VISIT">
+                    <Group ref="GRP_FLOW">
+                      <Collection ref="COL_FLOW">
+                        <Product ref="HYDRO"/>
+                        <Product ref="FHM"/>
+                        <Product ref="GUT"/>
+                      </Collection>
+                    </Group>
+                    <Product ref="TOPO"/>
+                  </Collection>
+                </Collection>
+              </Group>
             </Collection>
           </Group>
-        </Group>
-        <Group ref="GRP_SITE">
-          <Collection ref="COL_SITE">
-            <Collection ref="COL_VISIT">
-              <Collection ref="COL_YEAR">
-                <Group ref="GRP_FLOW">
-                  <Collection ref="COL_FLOW">
-                    <Product ref="HYDRO"/>
-                    <Product ref="FHM"/>
-                    <Product ref="GUT"/>
-                    <Product ref="GCD"/>
-                  </Collection>
-                </Group>
-                <Group ref="GRP_TOPO">
-                  <Product ref="DEM"/>
-                </Group>
-              </Collection>
-            </Collection>
-          </Collection>
-        </Group>
-      </Collection>
+        </Collection>
+      </Group>
     </Collection>
   </Hierarchy>
-
 </Program>
