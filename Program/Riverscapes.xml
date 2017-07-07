@@ -36,6 +36,7 @@
         <Allow name="Lower Snake-Tucannon" folder="Tucannon"/>
         <Allow name="Lower Yakima" folder="LowerYakima"/>
         <Allow name="Methow" folder="Methow"/>
+        <Allow name="Middle Fork Clearwater" folder="MiddleForkClearwater"/>
         <Allow name="Middle Columbia-Lake Wallula" folder="LakeWallula"/>
         <Allow name="Middle Fork John Day" folder="MiddleForkJohnDay"/>
         <Allow name="Middle Salmon-Chamberlain" folder="MiddleSalmonChamberlain"/>
@@ -54,6 +55,7 @@
         <Allow name="Upper Grande Ronde" folder="UpperGrandeRonde"/>
         <Allow name="Upper John Day" folder="UpperJohnDay"/>
         <Allow name="Upper Middle Fork Salmon" folder="UpperMiddleForkSalmon"/>
+        <Allow name="Upper North Fork Clearwater" folder="UpperNorthForkClearwater"/>
         <Allow name="Upper Salmon" folder="UpperSalmon"/>
         <Allow name="Upper Selway" folder="UpperSelway"/>
         <Allow name="Upper Yakima" folder="UpperYakima"/>
