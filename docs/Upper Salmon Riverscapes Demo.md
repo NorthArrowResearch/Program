@@ -89,7 +89,21 @@ Layers:
 
 - *aux measurements (context)*
 
-  ​
+
+| SiteName        | WatershedName | VisitYear | VisitID | AverageBFWidth | Priority |
+| --------------- | ------------- | --------- | ------- | -------------- | -------- |
+| CBW05583-026031 | Lemhi         | 2016      | 3905    | 17.18          | 1        |
+| CBW05583-028079 | Lemhi         | 2012      | 1029    | 7.34           | 1        |
+| CBW05583-038111 | Lemhi         | 2015      | 3501    | 19.82          | 5        |
+| CBW05583-080335 | Lemhi         | 2015      | 3456    | 8.99           | 3        |
+| CBW05583-362335 | Lemhi         | 2015      | 3535    | 6.56           | 4        |
+| YFI00001-002166 | Yankee Fork   | 2014      | 2185    | 18.3           | 6        |
+| YFI00001-002166 | Yankee Fork   | 2016      | 3955    | 18.3           | 1        |
+| YFI00001-001711 | Yankee Fork   | 2013      | 1416    | 12.38          | 7        |
+| YFI00001-001711 | Yankee Fork   | 2016      | 3957    | 12.38          | 2        |
+| YFI00001-000595 | Yankee Fork   | 2016      | 4182    | 15.24          | 1        |
+
+
 
 ### Network Context layers (not currently part of projects)
 
