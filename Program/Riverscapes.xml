@@ -95,7 +95,7 @@
       <Product id="QRF" name="QRF" folder="QRF" url=""/>
 
       <!--NETWORK level products-->
-      <Product id="GRTS" name="GRTS Rollup" folder="GRTS" url=""/>
+      <Product id="GRTS" name="GRTS" folder="GRTS" url=""/>
       <Product id="GAA" name="GAA" folder="GAA" url=""/>
       <Product id="CONTEXT" name="Context Layers" folder="context_layers" url=""/>
       <Product id="VBET" name="VBET" folder="VBET" url=""/>
