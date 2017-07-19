@@ -1,15 +1,15 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
 <?xml-stylesheet type="text/xsl" href="/plugins.xsl" ?>
 <plugins>
-  <pyqgis_plugin name="NetworkProfiler" version="0.0.1">
-    <version>0.0.1</version>
+  <pyqgis_plugin name="NetworkProfiler" version="0.5">
+    <version>0.5</version>
     <icon>icon.png</icon>
     <description>The network profiler</description>
     <homepage>https://github.com/Riverscapes/NetworkProfiler</homepage>
     <qgis_minimum_version>2.0</qgis_minimum_version>
-    <file_name>NetworkProfiler-0.0.1.zip</file_name>
+    <file_name>NetworkProfiler.zip</file_name>
     <author_name>Matt Reimer</author_name>
-    <download_url>http://qgis.northarrowresearch.com/plugins/networkprofiler/NetworkProfiler-0.0.1.zip</download_url>
+    <download_url>http://qgis.northarrowresearch.com/plugins/networkprofiler/v0.5/NetworkProfiler.zip</download_url>
     <experimental>True</experimental>
     <deprecated>False</deprecated>  
     <update_date>20.8-05-02T00:00:00</update_date>
