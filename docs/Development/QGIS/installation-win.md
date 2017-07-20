@@ -111,4 +111,4 @@ Finally, type the following at the DOS command prompt:
 c:\> pip install pb_tool
 ```
 
-This installs the [QGIS Python plugin development](https://pypi.python.org/pypi/pb_tool/1.9) package needed to develop QGIS plugins. Now you have everything you need to compile and debug QGIS plguins in pycharm. You will need to read the page called [Debugging plugins using Pycharm](http://localhost:1313/development/qgis/pycharm/) to set that up. 
+This installs the [QGIS Python plugin development](https://pypi.python.org/pypi/pb_tool/1.9) package needed to develop QGIS plugins. Now you have everything you need to compile and debug QGIS plguins in pycharm. You will need to read the page called [Debugging plugins using Pycharm]({{site.baseurl}}/Development/QGIS/pycharm/) to set that up. 

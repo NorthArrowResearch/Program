@@ -86,7 +86,7 @@ The kind of Datasource tag you choose (e.g. `<Raster>`, `<DEM>` ) is important. 
 * **Name**: `<Name>` A plain-text name for this Datasource
 * **Path**: `<Path>` A ***RELATIVE*** filepath to the layer/file/datasource in question (i.e. `inputs/input01/input.tif`). The path is relative either to this project or another project root specified using the `<Project>` element. 
 * **Project**: `<Project>`*(Optional)* If you are refering to a datasource in another project you can use this element. Relative paths are preferred but in some cases absolute paths are necessary. See below for more details.
-* [**MetaData**](../metadata): `<MetaData>` Key-value pairs. *(See [MetaData](../metadata) docs for how to use this.)*
+* [**MetaData**](metadata.html): `<MetaData>` Key-value pairs. *(See [MetaData](metadata.html) docs for how to use this.)*
 
 #### Special Elements:
 
