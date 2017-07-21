@@ -221,6 +221,7 @@
       <xs:element type="StreamTemperatureType" name="StreamTemperature" maxOccurs="unbounded" minOccurs="0"/>
       <xs:element type="SurveyDataType" name="SurveyData" maxOccurs="unbounded" minOccurs="0"/>
       <xs:element type="TopographyType" name="Topography" maxOccurs="unbounded" minOccurs="0"/>
+      <xs:element type="CHaMPMetricsType" name="Metrics" maxOccurs="unbounded" minOccurs="0"/>
     </xs:choice>
   </xs:complexType>
 
@@ -299,6 +300,23 @@
   ============================================================================== -->
 
   <xs:complexType name="NREIType" mixed="true">
+    <xs:complexContent>
+      <xs:extension base="RealizationType">
+        <xs:sequence>
+          <xs:element type="DataSetContainerType" name="Inputs" minOccurs="0"/>
+          <xs:element type="AnalysesType" name="Analyses" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+   <!-- =========================================================================
+
+    Project: CHaMP Metrics
+
+  ============================================================================== -->
+
+  <xs:complexType name="CHaMPMetricsType" mixed="true">
     <xs:complexContent>
       <xs:extension base="RealizationType">
         <xs:sequence>

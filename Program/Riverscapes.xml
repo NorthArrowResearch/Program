@@ -109,7 +109,7 @@
       <Product id="EC" name="EC" folder="EC" url=""/>
       <Product id="SOLAR" name="Solar" folder="Solar" url=""/>
 
-      <Product id="CHAMPMETRICS" name="CHaMP_Metrics" folder="CHaMPMetrics" url=""/>
+      <Product id="CHAMPMETRICS" name="CHaMP Metrics" folder="CHaMPMetrics" url=""/>
 
       <!--Streamtemp-->
       <Product id="STREAMTEMPMIN" name="STREAMTEMPMIN" folder="StreamTempMin" url=""/>
@@ -144,6 +144,7 @@
   <Hierarchy>
     <Collection ref="COL_REGION">
       <Product ref="QRF"/>
+      <Product ref="CHAMPMETRICS" />
       <Product ref="GAA"/>
       <Product ref="CONTEXT"/>
       <Group ref="GRP_WATERSHED">
