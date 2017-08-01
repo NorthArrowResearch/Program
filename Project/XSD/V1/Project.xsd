@@ -107,6 +107,10 @@
       <!-- A scalar value is possible as an input or an output but use <Params> if you can -->
       <xs:element type="xs:string" name="Value"/>
       <xs:element type="RasterType" name="Raster"/>
+      <xs:element type="RasterType" name="Cover"/>
+      <xs:element type="RasterType" name="Substrate"/>
+      <xs:element type="RasterType" name="Velocity"/>
+      <xs:element type="RasterType" name="Depth"/>
       <xs:element type="VectorType" name="Vector"/>
       <xs:element type="TINType" name="TIN"/>
       <xs:element type="DEMType" name="DEM"/>
@@ -117,10 +121,10 @@
       <xs:element type="SimpleFileType" name="SurveyQualityDB"/>
       <xs:element type="SimpleFileType" name="InstrumentFile"/>
       <xs:element type="SimpleFileType" name="AuxInstrumentFile"/>
-            <xs:element type="SimpleFileType" name="MSAccessDB"/>
-            <xs:element type="SimpleFileType" name="PDF"/>
+      <xs:element type="SimpleFileType" name="MSAccessDB"/>
+      <xs:element type="SimpleFileType" name="PDF"/>
 
-  </xs:choice>
+    </xs:choice>
   </xs:complexType>
 
   <!-- The base type  -->
@@ -206,7 +210,6 @@
       <xs:element type="DoDType" name="DoD" maxOccurs="unbounded" minOccurs="0"/>
       <xs:element type="VBETType" name="VBET" maxOccurs="unbounded" minOccurs="0"/>
       <xs:element type="NREIType" name="NREI" maxOccurs="unbounded" minOccurs="0"/>
-      <xs:element type="RiverStylesType" name="RiverStyles" maxOccurs="unbounded" minOccurs="0"/>
       <xs:element type="ConfinementType" name="Confinement" maxOccurs="unbounded" minOccurs="0"/>
       <xs:element type="GUTType" name="GUT" maxOccurs="unbounded" minOccurs="0"/>
       <xs:element type="GPPType" name="GPP" maxOccurs="unbounded" minOccurs="0"/>
@@ -310,11 +313,11 @@
     </xs:complexContent>
   </xs:complexType>
 
-   <!-- =========================================================================
+  <!-- =========================================================================
 
-    Project: CHaMP Metrics
+   Project: CHaMP Metrics
 
-  ============================================================================== -->
+ ============================================================================== -->
 
   <xs:complexType name="CHaMPMetricsType" mixed="true">
     <xs:complexContent>
@@ -400,87 +403,17 @@
 
   <!-- =========================================================================
 
-    Project: River Styles
-
-  ============================================================================== -->
-
-  <xs:complexType name="RiverStylesType" mixed="true">
-    <xs:complexContent>
-      <xs:extension base="RealizationType">
-        <xs:sequence>
-          <xs:element type="RiverStylesInputType" name="Inputs" minOccurs="0"/>
-          <xs:element type="RiverStylesAnalysesType" name="Analyses" minOccurs="0"/>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-
-  <xs:complexType name="RiverStylesInputType">
-    <xs:sequence>
-      <xs:element type="RiverStylesInputDrainageNetworksType" name="DrainageNetworks"/>
-    </xs:sequence>
-  </xs:complexType>
-
-  <xs:complexType name="RiverStylesInputDrainageNetworksType">
-    <xs:sequence>
-      <xs:element type="RiverStylesInputDrainageNetworkType" name="Network"/>
-    </xs:sequence>
-    <xs:attribute type="xs:string" name="guid" use="optional"/>
-  </xs:complexType>
-
-  <xs:complexType name="RiverStylesInputDrainageNetworkType" mixed="true">
-    <xs:complexContent>
-      <xs:extension base="VectorType">
-        <xs:sequence>
-          <xs:element type="VBETBufferType" name="Buffers"/>
-          <xs:element type="ValleyBottomType" name="ValleyBottom"/>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-
-  <xs:complexType name="ValleyBottomType">
-    <xs:complexContent>
-      <xs:extension base="VectorType"/>
-    </xs:complexContent>
-  </xs:complexType>
-
-  <xs:complexType name="RiverStylesConfinementType">
-    <xs:sequence>
-      <xs:element type="VectorType" name="Confinement"/>
-    </xs:sequence>
-  </xs:complexType>
-
-  <xs:complexType name="RiverStylesReachType">
-    <xs:sequence>
-      <xs:element type="ManualCrossChecksType" name="ManualCrossChecks"/>
-    </xs:sequence>
-  </xs:complexType>
-
-  <xs:complexType name="ManualCrossChecksType">
-    <xs:sequence>
-      <xs:element type="VectorType" name="ManualCrossCheck"/>
-    </xs:sequence>
-  </xs:complexType>
-
-  <xs:complexType name="RiverStylesAnalysesType">
-    <xs:sequence>
-      <xs:element type="RiverStylesConfinementType" name="Confinements"/>
-      <xs:element type="RiverStylesReachType" name="RiverStyleReach"/>
-    </xs:sequence>
-  </xs:complexType>
-
-  <!-- =========================================================================
-
     Project: GUT
 
   ============================================================================== -->
   <xs:complexType name="GUTType" mixed="true">
     <xs:complexContent>
-      <xs:extension base="RealizationType">    <xs:sequence>
-        <xs:element type="DataSetContainerType" name="Inputs" minOccurs="0"/>
-        <xs:element type="GUTAnalysesType" name="Analyses" minOccurs="0"/>
-      </xs:sequence></xs:extension>
+      <xs:extension base="RealizationType">
+        <xs:sequence>
+          <xs:element type="DataSetContainerType" name="Inputs" minOccurs="0"/>
+          <xs:element type="GUTAnalysesType" name="Analyses" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
     </xs:complexContent>
   </xs:complexType>
 
@@ -598,12 +531,41 @@
       <xs:extension base="RealizationType">
         <xs:sequence>
           <xs:element type="DataSetContainerType" name="Inputs" minOccurs="0"/>
-          <xs:element type="AnalysesType" name="Analyses" minOccurs="0"/>
+          <xs:element type="FHMAnalysesType" name="Analyses" minOccurs="0"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
 
+  <!-- FHM Analyses -->
+  <xs:complexType name="FHMAnalysesType">
+    <xs:sequence>
+      <xs:element type="FHMAnalysisType" name="Analysis"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="FHMAnalysisType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="Name"/>
+      <xs:element type="FHMModelsType" name="Models" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="FHMModelsType">
+    <xs:sequence>
+      <xs:element type="FHMHSIAnalysisType" name="FIS"/>
+      <xs:element type="FHMHSIAnalysisType" name="HSI"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="FHMHSIAnalysisType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="FISFile" minOccurs="0"/>
+      <xs:element type="MetaDataType" name="MetaData"/>
+      <xs:element type="DataSetContainerType" name="Outputs"/>
+      <xs:element type="MetricsType" name="Metrics"/>
+    </xs:sequence>
+  </xs:complexType>
 
   <!-- =========================================================================
 

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="XSD/V1/Project.xsd">
+  <Name>CBW05583-026031-3905</Name>
+  <ProjectType>FHM</ProjectType>
+  <MetaData>
+    <Meta name="CreatedOn">2017-07-14T17:30:09.9076853-06:00</Meta>
+    <Meta name="Region">CRB</Meta>
+    <Meta name="Site">CBW05583-026031</Meta>
+    <Meta name="Watershed">Lemhi</Meta>
+  </MetaData>
+  <Inputs>
+    <Cover id="2016_VISIT_3905_S00002_762_CoverIndex">
+      <Name>2016 Visit 3905 S00002_762 Cover Index</Name>
+      <Path>2016\VISIT_3905\S00002_762\Inputs\CoverIndex\CoverIndex.tif</Path>
+    </Cover>
+    <Substrate id="2016_Visit_3905_S00002_762_Substrate">
+      <Name>2016 Visit 3905 S00002_762 Substrate</Name>
+      <Path>2016\VISIT_3905\S00002_762\Inputs\GrainSize\D50.tif</Path>
+    </Substrate>
+    <Velocity id="2016_Visit_3905_S00002_762_Velocity">
+      <Name>2016 Visit 3905 S00002_762 Velocity</Name>
+      <Path>2016\VISIT_3905\S00002_762\Inputs\Hydraulics\Vel.tif</Path>
+    </Velocity>
+    <Depth id="2016_Visit_3905_S00002_762_Depth">
+      <Name>2016 Visit 3905 S00002_762 Depth</Name>
+      <Path>2016\VISIT_3905\S00002_762\Inputs\Hydraulics\Depth.tif</Path>
+    </Depth>
+  </Inputs>
+  <Realizations>
+    <FHM id="" dateCreated="" productVersion="" guid="">
+      <Name></Name>
+      <MetaData>
+        <Meta name="Visit">3905</Meta>
+        <Meta name="Discharge">S00002_762</Meta>
+      </MetaData>
+      <Inputs>
+        <Cover ref="2016_VISIT_3905_S00002_762_CoverIndex"/>
+        <Substrate ref="2016_Visit_3905_S00002_762_Substrate" />
+        <Velocity ref="2016_Visit_3905_S00002_762_Velocity"/>
+        <Depth ref="2016_Visit_3905_S00002_762_Depth"/>
+      </Inputs>
+      <Analyses>
+        <Analysis>
+          <Name>2016 Visit 3905 S00002_762 Chinook Spawner</Name>
+          <Models>
+            <FIS>
+              <FISFile>2016\VISIT_3905\S00002_762\Analyses\FIS\Steelhead\Spawner\Run_01\FISModel\FuzzySteelheadSpawner_DVSC.fis</FISFile>
+              <MetaData>
+                <Meta name="Species">Chinook</Meta>
+                <Meta name="LifeStage">Spawner</Meta>
+              </MetaData>
+              <Outputs>
+                <Raster id="">
+                  <Name>Fish Habitat</Name>
+                  <Path>2016\VISIT_3905\S00002_762\Analyses\FIS\Chinook\Spawner\Run_01\FuzzyChinookSpawner_DVSC.tif</Path>
+                  <MetaData>
+                    <Meta name="Type"></Meta>
+                  </MetaData>
+                </Raster>
+                <Raster id="">
+                  <Name>High Quality Habitat</Name>
+                  <Path>2016\VISIT_3905\S00002_762\Analyses\FIS\Chinook\Spawner\Run_01\FuzzyHQ.tif</Path>
+                </Raster>
+                <Image id="">
+                  <Name>Fish Habitat Quality</Name>
+                  <Path>2016\VISIT_3905\S00002_762\Analyses\FIS\Chinook\Spawner\Run_01\Figs\FuzzyHQ_Hist.png</Path>
+                </Image>
+              </Outputs>
+              <Metrics>
+                <Metric name="WUA">0.0</Metric>
+              </Metrics>
+            </FIS>
+            <HSI>
+              <MetaData>
+                <Meta name="Species">Chinook</Meta>
+                <Meta name="LifeStage">Spawner</Meta>
+              </MetaData>
+              <Outputs>
+                <Raster id="">
+                  <Name>Fish Habitat</Name>
+                  <Path>2016\VISIT_3905\S00002_762\Analyses\FIS\Chinook\Spawner\Run_01\FuzzyChinookSpawner_DVSC.tif</Path>
+                  <MetaData>
+                    <Meta name="Type"></Meta>
+                  </MetaData>
+                </Raster>
+                <Raster id="">
+                  <Name>High Quality Habitat</Name>
+                  <Path>2016\VISIT_3905\S00002_762\Analyses\FIS\Chinook\Spawner\Run_01\FuzzyHQ.tif</Path>
+                </Raster>
+                <Image id="">
+                  <Name>Fish Habitat Quality</Name>
+                  <Path>2016\VISIT_3905\S00002_762\Analyses\FIS\Chinook\Spawner\Run_01\Figs\FuzzyHQ_Hist.png</Path>
+                </Image>
+              </Outputs>
+              <Metrics>
+                <Metric name="WUA">0.0</Metric>
+              </Metrics>
+            </HSI>
+          </Models>
+        </Analysis>
+      </Analyses>
+    </FHM>
+  </Realizations>
+</Project>
