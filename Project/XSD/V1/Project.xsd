@@ -999,15 +999,15 @@
     </xs:complexContent>
   </xs:complexType>
 
-  <xs:complexType name="AssocSurfacesType">
-    <xs:sequence>
+  <xs:complexType name="AssocSurfacesType" mixed="true">
+    <xs:all>
       <xs:element type="RasterType" name="Slope" minOccurs="1" maxOccurs="1"/>
       <xs:element type="RasterType" name="PointDensity" minOccurs="1" maxOccurs="1"/>
       <xs:element type="RasterType" name="InterpolationError" minOccurs="1" maxOccurs="1"/>
       <xs:element type="RasterType" name="PointQuality3D" minOccurs="1" maxOccurs="1"/>
       <xs:element type="RasterType" name="Roughness" minOccurs="1" maxOccurs="1"/>
       <xs:element type="RasterType" name="ErrSurface" minOccurs="1" maxOccurs="1"/>
-    </xs:sequence>
+    </xs:all>
   </xs:complexType>
 
   <xs:complexType name="TopoStagesType">
