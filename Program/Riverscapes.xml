@@ -108,7 +108,7 @@
       <Product id="CONFINEMENT" name="Confinement" folder="CONFINEMENT" url=""/>
       <Product id="EC" name="EC" folder="EC" url=""/>
       <Product id="SOLAR" name="Solar" folder="Solar" url=""/>
-
+      <Product id="GNAT" name="GNAT" folder="GNAT" url=""/>
       <Product id="CHAMPMETRICS" name="CHaMP Metrics" folder="CHaMPMetrics" url=""/>
 
       <!--Streamtemp-->
@@ -161,6 +161,7 @@
             <Product ref="CONFINEMENT"/>
             <Product ref="EC"/>
             <Product ref="SOLAR"/>
+            <Product ref="GNAT"/>
             <Group ref="GRP_STREAMTEMP">
               <Collection ref="COL_YEAR">
                 <Product ref="STREAMTEMPMIN"/>
