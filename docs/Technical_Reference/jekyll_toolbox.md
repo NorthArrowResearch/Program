@@ -50,3 +50,25 @@ OK... don't do any of that! Styling individual elements is tedious and error pro
 These sites actually build CSS using a completely separate scripting language called [SASS](http://sass-lang.com/). SASS allows you to write more advanced CSS rules and then, from this code, generate the traditional CSS file. Essentially you write a powerful styling script then a SASS software engine downgrades it to dumb, traditional CSS that web sites use. It does some other tricks too, such as minify the CSS by removing unnecessary whitespace to make it faster on client browser.
 
 In summary, if you want to overhaul the style of one of these web sites, you need to know SASS...
+
+## Banner Image
+
+Store a banner image for your site in the `assets\images` folder of your site. Then refer to it in the `src\_layouts\default.html` file (around line 23). Here's the BRAT example that allows the banner image to link back to the home page for the site:
+
+```
+  <header>
+    <!-- <div id="topbarnav" class="row"></div> -->
+    <div class="text-center callout large">
+      <a href="{{ site.url }}"><img src="/assets/Images/BRAT_Banner_Web.png" alt="BRAT"></a>
+    </div>
+  </header>
+```
+
+## YouTube Videos
+
+The easiest way to embed YouTube videos in Jekyll markdown web sites is to use the `IFRAME` tag:
+
+1. Navigate to the YouTube video in question
+2. Click on the `Share` button underneath the video.
+3. Click on the `Embed Button`.
+4. Copy the text provide and paste it into your markdown page. Typically you can delete the wrapping `div` tag and just keep the `iframe` tag.
