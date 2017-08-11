@@ -15,7 +15,7 @@ Here are some things to remember before uploading your source code onto the inte
 * Remove sensitive information such as user names and passwords in any files. It's best that your code reads these from a configuration file that is separate from your source code. This configuration file can then be excluded from your repo using a [.gitignore](https://help.github.com/articles/ignoring-files/) file. If you do this, then it can be helpful to create another file called something like `config.TEMPLATE`, with the exact same structure as your configure file, but without the sensitive information, and then include this in the repo. Others trying to use your code can use this template as a starting point.
 * Avoid putting binary files in your repo (databases, DLLs, compiled items etc). Again, use a [.gitignore](https://help.github.com/articles/ignoring-files/) file to exclude these.
 
-##Source code in Riverscapes GitHub
+## Source code in Riverscapes GitHub
 
 Your source code should be stored in a git repository and uploaded into the [Riverscapes ](https://github.com/orgs/Riverscapes/dashboard) organization on GitHub. If you're new to GitHub, the default is to upload repositories under the umbrella of your own user account, so it's important that you understand how to upload the repo under the riverscapes organization.
 
@@ -75,7 +75,7 @@ Here are the steps to create a documentation web site for your model:
 
 You will need to wait 2-3 minutes after each push to GitHub for your site to be generated from your markdown documents.
 
-### Documentation Site Content Recommendations
+### Site Content Recommendations
 
 It's recommended that - at an absolute minimum - you cover the following topics in your web site:
 
