@@ -1,0 +1,85 @@
+@charset 'utf-8';
+
+// Extra fonts we bring in form google
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+// This grabs all our foundation settings
+@import 'settings';
+@import 'font-awesome';
+@import 'github';
+@import 'selectize';
+
+#map { 
+  width:100%;
+  height: 1000px;
+}
+
+
+// Make the selectize theme more compatible
+.selectize-input {
+    height: 44px;
+    border-radius: 0;
+}
+.selectize-input .ui-select-search {
+    height: 29px;
+}
+.selectize-input .ui-select-match {
+    line-height: 29px;
+}
+.ui-select-choices {
+    margin-top: -8px;
+}
+
+.inventoryAccordion {
+    .accordion-content{
+        padding: 0 0 0 1rem;
+    }
+
+    li.branch > a.accordion-title {
+        padding: 0.5rem;
+        span.title{
+            margin-right: 1rem; 
+        }
+        span.donenum {
+
+        }
+        span.percentdone{
+            float: right;
+            margin-right: 2rem;
+            font-weight: bold;
+            font-size: 1rem;
+            margin-top: -2px;
+        }
+    }
+
+    li.product > a.accordion-title {
+        padding: 0.5rem;
+    }
+    li.product.present > a.accordion-title {
+        border-color: #009900;
+        background: #005500;
+        color: white;
+    }
+    li.product.present > div.accordion-content{
+        background: #99cc99;
+    }
+    li.product.absent > a.accordion-title {
+        border-color: #550000;
+        background: #990000;
+        color: white;
+    }
+    li.branch > a.accordion-title{
+        border-color: black;
+        background: black;
+        color: white;
+    }        
+
+    table.metatable{
+        margin-bottom: 0;
+        font-size: 0.8rem;
+        .metaname {
+            font-weight: bold;
+        }
+    }
+}

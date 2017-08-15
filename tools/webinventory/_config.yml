@@ -1,0 +1,28 @@
+# Site settings
+title: Riverscapes Inventory
+description: > # this means to ignore newlines until "baseurl:"
+  Riverscapes Inventory for CHaMP
+url: https://riverscapes.github.io
+baseurl: ""
+port: 4001
+# Build settings
+markdown: kramdown
+highlighter: rouge
+
+defaults:
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+    values:
+      layout: "default"
+
+exclude:
+  - src
+  - lambda
+  - node_modules
+  - Gruntfile.js
+  - package.json
+  - LICENSE
+  - README.md
+  - _config.yml
+
