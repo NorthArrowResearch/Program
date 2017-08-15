@@ -118,6 +118,7 @@
       <xs:element type="SimpleFileType" name="CSV"/>
       <xs:element type="SimpleFileType" name="Image"/>
       <xs:element type="SimpleFileType" name="Video"/>
+      <xs:element type="SimpleFileType" name="DataTable"/>
       <xs:element type="SimpleFileType" name="SurveyQualityDB"/>
       <xs:element type="SimpleFileType" name="InstrumentFile"/>
       <xs:element type="SimpleFileType" name="AuxInstrumentFile"/>
@@ -702,17 +703,13 @@
       <xs:extension base="RealizationType">
         <xs:sequence>
           <xs:element type="DataSetContainerType" name="Inputs" minOccurs="0"/>
-          <xs:element type="ECAnalysesType" name="Analyses" minOccurs="0"/>
+          <xs:element type="AnalysesType" name="Analyses" minOccurs="0"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
 
-  <xs:complexType name="ECAnalysesType">
-    <xs:sequence>
-      <xs:element type="DataSetContainerType" name="Outputs"/>
-    </xs:sequence>
-  </xs:complexType>
+
 
   <!-- =========================================================================
 
