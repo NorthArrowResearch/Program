@@ -47,7 +47,7 @@
   <!--Realizations Must have an Analysis-->
   <xs:complexType name="AnalysisType" mixed="true">
     <xs:sequence>
-      <xs:element type="xs:string" name="Name"/>
+      <xs:element type="xs:string" name="Name" minOccurs="0"/>
       <xs:element type="MetricsType" name="Metrics" minOccurs="0"/>
       <xs:element type="DataSetContainerType" name="Outputs" minOccurs="0"/>
     </xs:sequence>

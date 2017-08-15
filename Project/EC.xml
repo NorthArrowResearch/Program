@@ -73,7 +73,6 @@
 			</Inputs>
 			<Analyses>
 				<Analysis>
-					<Name>EC Outputs</Name>
 					<Outputs>
 						<DataTable guid="D24DDB93-1BAB-4B55-A5DC-F4199E5452F9" id="PARAM_TABLE">
 							<Name>
