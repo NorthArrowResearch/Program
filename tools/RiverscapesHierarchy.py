@@ -11,12 +11,12 @@ sites = []
 class hierarchyBuilder():
 
 
-    def __init__(self, xmlFilePath, writetoFile):
+    def __init__(self, xmlFilePath, writetoFile, keyfile):
 
         self.tree = ET.parse(xmlFilePath)
         self.writetoFile = writetoFile
         self.nodRoot = self.tree.getroot()
-
+        self.keyfile = keyfile
         self.products = self.nodRoot.findall('Definitions/Products/Product')
 
 
@@ -25,7 +25,7 @@ class hierarchyBuilder():
         # treePrint(0, "Rave Tree \n-------------------------------------")
         # traverseViewTree(nodRoot.find('ViewTree'))
 
-    def traverseFileTree(self, root,level=0):
+    def traverseFileTree(self, root,level=0, keyarr=[]):
         level +=1
         children = root.findall("*")
 
@@ -33,16 +33,17 @@ class hierarchyBuilder():
             if child.tag == "Collection":
                 for col in getCollectionElements(self.nodRoot.find("Definitions/Collections/Collection[@id='{}']".format(child.attrib['ref']))):
                     self.treePrint(level, "/" + str(col))
-                    self.traverseFileTree(child, level)
+                    self.traverseFileTree(child, level, keyarr + [str(col)])
 
             elif child.tag == "Group":
                 grp = self.nodRoot.find("Definitions/Groups/Group[@id='{}']".format(child.attrib['ref']))
                 self.treePrint(level, "/" + grp.attrib["folder"])
-                self.traverseFileTree(child, level)
+                self.traverseFileTree(child, level, keyarr + [grp.attrib["folder"]])
 
             elif child.tag == "Product":
                 prod = self.nodRoot.find("Definitions/Products/Product[@id='{}']".format(child.attrib['ref']))
                 self.treePrint(level, "/" + prod.attrib["folder"] + "/project.rs.xml")
+                self.keyprint("/".join(keyarr + [prod.attrib["folder"]]))
 
     def traverseViewTree(self, root, level=0, recurseID=None, newLevel=False):
         level +=1
@@ -86,10 +87,14 @@ class hierarchyBuilder():
             myfile.write(output + "\n")
         print output
 
+    def keyprint(self, key):
+        with open(self.keyfile, "a") as myfile:
+            myfile.write(key + "\n")
+
 def getCollectionElements(collection, recurseParent=None):
     if "pattern" in collection.find("Allow").attrib:
         if collection.attrib['id'] == "COL_YEAR":
-            return [2011, 2012, 2013, 2014, 2015]
+            return [2011, 2012, 2013, 2014, 2015, 2016, 2017]
         elif collection.attrib['id'] == "COL_VISIT":
             sites = []
             for n in range(1):
@@ -145,12 +150,16 @@ def main():
     parser.add_argument('inputfile', type=argparse.FileType('r'))
     parser.add_argument('--outputfile',
                         type=str,
-                        default="validation",
+                        default="RiverscapesTree.txt",
                         help='Write the results of the operation to a specified logfile (optional)')
+    parser.add_argument('--keyfile',
+                        type=str,
+                        default="RiverscapesKeys.txt",
+                        help='Write the results of the operation to a specified keyfile (optional)')
     args = parser.parse_args()
 
     try:
-        hierarchyBuilder(args.inputfile.name, args.outputfile)
+        hierarchyBuilder(args.inputfile.name, args.outputfile, args.keyfile)
     except AssertionError as e:
         print "Assertion Error", e
         sys.exit(0)
