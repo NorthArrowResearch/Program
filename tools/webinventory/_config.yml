@@ -2,8 +2,8 @@
 title: Riverscapes Inventory
 description: > # this means to ignore newlines until "baseurl:"
   Riverscapes Inventory for CHaMP
-url: https://riverscapes.github.io
-baseurl: ""
+url: http://demos.northarrowresearch.com
+baseurl: "/riverscapes_inventory"
 port: 4001
 # Build settings
 markdown: kramdown

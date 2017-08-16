@@ -18,7 +18,7 @@ function chain(fns) {
 }
 
 function getCSV(callback){
-  $.ajax('/rsinclude.csv', {
+  $.ajax('rsinclude.csv', {
     type: 'GET',
     success: function( res ) { 
       rows =  res.split('\n');
@@ -38,7 +38,7 @@ function getCSV(callback){
 }
 
 function getJSON(callback){
-  $.ajax('/inventory.json', {
+  $.ajax('inventory.json', {
     type: 'GET',
     success: function( res ) { 
       data.inventory = res
@@ -259,7 +259,7 @@ function renderTreeProducts($ulnode, treenodes) {
   }
 }
 
-$(document).ready(function(){
+function Inventory(){
   // var elem = new Foundation.OffCanvas($('#offCanvas'));
   var finalize = function(callback){
     var options = {
@@ -279,5 +279,5 @@ $(document).ready(function(){
   }
   chain([spinnerStart, getCSV, getJSON, processData, renderTreeStart, finalize, spinnerStop]);
 
-});
+};
 
