@@ -40,6 +40,8 @@ weight: 1
 
 The weight tag is **case sensitive** and the value should be a positive integer. The code that creates the table of contents attempts a simple sort all pages at a specific level using this integer. For this to work **all pages at a specific level must have a weight value** (or the sorting resorts to the alphabetical default). Technically, it doesn't matter what the weight values represent or where they start at; they can start at zero or one or any other positive integer. Typically I start the weights at 1, but if there's a page that I want to *sink* to the bottom I will weight it with a value of 99.
 
+Note that page sorting only works for documents. Obviously there's no way to associate a weight with a directory.
+
 ## Useful Links
 
 The useful links section comprises an unordered list of bullets with hyperlinks to helpful external web sites. This list is hard coded into the file `src\_includes\sidenav.html`.
