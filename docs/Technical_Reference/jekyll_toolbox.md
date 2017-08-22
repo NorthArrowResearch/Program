@@ -85,3 +85,25 @@ The easiest way to embed YouTube videos in Jekyll markdown web sites is to use t
 2. Click on the `Share` button underneath the video.
 3. Click on the `Embed Button`.
 4. Copy the text provide and paste it into your markdown page. Typically you can delete the wrapping `div` tag and just keep the `iframe` tag.
+
+## Running Jekyll Locally
+
+It's always a good idea to verify changes locally before pushing them to GitHub. This avoids potentially breaking the site, or having to a push simply to visualize what your work (only to realize a minor typo and then stage-commit-push a second time). To do this you need to run Jekyll locally on your computer and then point you browser to your localhost. Unfortunately Jekyll is coded in Ruby which can be tricky to install on Windows. The good news is that Windows recently made it incredibly easy to install native Unbuntu (Linux) as a Windows app. This opens up all kinds of neat tricks, running Jekyll being just one of them. 
+
+The two main steps are:
+
+1. [Install Linux subsystem on Windows](https://msdn.microsoft.com/en-us/commandline/wsl/install_guide)
+1. [Install Ruby and Jekyll](https://jekyllrb.com/docs/windows/)
+
+If this all goes well, you can now run a local copy of Jekyll by doing the following:
+
+1. Open a DOS command shell
+1. Navigate to the folder at the root of your site that contains index.md
+1. Type `bash` to launch Linux
+1. type `jekyll serve` to start Jekyll
+
+**Note** For some weird reason, on my system I don't seem to need to perform step 3 above. I don't need to enter Linux. I can simply type `jekyll serve` at the *Windows prompt* and it all works!
+
+What happens next is that the Jekyll software processes all your markdown files and builds the HTML site in a folder called `_site`. Jekyll then becomes a lightweight web server for you to access the site. Read the text in the DOS window to determine what address to use. Be sure to include the port number in the URL which is the number after the colon in the url. Typically the port is 4000.
+
+![jekyll serve](/assets/images/jekyll_serve.png)
