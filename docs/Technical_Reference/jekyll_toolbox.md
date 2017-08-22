@@ -88,9 +88,7 @@ The easiest way to embed YouTube videos in Jekyll markdown web sites is to use t
 
 ## Running Jekyll Locally
 
-It's always a good idea to verify changes locally before pushing them to GitHub. This avoids potentially breaking the site, or having to a push simply to visualize what your work (only to realize a minor typo and then stage-commit-push a second time). To do this you need to run Jekyll locally on your computer and then point you browser to your localhost. Unfortunately Jekyll is coded in Ruby which can be tricky to install on Windows. The good news is that Windows recently made it incredibly easy to install native Unbuntu (Linux) as a Windows app. This opens up all kinds of neat tricks, running Jekyll being just one of them. 
-
-The two main steps are:
+It's always a good idea to verify changes locally before pushing them to GitHub. This avoids potentially breaking the site, or having to a push simply to visualize your work (only to realize a minor typo and then stage-commit-push a second time). To do this you need to run Jekyll locally on your computer and then point your browser at your localhost. Unfortunately Jekyll is coded in Ruby which can be tricky to install on Windows. The good news is that Windows recently made it incredibly easy to install native Unbuntu (Linux) as a Windows app. This opens up all kinds of neat tricks, running Jekyll being just one of them. The two main steps are:
 
 1. [Install Linux subsystem on Windows](https://msdn.microsoft.com/en-us/commandline/wsl/install_guide)
 1. [Install Ruby and Jekyll](https://jekyllrb.com/docs/windows/)
@@ -102,11 +100,11 @@ If this all goes well, you can now run a local copy of Jekyll by doing the follo
 1. Type `bash` to launch Linux
 1. type `jekyll serve` to start Jekyll
 
-**Note** For some weird reason, on my system I don't seem to need to perform step 3 above. I don't need to enter Linux. I can simply type `jekyll serve` at the *Windows prompt* and it all works!
+**Note** For some reason, I don't seem to need to perform step 3 above. I don't need to enter Linux. I can simply type `jekyll serve` at the *Windows prompt* and it all works!
 
-What happens next is that the Jekyll software processes all your markdown files and builds the HTML site in a folder called `_site`. Jekyll then becomes a lightweight web server for you to access the site. Read the text in the DOS window to determine what address to use. Be sure to include the port number in the URL which is the number after the colon in the url. Typically the port is 4000.
+What happens next is that the Jekyll software processes all your markdown files and builds the HTML site in a folder called `_site`. Jekyll then becomes a lightweight web server for you to access the site. Read the text in the DOS window to determine what address to use (see screenshot below). Be sure to include the port number in the URL which is the number after the colon in the url. Typically the port is 4000.
 
-So now you can repeat the following over and over **before you push to GitHub**:
+So now you can repeat the following over and over *before* you push to GitHub. This enables you to clean up any typos and prevent unnecessary site builds on GitHub:
 
 * Edit markdown documents
 * Save the file
