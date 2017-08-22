@@ -106,4 +106,10 @@ If this all goes well, you can now run a local copy of Jekyll by doing the follo
 
 What happens next is that the Jekyll software processes all your markdown files and builds the HTML site in a folder called `_site`. Jekyll then becomes a lightweight web server for you to access the site. Read the text in the DOS window to determine what address to use. Be sure to include the port number in the URL which is the number after the colon in the url. Typically the port is 4000.
 
+So now you can repeat the following over and over **before you push to GitHub**:
+
+* Edit markdown documents
+* Save the file
+* Refresh the web browser pointing at your local copy
+
 ![jekyll serve](/assets/images/jekyll_serve.png)
