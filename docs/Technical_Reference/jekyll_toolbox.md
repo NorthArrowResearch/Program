@@ -90,8 +90,29 @@ The easiest way to embed YouTube videos in Jekyll markdown web sites is to use t
 
 It's always a good idea to verify changes locally before pushing them to GitHub. This avoids potentially breaking the site, or having to a push simply to visualize your work (only to realize a minor typo and then stage-commit-push a second time). To do this you need to run Jekyll locally on your computer and then point your browser at your localhost. Unfortunately Jekyll is coded in Ruby which can be tricky to install on Windows. The good news is that Windows recently made it incredibly easy to install native Unbuntu (Linux) as a Windows app. This opens up all kinds of neat tricks, running Jekyll being just one of them. The two main steps are:
 
-1. [Install Linux subsystem on Windows](https://msdn.microsoft.com/en-us/commandline/wsl/install_guide)
-1. [Install Ruby and Jekyll](https://jekyllrb.com/docs/windows/)
+### Install Windows Subsystem for Linux
+
+1. Click the Windows Start button
+1. Type **windows features**
+1. Click Enter
+1. Tick the **Windows Subsystem for Linux (Beta)** box
+1. Click OK
+![linux](/assets/images/linux_subsystem.png)
+1. Click the Windows Start button
+1. Type **Powershell**
+1. Right click the suggested item and click **Run as Administrator**
+1. Type `Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux`
+1. Click Enter
+1. Reboot your computer (mandatory).
+1. Open a DOS prompt
+1. In the DOS prompty type `bash` and click Enter.
+1. Linux should boot and you will arrive at the bash shell
+
+### Install Ruby and Jekyll
+
+Follow these instructions: [https://jekyllrb.com/docs/windows/](https://jekyllrb.com/docs/windows/)
+
+### Run Jekyll
 
 If this all goes well, you can now run a local copy of Jekyll by doing the following:
 
