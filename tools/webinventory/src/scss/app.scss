@@ -55,25 +55,7 @@
 
     li.product > a.accordion-title {
         padding: 0.5rem;
-    }
-    li.product.present > a.accordion-title {
-        border-color: #009900;
-        background: #005500;
-        color: white;
-    }
-    li.product.present > div.accordion-content{
-        background: #99cc99;
-    }
-    li.product.absent > a.accordion-title {
-        border-color: #550000;
-        background: #990000;
-        color: white;
-    }
-    li.branch > a.accordion-title{
-        border-color: black;
-        background: black;
-        color: white;
-    }        
+    }   
 
     table.metatable{
         margin-bottom: 0;
@@ -83,3 +65,27 @@
         }
     }
 }
+
+#legend div {
+    padding: 0.5rem 0.5rem;
+    font-size: 0.75rem;
+    line-height: 1;
+}
+.inventoryAccordion li.product.present > a.accordion-title, #legend .present {
+    border-color: #009900;
+    background: #005500;
+    color: white;
+}
+.inventoryAccordion li.product.present > div.accordion-content, #legend .meta{
+    background: #99cc99;
+}
+.inventoryAccordion li.product.absent > a.accordion-title, #legend .absent  {
+    border-color: #550000;
+    background: #990000;
+    color: white;
+}
+.inventoryAccordion li.branch > a.accordion-title, #legend .folder  {
+    border-color: black;
+    background: black;
+    color: white;
+}     
