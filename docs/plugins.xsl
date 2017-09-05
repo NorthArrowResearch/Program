@@ -3,9 +3,9 @@ layout: plugins
 title: Plugin Repository
 ---
 
-<p>Add <code class="highlighter-rouge">{{site.url}}/plugins.xml</code> as a plugin store in QGis to be able to download these plugins.</p>
+<a class="button" href="{{ site.baseurl }}/">Back to Riverscapes</a>
 
-<strong><em>NB: Currently there is a bug where plugins from the NAR are not found after clicking the install button. Closing and re-opening QGIS fixes this problem.</em></strong>
+<p>Add <code class="highlighter-rouge">{{site.url}}/plugins.xml</code> as a plugin store in QGis to be able to download these plugins.</p>
 
 <div id="pluginrepo" class="row small-up-1 medium-up-1 large-up-2">
 <xsl:for-each select="/plugins/pyqgis_plugin">

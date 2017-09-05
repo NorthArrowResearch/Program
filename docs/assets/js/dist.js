@@ -227,7 +227,8 @@ $(document).ready(function (){
 				$newmA = $('<a class="reallink" href="' + br.index.absurl + '"><i class="icon"/>' + br.index.title + '</a>');
 			}
 			else{
-				$newmA = $('<a class="nolink" href="#"><i class="icon"/>'+ br.title +'</a>');
+				var title = br.title || br.key;
+				$newmA = $('<a class="nolink" href="#"><i class="icon"/>'+ title +'</a>');
 			}
 			$newmUl = $('<ul class="menu vertical nested"></ul>');
 			$newmLi.append($newmA);
