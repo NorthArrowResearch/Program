@@ -1,55 +1,42 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:noNamespaceSchemaLocation="XSD/V1/Project.xsd">
+         xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/Riverscapes/Program/master/Project/XSD/V1/Project.xsd">
 
-  <Name>Et Al GPP site</Name>
+    <Name>Et Al GPP site</Name>
   <ProjectType>GPP</ProjectType>
 
   <MetaData>
+    <Meta name="HUCID">1234</Meta>
     <Meta name="Region">CRB</Meta>
-    <Meta name="Watershed">Middle Fork John Day</Meta>
+    <Meta name="Watershed">Asotin</Meta>
   </MetaData>
 
   <Inputs>
-    <Vector guid="E0710757-5A2C-49A1-9FAF-C67360A6CB72" id="cond1">
+    <Vector guid="69cf8bbb-c7a6-4e09-a768-30ee4de31275" id="cond1">
       <Name>Conductivity</Name>
-      <Path>01_Inputs/MFJD_conductivity_net/MFJD_conductivity_net.shp</Path>
+      <Path>inputs/conductivity/MFJD_conductivity_net.shp</Path>
     </Vector>
-    <Vector guid="475F1554-FFDD-48A3-8700-3757B9B8C8CC" id="temp1">
+    <Vector guid="859d0c50-03bf-4efb-b954-84d999fa00c2" id="temp1">
       <Name>Temperature</Name>
-      <Path>01_Inputs/MFJD_temp_net_2013/MFJD_temp_net_2013.shp</Path>
+      <Path>inputs/solar/MFJD_solar_net.shp</Path>
     </Vector>
-    <Vector guid="567B9ED9-1A62-40A0-B4E2-789889EC2927" id="solar1">
+    <Vector guid="4cdd3b8d-ba69-415f-9d0f-efcc113a2775" id="solar1">
       <Name>Solar</Name>
-      <Path>01_Inputs/MFJD_solar_net/MFJD_solar_net.shp</Path>
+      <Path>inputs/temperature/MFJD_temp_net_2013.shp</Path>
     </Vector>
   </Inputs>
 
   <Realizations>
-    <GPP dateCreated="2017-05-16 14:20:37" guid="DBEBC9B9-7882-4BE4-B6A8-9A6FE11C86B0" id="GPP1" productVersion="1.0.5">
+    <GPP dateCreated="2017-05-16 14:20:37" guid="b32a0b23-1628-4c0c-84d6-a610f3386bae" id="GPP1" productVersion="1.0.5">
       <Name>GPP Realization 1</Name>
-      <GPPParameters>
-        <CRB>
-          <Param name="Intercept">-25.2496</Param>
-          <Param name="temperature">0.5111</Param>
-          <Param name="conductivity">0.9341</Param>
-          <Param name="solar">0.9507</Param>
-        </CRB>
-        <Watershed>
-          <Param name="intercept">-26.8531</Param>
-          <Param name="temperature">0.4581</Param>
-          <Param name="conductivity">0.5756</Param>
-          <Param name="solar">1.305</Param>
-        </Watershed>
-      </GPPParameters>
 
       <Inputs>
         <Vector ref="cond1"/>
         <Vector ref="solar1"/>
         <TemperatureModel ref="temp1">
-          <Vector guid="C68B4B78-567C-4042-BAFE-D2D61CCC6473">
+          <Vector guid="5ab6cc74-0b7a-4065-9735-e58dfe187e6b">
             <Name>TemperatureModel</Name>
-            <Path>02_Analyses/MFJD_2013_GPP.shp</Path>
+            <Path>realization1/TemperatureModel/averagefromtemp1.shp</Path>
           </Vector>
         </TemperatureModel>
       </Inputs>
@@ -58,9 +45,9 @@
         <Analysis>
           <Name>GPP Analysis</Name>
           <Outputs>
-            <Vector guid="53509A84-2868-4DB7-8C19-14AE95AFA046">
+            <Vector guid="3e231fb4-08f2-467b-b745-985a313d984d">
               <Name>GPP</Name>
-              <Path>02_Analyses/MFJD_2013_GPP.shp</Path>
+              <Path>realization1/TemperatureModel/MFJD_2013_GPP.shp</Path>
             </Vector>
           </Outputs>
         </Analysis>

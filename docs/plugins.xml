@@ -17,15 +17,15 @@
     <repository><![CDATA[https://github.com/Riverscapes/NetworkProfiler]]></repository>
     <changelog><![CDATA[https://github.com/Riverscapes/NetworkProfiler/blob/master/CHANGELOG.md]]></changelog>
   </pyqgis_plugin>
-  <pyqgis_plugin name="RiverscapesToolbar" version="0.10">
-    <version>0.10</version>
+  <pyqgis_plugin name="RiverscapesToolbar" version="0.11">
+    <version>0.11</version>
     <icon>icon.png</icon>
     <description>The Riverscapes Toolbar (RAVE)</description>
     <homepage>https://github.com/Riverscapes/network-profiler</homepage>
     <qgis_minimum_version>2.0</qgis_minimum_version>
     <file_name>RiverscapesToolbar.zip</file_name>
     <author_name>Matt Reimer</author_name>
-    <download_url>http://qgis.northarrowresearch.com/plugins/riverscapestoolbar/v0.10/RiverscapesToolbar.zip</download_url>
+    <download_url>http://qgis.northarrowresearch.com/plugins/riverscapestoolbar/v0.11/RiverscapesToolbar.zip</download_url>
     <experimental>True</experimental>
     <deprecated>False</deprecated>   
     <update_date>2017-09-01T00:00:00</update_date>
