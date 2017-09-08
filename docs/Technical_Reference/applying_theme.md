@@ -45,6 +45,7 @@ Sometimes we may make changes to the theme. These could be cosmetic or functiona
 	* `assets\fonts\*`
 	* `src\_includes`
 	* `src\_layouts\default.html`
+1. Compare your `_config.yml` file with the one in TemplateDocs and look for any changes. You could copy across the one from TemplateDocs, but be sure to rename your existing `_config/yml` file first because you're going to want to retain key information that you've already put in this file (site name, url, base url etc).
 1. See the Updating your favicon section below.
 
 
