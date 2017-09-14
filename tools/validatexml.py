@@ -1,10 +1,12 @@
 import os
 import sys
 import boto3
+from botocore.client import ClientError
 import argparse
 import re
 from collections import Counter
 from lxml import etree
+import csv
 
 guidlibrary = {}
 
@@ -68,10 +70,13 @@ class XMLFileValidator():
         self.validators = []
         self.key = key
         self.outputfolder = outputfolder
+
         self.projoutputfolder = os.path.join(outputfolder, "ProjectType")
         self.typeoutputfolder = os.path.join(outputfolder, "ErrorType")
+        self.projroot = os.path.dirname(self.key)
+        self.bucket = "sfr-riverscapesdata"
 
-        self.xmlfile = s3.get_object(Bucket="sfr-riverscapesdata", Key=key)['Body'].read()
+        self.xmlfile = s3.get_object(Bucket=self.bucket, Key=key)['Body'].read()
 
         self.dom  = etree.fromstring(self.xmlfile)
         self.projtype = self.dom.find('ProjectType').text.strip()
@@ -81,13 +86,16 @@ class XMLFileValidator():
 
         self.outfile = os.path.join(self.projoutputfolder, '{}.log'.format(self.projtype))
         self.allfile = os.path.join(self.outputfolder, 'Riverscapes.log')
+        self.allfilecsv = os.path.join(self.outputfolder, 'Riverscapes.csv')
 
         self.xmlvalidate()
         self.guids()
         self.ids()
         self.paths()
+        self.dateCreated()
 
         self.printoutputs()
+        self.printtocsv()
 
     def printoutputs(self):
         overallpass = len([v for v in self.validators if v.status == "FAIL"]) == 0
@@ -99,6 +107,12 @@ class XMLFileValidator():
                 if v.status == "FAIL":
                     for err in v.errors:
                         self.printToFile('    [{}]: {}\n'.format(v.name, err), v.name)
+
+    def printtocsv(self):
+        with open(self.allfilecsv, 'a+') as f:
+            writer = csv.writer(f, quoting=csv.QUOTE_MINIMAL)
+            for v in self.validators:
+                writer.writerow([self.projtype, self.key, v.name, v.status, len(v.errors),  str(v.errors)])
 
 
     def printToFile(self,message, errType=None):
@@ -120,6 +134,22 @@ class XMLFileValidator():
                 errors.append("Line:{}  xpath: {} msg: {}  ERR_{}".format(err.line, err.path,
                                                                                 err.message, err.type))
             self.validators.append(ValidatorResult("XSD Validation", "FAIL", errors))
+
+    def dateCreated(self):
+        """
+        Make sure Dates are 8601 compliant
+        :return:
+        """
+        errors = []
+        dates = [a.attrib['dateCreated'] for a in self.dom.getroottree().iterfind('//*[@dateCreated]')]
+        for date in dates:
+            if not re.match("^\d{4}-\d{2}-\d{2}[T ]\d{2}:\d{2}:\d{2}", date):
+                errors.append("'{}': does not validate as ISO8601".format(date))
+
+        if len(errors) == 0:
+            self.validators.append(ValidatorResult("Date Validation", "PASS"))
+        else:
+            self.validators.append(ValidatorResult("Date Validation", "FAIL", errors))
 
     def guids(self):
         """
@@ -170,12 +200,21 @@ class XMLFileValidator():
             self.validators.append(ValidatorResult("Ids Unique Locally", "PASS"))
 
     def paths(self):
+        s3 = boto3.client('s3')
+
         pathattrib = [a.attrib['path'].strip() for a in self.dom.getroottree().iterfind('//*[@path]')]
         pathnodes = [a.text.strip() for a in self.dom.getroottree().iterfind('//Path')]
         errors = []
         for p in pathattrib+pathnodes:
             if re.match('^([A-Za-z]:|/)', p):
                 errors.append("Invalid absolute path detected: '{}'".format(p))
+            else:
+                # Now make sure the files really exist
+                filekey = os.path.join(self.projroot, p.replace("\\","/"))
+                try:
+                    s3.head_object(Bucket=self.bucket, Key=filekey)
+                except ClientError, e:
+                    errors.append("File not found on repository: {}".format(filekey))
 
         if len(errors) > 0:
             self.validators.append(ValidatorResult("Path Checking", "FAIL", errors))
