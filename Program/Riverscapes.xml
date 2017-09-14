@@ -20,6 +20,7 @@
         <Allow name="Entiat" folder="Entiat"/>
         <Allow name="Hells Canyon" folder="HellsCanyon"/>
         <Allow name="Imnaha" folder="Imnaha"/>
+        <Allow name="John Day" folder="JohnDay"/>
         <Allow name="Klickitat" folder="Klickitat"/>
         <Allow name="Lemhi" folder="Lemhi"/>
         <Allow name="Little Salmon" folder="LittleSalmon"/>

@@ -226,6 +226,8 @@
       <xs:element type="SurveyDataType" name="SurveyData" maxOccurs="unbounded" minOccurs="0"/>
       <xs:element type="TopographyType" name="Topography" maxOccurs="unbounded" minOccurs="0"/>
       <xs:element type="CHaMPMetricsType" name="Metrics" maxOccurs="unbounded" minOccurs="0"/>
+
+      <xs:element type="QRFType" name="QRF" maxOccurs="unbounded" minOccurs="0"/>
     </xs:choice>
   </xs:complexType>
 
@@ -925,6 +927,29 @@
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
+  </xs:complexType>
+
+  <!-- =========================================================================
+
+    Project: QRF
+
+  ============================================================================== -->
+  <xs:complexType name="QRFType" mixed="true">
+    <xs:complexContent>
+      <xs:extension base="RealizationType">
+        <xs:sequence>
+          <xs:element type="DataSetContainerType" name="Inputs" minOccurs="0"/>
+          <xs:element type="GNATOutputsType" name="Outputs" minOccurs="0"/>
+          <xs:element type="QRFAnalysesType" name="Analyses" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="QRFAnalysesType">
+    <xs:sequence>
+      <xs:element type="AnalysisType" name="Analysis"/>
+    </xs:sequence>
   </xs:complexType>
 
 
