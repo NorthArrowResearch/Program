@@ -40,9 +40,16 @@ function getCSV(callback){
 function getJSON(callback){
   $.ajax('inventory.json', {
     type: 'GET',
+    contentType: "application/json",
     success: function( res ) { 
-      data.inventory = res
-      console.log("done getting json");
+      if (typeof(res) == "object"){
+        data.inventory = res        
+      }
+      else{
+        // sometimes S3 returns the wrong mime type. I'm too lazy to figure this out.
+        data.inventory = JSON.parse(res)        
+      }
+        console.log("done getting json");
       callback();
     },
     error:function(e){ 
