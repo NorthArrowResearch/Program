@@ -22,7 +22,7 @@ Now you are ready to apply the theme to your site. Choose the section below that
 1. Copy the following files and folders from TemplateDocs and place them in the same location in your site:
     * `\assets\css`
     * `\assets\fonts`
-    * `\js`
+    * `\assets\js`
     * `\src`
     * `\_config.yml`
 1. Edit the _config.yml file and set the following:
