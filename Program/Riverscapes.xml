@@ -15,7 +15,7 @@
       <Collection id="COL_WATERSHED" name="Watershed">
         <Allow name="Asotin" folder="Asotin"/>
         <Allow name="Brownlee Reservoir" folder="BrownleeReservoir"/>
-        <Allow name="Big Navarro Garcia" folder="BigNavarroGarcia"/>
+        <Allow name="Big Navarro Garcia" folder="BigNavarroGarcia" aliases="Big-Navarro-Garcia(CA)"/>
         <Allow name="Clearwater" folder="Clearwater"/>
         <Allow name="Entiat" folder="Entiat"/>
         <Allow name="Hells Canyon" folder="HellsCanyon"/>
@@ -26,7 +26,7 @@
         <Allow name="Little Salmon" folder="LittleSalmon"/>
         <Allow name="Lochsa" folder="Lochsa"/>
         <Allow name="Lolo" folder="Lolo"/>
-        <Allow name="Lower Clearwater" folder="LowerClearwater"/>
+        <Allow name="Lower Clearwater" folder="LowerClearwater" aliases="LowerClearwater"/>
         <Allow name="Lower Grande Ronde" folder="LowerGrandeRonde"/>
         <Allow name="Lower John Day" folder="LowerJohnDay"/>
         <Allow name="Lower Middle Fork Salmon" folder="LowerMiddleForkSalmon"/>
@@ -49,22 +49,22 @@
         <Allow name="Pahsimeroi" folder="Pahsimeroi"/>
         <Allow name="Secesh" folder="Secesh"/>
         <Allow name="South Fork Clearwater" folder="SouthForkClearwater"/>
-        <Allow name="South Fork Salmon" folder="SouthForkSalmon"/>
+        <Allow name="South Fork Salmon" folder="SouthForkSalmon" aliases="SouthForkSalmon"/>
         <Allow name="South Fork John Day" folder="SouthForkJohnDay"/>
         <Allow name="Tucannon" folder="Tucannon"/>
         <Allow name="Umatilla" folder="Umatilla"/>
-        <Allow name="Upper Grande Ronde" folder="UpperGrandeRonde"/>
+        <Allow name="Upper Grande Ronde" folder="UpperGrandeRonde" aliases="UpperGrandeRonde"/>
         <Allow name="Upper John Day" folder="UpperJohnDay"/>
         <Allow name="Upper Middle Fork Salmon" folder="UpperMiddleForkSalmon"/>
         <Allow name="Upper North Fork Clearwater" folder="UpperNorthForkClearwater"/>
         <Allow name="Upper Salmon" folder="UpperSalmon"/>
         <Allow name="Upper Selway" folder="UpperSelway"/>
         <Allow name="Upper Yakima" folder="UpperYakima"/>
-        <Allow name="Walla Walla" folder="WallaWalla"/>
+        <Allow name="Walla Walla" folder="WallaWalla" aliases="WallaWalla"/>
         <Allow name="Wallowa" folder="Wallowa"/>
         <Allow name="Wenatchee" folder="Wenatchee"/>
         <Allow name="Willow" folder="Willow"/>
-        <Allow name="Yankee Fork" folder="YankeeFork"/>
+        <Allow name="Yankee Fork" folder="YankeeFork" aliases="YankeeFork"/>
       </Collection>
       <Collection id="COL_SITE" name="Site">
         <Allow pattern=".*"/>
