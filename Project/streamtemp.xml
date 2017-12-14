@@ -1,104 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:noNamespaceSchemaLocation="XSD/V1/Project.xsd">
+  xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/Riverscapes/Program/master/Project/XSD/V1/Project.xsd">
 
-  <Name>stream_temperature_project</Name>
-  <ProjectType>STREAMTEMP</ProjectType>
+  <Name>potential_stream_temperature_project</Name>
+  <ProjectType>STREAMTEMPPOTMEAN</ProjectType>
 
   <MetaData>
     <!--This first metadata exists only to place this project in the riverscapes project-->
+    <Meta name="description">Summer mean and max potential stream temperature derived from potential riparian vegetation height</Meta>
     <Meta name="HUCID">17060201</Meta>
 		<Meta name="Region">CRB</Meta>
-    <Meta name="Watershed">Wenatchee</Meta>
+    <Meta name="Watershed">Yankee Fork</Meta>
+    <Meta name="Year">2015</Meta>
   </MetaData>
 
+    <Inputs></Inputs>
 
-  <Inputs>
-  </Inputs>
-
-  <Realizations>
-    <StreamTemperature guid="6cb1b2e9-ae4c-41be-a6f3-96d5b71bd57a" id="streamtemp" dateCreated="2017-05-03" productVersion="1.0">
-      <Name>Stream Temperature for Wenatchee 2012</Name>
+ <Realizations>
+    <StreamTemperature guid="8d3a474d-e43f-46ef-9795-4c35cf8556c6" id="streamtemp" dateCreated="2017-12-04" productVersion="1.0">
+      <Name>Potential Stream Temperature for Yankee Fork 2015</Name>
 
       <MetaData>
         <!--This next metadata relates to this particular realization-->
-        <Meta name="MODIS_dataset">MOD11A2v005</Meta>
-        <Meta name="EOSDIS">https://reverb.echo.nasa.gov/reverb/</Meta>
-        <Meta name="Logger_data_source">www.champmonitoring.org</Meta>
+        <Meta name="Current_vegetation_dataset">https://www.usna.edu/Users/oceano/pguth/md_help/html/nbcd.htm</Meta>
+        <Meta name="Potential_vegetation_dataset">https://www.landfire.gov/NationalProductDescriptions24.php</Meta>
+        <Meta name="Current_temperature_estimates">https://github.com/SouthForkResearch/StreamTemperature/wiki</Meta>
         <Meta name="Code_wiki">https://github.com/SouthForkResearch/StreamTemperature/wiki</Meta>
       </MetaData>
 
-      <Analyses>
-        <Analysis>
-          <Name>Stream Temp Analysis</Name>
+    <Analyses>
+      <Analysis>
+        <Name>Stream Temp Analysis</Name>
           <Outputs>
 
-            <CSV id="coeffs">
-              <Name>Model_coefficients</Name>
-              <Path>All_data_Wen_2012_mod_coeffs_Min.csv</Path>
-              <MetaData>
-                <Meta name="description">Parameter coefficients for the final model</Meta>
-              </MetaData>
-            </CSV>
-
-            <CSV id="metrics">
-              <Name>Model_metrics</Name>
-              <Path>All_data_Wen_2012_mod_metrics_Min.csv</Path>
-              <MetaData>
-                <Meta name="description">Model quality metrics</Meta>
-              </MetaData>
-            </CSV>
-
-            <CSV id="error">
-              <Name>Model_error</Name>
-              <Path>Error_Wen_2012_8D_Min.csv</Path>
-              <MetaData>
-                <Meta name="description">Model estimation error for each 8-day period by site</Meta>
-              </MetaData>
-            </CSV>
-
-            <CSV id="estimates">
-              <Name>Model_data_prediction</Name>
-              <Path>jk_pred_v_y_Min_Wen_2012_sp_fall.csv</Path>
-              <MetaData>
-                <Meta name="description">Jack-knifed temperature estimate for each 8-day logger input</Meta>
-              </MetaData>
-            </CSV>
-
-            <CSV id="modelData">
-              <Name>Model_input_data</Name>
-              <Path>Wen_2012_8Day_Min_model_data.csv</Path>
-              <MetaData>
-                <Meta name="description">Formatted input data used in the model</Meta>
-              </MetaData>
-            </CSV>
-
-            <Image id="still">
-              <Name>Network_estimate_snapshot</Name>
-              <Path>graphics/Stills/Wen_2012_8D_Min.png</Path>
-              <MetaData>
-                <Meta name="description">Still image of estimated temperature and error-by-site on the network for one day</Meta>
-              </MetaData>
-            </Image>
-
-            <Video id="movie">
-              <Name>Network_annual_estimate_animation</Name>
-              <Path>graphics/Wen_2012_8D_Min.mpeg</Path>
-            </Video>
-
-            <Vector id="network">
+             <Vector id="network">
               <Name>Network_estimate_shapefile</Name>
-              <Path>Wen_2012_8D_Min.shp</Path>
+              <Path>YF_2015_Pot_Mn_temp.shp</Path>
               <MetaData>
-                <Meta name="description">Shapefile of network with temperature estimates for each 8-day period</Meta>
-              </MetaData>
-            </Vector>
-
-            <Vector id="errorPts">
-              <Name>Error_by_site_points</Name>
-              <Path>Wen_Error_2012_8D_Min.shp</Path>
-              <MetaData>
-                <Meta name="description">Point shapefile of all included sites with model estimation error</Meta>
+                <Meta name="description">Shapefile of network with summer mean mean and max mean potential temperature estimates</Meta>
               </MetaData>
             </Vector>
 
