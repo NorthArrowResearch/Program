@@ -117,6 +117,8 @@
       <Product id="STREAMTEMPMAX" name="STREAMTEMPMAX" folder="StreamTempMax" url=""/>
       <Product id="STREAMTEMPMEAN" name="STREAMTEMPMEAN" folder="StreamTempMean" url=""/>
       <Product id="STREAMTEMPPOTMAX" name="STREAMTEMPPOTMAX" folder="StreamTempPotMax" url=""/>
+      <Product id="STREAMTEMPPOTMEAN" name="STREAMTEMPPOTMEAN" folder="StreamTempPotMean" url=""/>
+      <Product id="STREAMTEMPPOTMIN" name="STREAMTEMPPOTMIN" folder="StreamTempPotMin" url=""/>
       <!--Site-level products-->
       <Product id="SITE_HYDRO" name="Hydro" folder="Hydro" url=""/>
       <Product id="GCD" name="GCD" folder="GCD" url=""/>
@@ -168,6 +170,10 @@
                 <Product ref="STREAMTEMPMIN"/>
                 <Product ref="STREAMTEMPMAX"/>
                 <Product ref="STREAMTEMPMEAN"/>
+
+                <Product ref="STREAMTEMPPOTMAX"/>
+                <Product ref="STREAMTEMPPOTMIN"/>
+                <Product ref="STREAMTEMPPOTMEAN"/>
               </Collection>
             </Group>
           </Group>
