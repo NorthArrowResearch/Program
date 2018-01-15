@@ -32,7 +32,9 @@ Now you are ready to apply the theme to your site. Choose the section below that
     * If you are using the default GitHub pages IO web address for your site then put the name of your repo in `baseurl`
 1. See the Updating your favicon section below.
 
+Here's a video that demonstrates these steps being performed on a clean repo that has not previously had a theme applied.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Dkrp_NCus_8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ## Updating a Site That's Already Themed
 
