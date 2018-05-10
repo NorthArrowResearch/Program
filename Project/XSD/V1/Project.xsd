@@ -112,6 +112,7 @@
       <xs:element type="RasterType" name="Velocity"/>
       <xs:element type="RasterType" name="Depth"/>
       <xs:element type="VectorType" name="Vector"/>
+      <xs:element type="VectorType" name="StreamNetwork"/>
       <xs:element type="TINType" name="TIN"/>
       <xs:element type="DEMType" name="DEM"/>
       <xs:element type="HillShadeType" name="HillShade"/>
@@ -226,6 +227,8 @@
       <xs:element type="SurveyDataType" name="SurveyData" maxOccurs="unbounded" minOccurs="0"/>
       <xs:element type="TopographyType" name="Topography" maxOccurs="unbounded" minOccurs="0"/>
       <xs:element type="CHaMPMetricsType" name="Metrics" maxOccurs="unbounded" minOccurs="0"/>
+
+      <xs:element type="GrainSizeType" name="GrainSize" maxOccurs="unbounded" minOccurs="0"/>
 
       <xs:element type="QRFType" name="QRF" maxOccurs="unbounded" minOccurs="0"/>
     </xs:choice>
@@ -928,6 +931,39 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+
+  <!-- =========================================================================
+
+    Project: GrainSize
+
+  ============================================================================== -->
+  <xs:complexType name="GrainSizeType" mixed="true">
+    <xs:complexContent>
+      <xs:extension base="RealizationType">
+        <xs:sequence>
+          <xs:element type="GrainSizeInputsType" name="Inputs" minOccurs="0"/>
+          <xs:element type="AnalysesType" name="Analyses" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+
+  <xs:complexType name="GrainSizeInputsType">
+    <xs:choice maxOccurs="unbounded">
+      <xs:element type="DEMType" name="DEM"/>
+      <xs:element type="VectorType" name="StreamNetwork"/>
+      <xs:element type="VectorType" name="Precipitation"/>
+      <xs:element type="VectorType" name="OtherValues"/>
+    </xs:choice>
+  </xs:complexType>
+
+  <xs:complexType name="GrainSizeDEMsType">
+    <xs:choice maxOccurs="unbounded">
+      <xs:element type="DEMType" name="DEM"/>
+    </xs:choice>
+  </xs:complexType>
+
 
   <!-- =========================================================================
 

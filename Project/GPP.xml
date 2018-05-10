@@ -1,57 +1,74 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/Riverscapes/Program/master/Project/XSD/V1/Project.xsd">
-
-    <Name>Et Al GPP site</Name e>
-  <ProjectType>GPP</ProjectType>
-
-  <MetaData>
-    <Meta name="HUCID">1234</Meta>
-    <Meta name="Region">CRB</Meta>
-    <Meta name="Watershed">Asotin</Meta>
-  </MetaData>
-
-  <Inputs>
-    <Vector guid="69cf8bbb-c7a6-4e09-a768-30ee4de31275" id="cond1">
-      <Name>Conductivity</Name>
-      <Path>inputs/conductivity/MFJD_conductivity_net.shp</Path>
-    </Vector>
-    <Vector guid="859d0c50-03bf-4efb-b954-84d999fa00c2" id="temp1">
-      <Name>Temperature</Name>
-      <Path>inputs/solar/MFJD_solar_net.shp</Path>
-    </Vector>
-    <Vector guid="4cdd3b8d-ba69-415f-9d0f-efcc113a2775" id="solar1">
-      <Name>Solar</Name>
-      <Path>inputs/temperature/MFJD_temp_net_2013.shp</Path>
-    </Vector>
-  </Inputs>
-
-  <Realizations>
-    <GPP dateCreated="2017-05-16 14:20:37" guid="b32a0b23-1628-4c0c-84d6-a610f3386bae" id="GPP1" productVersion="1.0.5">
-      <Name>GPP Realization 1</Name>
-
-      <Inputs>
-        <Vector ref="cond1"/>
-        <Vector ref="solar1"/>
-        <TemperatureModel ref="temp1">
-          <Vector guid="5ab6cc74-0b7a-4065-9735-e58dfe187e6b">
-            <Name>TemperatureModel</Name>
-            <Path>realization1/TemperatureModel/averagefromtemp1.shp</Path>
-          </Vector>
-        </TemperatureModel>
-      </Inputs>
-
-      <Analyses>
-        <Analysis>
-          <Name>GPP Analysis</Name>
-          <Outputs>
-            <Vector guid="3e231fb4-08f2-467b-b745-985a313d984d">
-              <Name>GPP</Name>
-              <Path>realization1/TemperatureModel/MFJD_2013_GPP.shp</Path>
-            </Vector>
-          </Outputs>
-        </Analysis>
-      </Analyses>
-    </GPP>
-  </Realizations>
+    <Name>ICRB GPP Points</Name>
+    <ProjectType>GPP</ProjectType>
+    <MetaData>
+        <Meta name="HUCID">17060306</Meta>
+        <Meta name="Region">CRB</Meta>
+        <Meta name="Watershed">Clearwater</Meta>
+    </MetaData>
+    <Inputs>
+        <Vector guid="32434382-2A30-4986-9F9C-D203635C1914" id="cond1">
+            <Name>Conductivity</Name>
+            <Path>Inputs/conductivity/clearwater_conductivity_20171128.shp</Path>
+        </Vector>
+        <Vector guid="174131B5-17DA-45CB-8852-E573ABF0C276" id="temp1">
+            <Name>Temperature</Name>
+            <Path>Inputs/temperature/</Path>
+        </Vector>
+        <Vector guid="8EB67F40-8E6A-4070-8BC0-D6C28D3D634D" id="solar1">
+            <Name>Solar</Name>
+            <Path>Inputs/solar/clearwater_solar_nbcd_20171128.shp</Path>
+        </Vector>
+    </Inputs>
+    <Realizations>
+        <GPP dateCreated="2017-05-16 14:20:37" guid="FF6E3DD5-1D27-473B-9226-4597FD1F2A03" id="GPP1"
+             productVersion="1.0.5">
+            <Name>GPP Realization 1</Name>
+            <Inputs>
+                <Vector ref="cond1"/>
+                <Vector ref="solar1"/>
+                <TemperatureModel ref="temp1">
+                    <Vector guid="1726098C-D19F-4547-AAE6-5E7BBA698A19">
+                        <Name>Temperature 8D Model</Name>
+                        <Path>Realizations/realization1/TemperatureModel/averagefromtemp1.shp</Path>
+                    </Vector>
+                </TemperatureModel>
+            </Inputs>
+            <Analyses>
+                <Analysis>
+                    <Name>GPP Analysis</Name>
+                    <Outputs>
+                        <Vector guid="8DE2E770-B91F-423C-A148-252F1C4D7874">
+                            <Name>GPP</Name>
+                            <Path>
+                                Realizations/realization1/TemperatureModel/GAAsites_temp2013_solar_cond_GPP_Clearwater.shp
+                            </Path>
+                        </Vector>
+                    </Outputs>
+                </Analysis>
+            </Analyses>
+        </GPP>
+    </Realizations>
+    <Esri>
+        <CreaDate>20171218</CreaDate>
+        <CreaTime>14463100</CreaTime>
+        <SyncOnce>TRUE</SyncOnce>
+        <DataProperties>
+            <itemProps>
+                <itemLocation>
+                    <linkage Sync="TRUE">
+                        file://\\DESKTOP-3KBQTEM\C$\ISEMP\Networks\Clearwater\Clearwater\GPP\project.rs.edit
+                    </linkage>
+                    <protocol Sync="TRUE">Local Area Network</protocol>
+                </itemLocation>
+            </itemProps>
+            <copyHistory>
+                <copy source="C:\GIS\GIS_Projects\GPP_addedto_GAApoints\RiverscapesData\project.rs.edit"
+                      dest="\\DESKTOP-3KBQTEM\C$\ISEMP\Networks\Clearwater\Clearwater\GPP\project.rs.edit"
+                      date="20171218" time="14463100"></copy>
+            </copyHistory>
+        </DataProperties>
+    </Esri>
 </Project>
