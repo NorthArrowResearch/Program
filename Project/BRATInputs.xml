@@ -11,7 +11,10 @@
 		<Meta name="HUC8">17070301</Meta>
 	</MetaData>
 	<Realizations>
-		<BRATInputs>
+		<BRATInputs id="BRATINPUTS1" dateCreated="" guid="" productVersion="">
+
+			<Name>Brat Inputs</Name>
+
 			<DEM guid="6822453c-d4ed-11e9-b025-acde48001122" id="DEM1">
 				<Name>NED 10m DEM</Name>
 				<Path>dem.tif</Path>
