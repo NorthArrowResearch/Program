@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Program name="Riverscapes" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="XSD/V1/Program.xsd">
+  <MetaData>
+    <Meta name="s3bucket">brat-data</Meta>
+    <Meta name="projectfile">project.rs.xml</Meta>
+  </MetaData>
+
+  <Definitions>
+    <!--Here's where we say what's allowed for each collection. Can be a list or a regex-->
+    <Collections>
+      <Collection id="COL_HUC8" name="HUC8">
+        <Allow pattern="[0-9]{8}" />
+      </Collection>
+    </Collections>
+
+    <!--Groups are a lot simpler than collections. They can only be a single folder-->
+    <Groups>
+      <Group id="GRP_NATIONAL" name="National" folder="National" />
+      <Group id="GRP_HUC8" name="HUC8" folder="HUC8" />
+    </Groups>
+
+    <!--Products for now just need ref, name and folder (url is optional and leads to a wiki)-->
+    <Products>
+      <Product id="BRAT" name="BRAT Models" folder="BRAT" url="" />
+      <Product id="BRATInputs" name="BRAT Inputs" folder="BRATInputs" url="" />
+      <Product id="BRATNationalInputs" name="BRAT National Inputs" folder="BRATNationalInputs" url="" />
+    </Products>
+  </Definitions>
+
+  <!-- Here's where we specify the actual structure
+    Reminder:
+      - Collection: Repeating folders (e.g. Asotin, Lemhi
+      - Group: Single folder with an explicit name (e.g. Topography)
+     Rules:
+      - Only one collection is allowed at any level
+      - Collections cannot be mixed with groups or products
+  -->
+  <Hierarchy>
+      <Group ref="GRP_NATIONAL">
+        <Product ref="BRATNationalInputs" />
+      </Group>
+      <Group ref="GRP_HUC8">
+        <Collection ref="COL_HUC8">
+          <Product ref="BRAT" />
+          <Product ref="BRATInputs" />
+        </Collection>
+      </Group>
+    </Hierarchy>
+</Program>
