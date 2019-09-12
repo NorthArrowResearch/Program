@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="XSD/V1/Project.xsd">
+        <!--Move following line above line above and uncomment, comment out above line, for debugging-->
+        <!--xsi:noNamespaceSchemaLocation="XSD/V1/Project.xsd">-->
+	<Name>BRAT Inputs for HUC 17070301</Name>
+	<ProjectType>BRATInputs</ProjectType>
+	<MetaData>
+		<Meta name="dateCreated">2019-09-11T16:39:23.155999</Meta>
+		<Meta name="HUC8">17070301</Meta>
+	</MetaData>
+	<Realizations>
+		<BRATInputs>
+			<DEM guid="6822453c-d4ed-11e9-b025-acde48001122" id="DEM1">
+				<Name>NED 10m DEM</Name>
+				<Path>dem.tif</Path>
+			</DEM>
+			<Raster guid="68943b1a-d4ed-11e9-b025-acde48001122" id="DA1">
+				<Name>Drainage Area</Name>
+				<Path>drainarea_sqkm.tif</Path>
+			</Raster>
+			<Raster guid="69257260-d4ed-11e9-b025-acde48001122" id="EXVEG1">
+				<Name>Existing Vegetation</Name>
+				<Path>existing_veg.tif</Path>
+			</Raster>
+			<Raster guid="69ee5a5e-d4ed-11e9-b025-acde48001122" id="HISTVEG1">
+				<Name>Historical Vegetation</Name>
+				<Path>historical_veg.tif</Path>
+			</Raster>
+			<Vector guid="835d7902-d4ed-11e9-b025-acde48001122" id="1">
+				<Name>WBDHU12</Name>
+				<Path>nhd/Shape/WBDHU12.shp</Path>
+			</Vector>
+			<Vector guid="835e3bda-d4ed-11e9-b025-acde48001122" id="2">
+				<Name>WBDHU8</Name>
+				<Path>nhd/Shape/WBDHU8.shp</Path>
+			</Vector>
+			<Vector guid="835f240a-d4ed-11e9-b025-acde48001122" id="3">
+				<Name>NHDPoint</Name>
+				<Path>nhd/Shape/NHDPoint.shp</Path>
+			</Vector>
+			<Vector guid="83601e14-d4ed-11e9-b025-acde48001122" id="4">
+				<Name>NHDArea</Name>
+				<Path>nhd/Shape/NHDArea.shp</Path>
+			</Vector>
+			<Vector guid="83611f3a-d4ed-11e9-b025-acde48001122" id="5">
+				<Name>WBDHU10</Name>
+				<Path>nhd/Shape/WBDHU10.shp</Path>
+			</Vector>
+			<Vector guid="83624248-d4ed-11e9-b025-acde48001122" id="6">
+				<Name>WBDHU14</Name>
+				<Path>nhd/Shape/WBDHU14.shp</Path>
+			</Vector>
+			<Vector guid="836366a0-d4ed-11e9-b025-acde48001122" id="7">
+				<Name>NHDLineEventFC</Name>
+				<Path>nhd/Shape/NHDLineEventFC.shp</Path>
+			</Vector>
+			<Vector guid="83648f8a-d4ed-11e9-b025-acde48001122" id="8">
+				<Name>WBDHU16</Name>
+				<Path>nhd/Shape/WBDHU16.shp</Path>
+			</Vector>
+			<Vector guid="8365aadc-d4ed-11e9-b025-acde48001122" id="9">
+				<Name>NHDFlowline</Name>
+				<Path>nhd/Shape/NHDFlowline.shp</Path>
+			</Vector>
+			<Vector guid="8366cc78-d4ed-11e9-b025-acde48001122" id="10">
+				<Name>NHDWaterbody</Name>
+				<Path>nhd/Shape/NHDWaterbody.shp</Path>
+			</Vector>
+			<Vector guid="83681736-d4ed-11e9-b025-acde48001122" id="11">
+				<Name>WBDLine</Name>
+				<Path>nhd/Shape/WBDLine.shp</Path>
+			</Vector>
+			<Vector guid="8369533a-d4ed-11e9-b025-acde48001122" id="12">
+				<Name>NHDLine</Name>
+				<Path>nhd/Shape/NHDLine.shp</Path>
+			</Vector>
+			<Vector guid="836a657c-d4ed-11e9-b025-acde48001122" id="13">
+				<Name>NHDPointEventFC</Name>
+				<Path>nhd/Shape/NHDPointEventFC.shp</Path>
+			</Vector>
+			<Vector guid="836bb508-d4ed-11e9-b025-acde48001122" id="14">
+				<Name>WBDHU2</Name>
+				<Path>nhd/Shape/WBDHU2.shp</Path>
+			</Vector>
+			<Vector guid="836d1088-d4ed-11e9-b025-acde48001122" id="15">
+				<Name>WBDHU6</Name>
+				<Path>nhd/Shape/WBDHU6.shp</Path>
+			</Vector>
+			<Vector guid="836e4caa-d4ed-11e9-b025-acde48001122" id="16">
+				<Name>WBDHU4</Name>
+				<Path>nhd/Shape/WBDHU4.shp</Path>
+			</Vector>
+			<Vector guid="83700162-d4ed-11e9-b025-acde48001122" id="17">
+				<Name>NHDAreaEventFC</Name>
+				<Path>nhd/Shape/NHDAreaEventFC.shp</Path>
+			</Vector>
+		</BRATInputs>
+	</Realizations>
+</Project>

@@ -211,6 +211,9 @@
     <xs:choice maxOccurs="unbounded">
       <xs:element type="DoDType" name="DoD" maxOccurs="unbounded" minOccurs="0"/>
       <xs:element type="VBETType" name="VBET" maxOccurs="unbounded" minOccurs="0"/>
+      <xs:element type="BRATInputsType" name="BRATInputs" maxOccurs="unbounded" minOccurs="0"/>
+      <xs:element type="BRATPrepType" name="BRATPrep" maxOccurs="unbounded" minOccurs="0"/>
+      <xs:element type="BRATRunType" name="BRATRun" maxOccurs="unbounded" minOccurs="0"/>
       <xs:element type="NREIType" name="NREI" maxOccurs="unbounded" minOccurs="0"/>
       <xs:element type="ConfinementType" name="Confinement" maxOccurs="unbounded" minOccurs="0"/>
       <xs:element type="GUTType" name="GUT" maxOccurs="unbounded" minOccurs="0"/>
@@ -1096,5 +1099,53 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+
+   <!-- =========================================================================
+
+    Project: BRAT
+
+  ============================================================================== -->
+
+  <xs:complexType name="BRATInputs" mixed="true">
+    <xs:complexContent>
+      <xs:extension base="RealizationType">
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element type="DEMType" name="DEM" minOccurs="1" maxOccurs="1"/>
+          <xs:element type="RasterType" name="Raster"/>
+          <xs:element type="VectorType" name="Vector"/>
+        </xs:choice>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+<!--  <xs:complexType name="GUTType" mixed="true">-->
+<!--    <xs:complexContent>-->
+<!--      <xs:extension base="RealizationType">-->
+<!--        <xs:sequence>-->
+<!--          <xs:element type="DataSetContainerType" name="Inputs" minOccurs="0"/>-->
+<!--          <xs:element type="GUTAnalysesType" name="Analyses" minOccurs="0"/>-->
+<!--        </xs:sequence>-->
+<!--      </xs:extension>-->
+<!--    </xs:complexContent>-->
+<!--  </xs:complexType>-->
+
+<!--  <xs:complexType name="GUTAnalysesType">-->
+<!--    <xs:sequence>-->
+<!--      <xs:element type="GUTEvidenceLayersType" name="EvidenceLayers"/>-->
+<!--      <xs:element type="GUTMetricsType" name="Metrics"/>-->
+<!--      <xs:element type="GUTOutputsContainerType" name="Outputs"/>-->
+<!--    </xs:sequence>-->
+<!--  </xs:complexType>-->
+
+
+
+<!--  <xs:complexType name="BRATInputsType">-->
+<!--    <xs:choice minOccurs="0" maxOccurs="unbounded">-->
+<!--      <xs:element type="DEMType" name="DEM" minOccurs="1" maxOccurs="1"/>-->
+<!--      <xs:element type="RasterType" name="Raster"/>-->
+<!--      <xs:element type="VectorType" name="Vector"/>-->
+<!--    </xs:choice>-->
+<!--  </xs:complexType>-->
+
 
 </xs:schema>
