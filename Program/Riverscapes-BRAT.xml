@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Program name="Riverscapes" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:noNamespaceSchemaLocation="XSD/V1/Program.xsd">
+<?xml version="1.0" encoding="utf-8" ?>
+<Program name="Riverscapes" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="XSD/V1/Program.xsd">
   <MetaData>
     <Meta name="s3bucket">brat-data</Meta>
     <Meta name="projectfile">project.rs.xml</Meta>
@@ -24,7 +23,7 @@
     <Products>
       <Product id="BRAT" name="BRAT Models" folder="BRAT" url="" />
       <Product id="BRATInputs" name="BRAT Inputs" folder="BRATInputs" url="" />
-      <Product id="BRATNationalInputs" name="BRAT National Inputs" folder="BRATNationalInputs" url="" />
+      <Product id="Landfire" name="Landfire" folder="landfire" url="" />
     </Products>
   </Definitions>
 
@@ -37,14 +36,14 @@
       - Collections cannot be mixed with groups or products
   -->
   <Hierarchy>
-      <Group ref="GRP_NATIONAL">
-        <Product ref="BRATNationalInputs" />
-      </Group>
-      <Group ref="GRP_HUC8">
-        <Collection ref="COL_HUC8">
-          <Product ref="BRAT" />
-          <Product ref="BRATInputs" />
-        </Collection>
-      </Group>
-    </Hierarchy>
+    <Group ref="GRP_NATIONAL">
+      <Product ref="Landfire" />
+    </Group>
+    <Group ref="GRP_HUC8">
+      <Collection ref="COL_HUC8">
+        <Product ref="BRAT" />
+        <Product ref="BRATInputs" />
+      </Collection>
+    </Group>
+  </Hierarchy>
 </Program>
